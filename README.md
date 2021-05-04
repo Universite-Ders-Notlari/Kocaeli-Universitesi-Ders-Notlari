@@ -1,2 +1,2 @@
-# Kocaeli-Universitesi-Ders-Notlari
-Kocaeli Üniversite öğrenim gördüğüm süre boyunca edindiğim ders notlarıdır.
+# Kocaeli Üniversitesi Ders Notları
+Kocaeli Üniversitesinde öğrenim gördüğüm süre boyunca edindiğim ders notlarıdır.
