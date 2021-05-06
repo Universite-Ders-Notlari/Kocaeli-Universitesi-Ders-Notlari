@@ -1,0 +1,135 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset="8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+<style type="text/css">
+<!--
+.style20 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style21 {
+	font-size: 12pt;
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+}
+.style27 {font-size: medium}
+.style28 {font-family: Verdana}
+.style29 {font-size: x-small}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content">
+  <tr valign="top"> 
+    <td><p class="baslik"><span style='font-family:Verdana'><b>2.10.2. LU Ayr&#305;&#351;t&#305;rma Y&ouml;ntemi ile Matris Tersini Bulmak </b></span></p>
+      <p class="content"><span style='font-family:&quot;Times New Roman&quot;'><b><i>A</i></b></span><span
+style='font-family:Verdana'> tekil matrisinin <b>LU ayr&#305;&#351;t&#305;rma y&ouml;ntemiyle</b> iki matrise ayr&#305;ld&#305;&#287;&#305;n&#305; varsayal&#305;m. Burada </span><span
+style='font-family:&quot;Times New Roman&quot;'><b><i>L</i></b></span><span
+style='font-family:Verdana'> ve </span><span style='font-family: &quot;Times New Roman&quot;'><b><i>U </i></b></span><span
+style='font-family:Verdana'>birer &uuml;&ccedil;gen matristir. Bir &uuml;&ccedil;gen matrisin tersi de yine bir &uuml;&ccedil;gen matris oldu&#287;undan, bu &ouml;zeli&#287;i kullanarak</span><span
+style='font-family:&quot;Times New Roman&quot;'><b><i> A </i></b></span><span
+style='font-family:Verdana'>matrisinin tersi elde edece&#287;iz.</span></p>
+      <p class="content"><span style='font-family:&quot;Times New Roman&quot;'><b><i>U</i></b></span> <span
+style='font-family:Verdana'>&uuml;&ccedil;gen matrisinin tersi</span> <span
+style='font-family:&quot;Times New Roman&quot;'><b><i>T </i></b></span><span
+style='font-family:Verdana'>matrisi olsun. Bu durumda, </span></p>
+      <p class="baslik style27 style28">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="570" height="75">
+          <param name="movie" value="pics/B02/H324.swf">
+          <param name="quality" value="high">
+          <embed src="pics/B02/H324.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="570" height="75"></embed>
+        </object>
+</p>
+      <div v:shape="_x0000_s1026" class=O><p:colorscheme
+ colors="#ffffff,#000000,#808080,#000000,#bbe0e3,#333399,#009999,#99cc00"/>
+        <div v:shape="_x0000_s1026" class=content style='mso-char-wrap:1;mso-kinsoku-overflow:
+1'></div>
+        <div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'>      </div>
+      </div>
+      <div v:shape="_x0000_s1026" class=O>
+        <div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'>
+        <span style='font-family:Verdana'
+lang=EN-US>&#13;</span></div>
+      </div>
+      <div v:shape="_x0000_s1026" class=O><div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'><div v:shape="_x0000_s1026" class=O>
+          <div style='mso-line-spacing:"100 50 0";mso-margin-left-alt:216;mso-char-wrap:
+1;mso-kinsoku-overflow:1'><span style="font-size: x-small"><nobr></nobr></span></div>
+            </div>
+          </div>
+      </div>      <div v:shape="_x0000_s1026" class=O>
+        <div style='text-align:justify;mso-char-wrap:1;mso-kinsoku-overflow:1'><span style='font-family:Verdana;font-size:x-small'>yaz&#305;labilir. Benzer bi&ccedil;imde </span><span
+style='font-family:&quot;Times New Roman&quot;;font-size:x-small'><b><i>L </i></b></span><span
+style='font-family:Verdana;font-size:x-small'>matrisinin tersinin </span><span
+style='font-family:&quot;Times New Roman&quot;;font-size:x-small'><b><i>S</i></b></span><span
+style='font-family:Verdana;font-size:x-small'> oldu&#287;unu varsayal&#305;m. O halde </span><span
+style='font-family:&quot;Times New Roman&quot;;font-size:x-small'><b><i>S</i></b></span><span
+style='font-family:Verdana;font-size:x-small'> matrisi i&ccedil;in de,</span></div>
+        </div>      <div v:shape="_x0000_s1026" class=O><div v:shape="_x0000_s1026" class=O style='mso-char-wrap:1;mso-kinsoku-overflow:
+1'>
+          <p><span
+style='font-family:Verdana;font-size:12pt'><span style='mso-spacerun:yes'>
+          <span
+style='font-family:Verdana;font-size:12pt'><span style='mso-spacerun:yes'>
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="570" height="70">
+            <param name="movie" value="pics/B02/H325.swf">
+            <param name="quality" value="high">
+            <embed src="pics/B02/H325.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="570" height="70"></embed>
+          </object>
+          </span></span> </span></span></p>
+        </div>
+        <div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'><p:colorscheme
+ colors="#ffffff,#000000,#808080,#000000,#bbe0e3,#333399,#009999,#99cc00"/>          <span style='font-family:Verdana'>ba&#287;&#305;nt&#305;s&#305;n&#305; yazabiliriz. O halde </span><span
+style='font-family:&quot;Times New Roman&quot;'><b><i>A</i></b></span><span
+style='font-family:Verdana'><b> matrisinin tersi</b>, </span></div>
+      </div>      <p>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="570" height="70">
+          <param name="movie" value="pics/B02/H326.swf">
+          <param name="quality" value="high">
+          <embed src="pics/B02/H326.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="570" height="70"></embed>
+        </object>
+</p>      <p><span class="content"><span style='font-family: Verdana'>bi&ccedil;iminde hesaplan&#305;r. <b>(2.10)</b></span><span style='font-family:Verdana'> ba&#287;&#305;nt&#305;s&#305;n&#305; <b>3. mertebeden matrislerle</b></span><span style='font-family: Verdana'> a&ccedil;&#305;k bi&ccedil;imde &#351;&ouml;yle ifade edebiliriz:</span></span><span class="content style20 style21"><span
+style='font-family:Verdana;font-size:12pt'><b> &#13;</b></span></span></p>      
+<div v:shape="_x0000_s1026" class=O>
+  <div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'></div>
+</div>
+<div v:shape="_x0000_s1026" class=O></div>      <div v:shape="_x0000_s1026" class=O>
+        <div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'></div>
+      </div>      <div v:shape="_x0000_s1026" class=O>
+        <div style='mso-line-spacing:"100 50 0";mso-char-wrap:1;mso-kinsoku-overflow:
+1'>
+          <p>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="570" height="100">
+              <param name="movie" value="pics/B02/H327.swf">
+              <param name="quality" value="high">
+              <embed src="pics/B02/H327.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="570" height="100"></embed>
+            </object>
+</p>
+          <p class="content"><span style='font-family:Verdana'>Bu ili&#351;kiden yararlanarak a&#351;a&#287;&#305;daki ba&#287;&#305;nt&#305;lar elde edilir:<b> </b></span></p>
+          <p>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="570" height="330">
+              <param name="movie" value="pics/B02/H328.swf">
+              <param name="quality" value="high">
+              <embed src="pics/B02/H328.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="570" height="330"></embed>
+            </object>
+          </p>
+        </div>
+      </div></td>
+  </tr>
+</table>
+</body>
+</html>

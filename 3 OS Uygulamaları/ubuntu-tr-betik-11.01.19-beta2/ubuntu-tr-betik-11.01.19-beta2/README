@@ -1,0 +1,65 @@
+
+!!!! Betik değişken verilmeden normal şekilde de çalışır. Aşağıdaki anlatım ek özelliklerin
+kullanımı içindir.. 
+
+
+AŞAMA KODLARI
+
+aşama1=1
+aşama2=2
+aşama3=3
+aşama4=4
+aşama5=5
+aşama6=6
+aşama7=7
+aşama8=8
+aşama9=9
+aşama10=0
+
+
+DEĞİŞKENLER
+
+-b, --bilgi 
+Betik listelerindeki uygulamaların kısa tanıtımını 
+betik çalışırken arka planda gösterir.
+
+-k, --kapat
+Betik işlemleri bitirdikten sonra, bilgisayarı kapatır.
+Ekrana son 20 saniye gösterilecek geri sayım penceresi çıkarır.
+İptal edilmezse sistem normal şekilde kapatılır.
+
+
+-y, --yoksay <asama_no>
+10 aşama içerisinden hariç tutulmak istenen aşamalar içindir.
+Girilen aşama no ları gösterilmez ve o aşamalarla ilgili işlem yapılmaz.
+Haricindeki tüm aşamalar gösterilir.
+
+-a, --asama,--aşama <asama_no>
+Sadece girilen aşama numaralarını çalıştırır.
+
+ÖRNEK KULLANIMLAR
+
+***
+ubuntu-tr-betik --kapat , ubuntu-tr-betik -k
+10 aşamayı çalıştırır ve işlem bitince sistemi kapatır.
+
+***
+ubuntu-tr-betik --bilgi, ubuntu-tr-betik -b
+10 aşamayı çalıştırır ayrıca ilk açılışta arka plana bilgi penceresi açar.
+
+***
+ubuntu-tr-betik -bk, ubuntu-tr-betik -kb, ubuntu-tr-betik --bilgi --kapat, ubuntu-tr-betik --bilgi -k, ubuntu-tr-betik --kapat -b
+10 aşamayı çalıştırır , bilgi penceresi açar, işlem sonunda sistemi kapatır.
+
+
+***
+ubuntu-tr-betik -bka 92301
+Sırasıyla 1, 2, 3, 9 ve 10. aşamaları çalıştırır, bilgi penceresi açar, işlem sonunda sistemi kapatır.
+
+***
+ubuntu-tr-betik -ky 0
+10. hariç diğer 9 aşamayı çalıştırır , işlem sonunda sistemi kapatır.
+
+
+
+

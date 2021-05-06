@@ -1,0 +1,1521 @@
+#!/bin/bash
+#
+##       Ubuntu 10.04,10.10 ve 11.04 Özelleştirmesi  - UBUNTU-TR-BETiK GNU Bash betiği
+##
+##             Copyright (C) 2010-2011  Fatih Bostancı  <faopera@gmail.com>
+##                          
+##                             Sürüm : 11.01.19-beta2 "TECRÜBE"               
+##
+##                          https://launchpad.net/ubuntu-tr-betik
+##
+##   Bu uygulama bir özgür yazılımdır: yeniden dağıtabilirsiniz ve/veya Özgür Yazılım Vakfı (FSF) tarafından yayımlanan
+##  (GPL) Genel kamu lisansı sürüm 3  veya daha yeni bir sürümünde belirtilen şartlara uymak kaydıyla, üzerinde
+##  değişiklik yapabilirsiniz.   
+##  
+##  Bu program kullanışlı olabileceği umularak dağıtılmaktadır.
+##  Ancak, hiçbir GARANTİSİ YOKTUR; hatta SATILABİLİRLİĞİ veya HERHANGİ
+##  BİR AMACA UYGUNLUĞU için bile garanti verilmez. 
+## 
+##  Lisansın bir kopyasını aşağıdaki adresten edinebilirsiniz.
+## 
+##     <http://www.gnu.org/licenses/>
+##
+##
+##~~~~~~~~~~~~~EN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  This program is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
+##
+##  This program is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License
+##  along with this program. If not, see <http://www.gnu.org/licenses/>.
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  Yararlanılan kaynaklar:
+##  http://www.webupd8.org/2010/04/what-to-do-after-fresh-ubuntu-install.html /
+##  http://profarius.com/content/64bit-java-flash-deathroll
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##  Kullanımı :
+##  Betiği indirdikten sonra uçbirimden betiğin bulunduğu dizine gidin.
+##  'chmod +x ubuntu-tr-betik' komutuyla betiği çalıştırılabilir yapın.
+##  Son olarak, 'sudo ./ubuntu-tr-betik' komutuyla betiği çalıştırın..
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
+#TODO:
+
+
+
+clear
+
+SARI='\033[1;33m'
+YESiL='\033[1;32m'
+SON='\033[0m'
+
+
+    function gerisayim() {
+echo
+    for ((c=$1; c>0; c--))
+    do
+       echo -ne "$SARI$c\t$SON"; sleep 1
+    done
+echo
+    }
+
+
+# Betiğin desteklediği sürüm mü?
+if [ $(lsb_release -sr | awk -F'.' '{print $1}') -lt 10 ]; then
+     echo -e $SARI"Hata1: Bu betik Ubuntu 10.04, 10.10 ve 11.04 sürümü içindir.."$SON
+     gerisayim 10; clear; exit 1
+fi
+
+
+# APT' yi kilitleyen uygulama çalışıyor mu?
+for kilit in synaptic update-manager software-center apt-get dpkg aptitude
+do
+  if ps -U root -u root u | grep ${kilit} | grep -v grep > /dev/null
+  then 
+     echo -e $SARI"Hata2: Betiğin çalışabilmesi için lütfen $YESiL'${kilit}'$SARI uygulamasını kapatın.."$SON
+     gerisayim 10; clear; exit 1
+  fi
+done
+
+
+# Betiğe yönetici hakları verilmiş mi ?
+if [[ $UID -ne 0 ]] # betiği çalıştıran kullanıcı id'si root (0) değilse...
+then 
+   echo -e $SARI"Hata3: Betiğin  işlemleri uygulayabilmesi için, betik yönetici haklarıyla \nçalıştırılmalıdır."$SON
+   echo -e $YESiL" \n'sudo ./ubuntu-tr-betik'$SARI komutuyla betiği çalıştırabilirsiniz."$SON
+   gerisayim 15; clear; exit 1
+fi   
+  
+         
+    function baglanti() {
+wget -t 3 -T 10 www.google.com -O /tmp/baglantisina &>/dev/null           
+  if [ ! -s /tmp/baglantisina ]
+  then
+       echo -e $SARI"Hata4: İnternet erişiminiz algılanamadı. \nBetiğin işlemleri uygulayabilmesi için internet bağlantısı gereklidir."$SON
+       gerisayim 10; clear; exit 1
+       
+  else
+     echo -e $YESiL"İnternet erişiminiz var.."$SON
+  fi
+    }    
+
+
+# günlük dosyası konumu ve adı.   
+b="$(pwd)/gunluk/GUNLUK_$(date +%F_%H-%M-%S)"
+#b=/dev/null # günlük tutmayı kapat.
+
+# Kurulacak uygulamaların yönlendireleceği dosya.
+kurulacak_listesi="$(pwd)/gunluk/KUR_$(date +%F_%H-%M-%S)"
+
+# Eklenen depo anahtarlarının yönlendireleceği dosya.
+anahtar_listesi="$(pwd)/gunluk/ANAHTAR_$(date +%F_%H-%M-%S)"
+
+
+
+    function gonder() {
+for ((a=0; a<$uz; a++))
+do
+    echo ${dizi[${a}]} >> "${kurulacak_listesi}"
+done
+    }
+    
+    
+    function gonder_kisa() {
+echo "$1" >> "${kurulacak_listesi}"
+    }
+    
+        
+    function anahtar_ekle() {
+echo "$1" >> "${anahtar_listesi}"
+    }
+    
+    
+    function asama_numara() {
+echo "                           " >> "${b}"
+echo "###########################" >> "${b}"  
+echo "        AŞAMA-$1           " >> "${b}"
+echo "###########################" >> "${b}"
+echo "                           " >> "${b}"            
+    } 
+            
+            
+# Normal kullanıcı hakkı (1000) vermek için sistemde çalışan root olmayan kullanıcı
+kullanici="$(ps axo comm=,user | grep gnome-panel | awk '{print $2}')"    
+#kullanici="$(ps axo comm=,user | grep xfce4-panel | awk '{print $2}')"
+
+export $(grep -v "^#" ~/.dbus/session-bus/`cat /var/lib/dbus/machine-id`-0)
+    if sudo -u "${kullanici}" test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+       eval `sudo -u "${kullanici}" dbus-launch --sh-syntax --exit-with-session`
+    fi 
+             
+echo "İşleme başlama zamanı          : $(date '+%F   %H:%M:%S')" >> "${b}"
+
+
+# Sürüm tespiti
+if [ `lsb_release -sc` = lucid ]; then
+      surum=lucid
+      echo "Kullanılan Ubuntu sürümü       : 10.04 Lucid Lynx" >> "${b}"
+      echo "Ubuntu mimarisi                : $(uname -m)" >> "${b}"
+      
+elif [ `lsb_release -sc` = maverick ]; then 
+        surum=maverick
+        echo "Kullanılan Ubuntu sürümü       : 10.10 Maverick Meerkat" >> "${b}"
+        echo "Ubuntu mimarisi                : $(uname -m)" >> "${b}"
+        
+elif [ `lsb_release -sc` = natty ]; then 
+        surum=natty
+        echo "Kullanılan Ubuntu sürümü       : 11.04 Natty Narwhal" >> "${b}"
+        echo "Ubuntu mimarisi                : $(uname -m)" >> "${b}"  
+              
+fi
+
+
+
+echo -e "İşlem öncesi kaynak listesi    : \n$(cat /etc/apt/sources.list) \n\nSources.list.d                 : \n$(cat /etc/apt/sources.list.d/* 2> /dev/null)" >> "${b}"
+
+    
+    function sozlesme_denetimi() { 
+# Sözleşme onayı
+cd GPL
+if [ -e lisans ]; then # lisans dosyası varsa...
+      if [ -e .durum ]; then # daha önceden bir .durum dosyası oluşmuşsa...
+            if [ $(grep -c Evet .durum) -eq 1 ]; then # oluşmuş .durum dosyası Evet değerini içeriyorsa...
+                 cd -; echo -e $YESiL"Sözleşme kabul edilmiş.."$SON # Sözleşme kabul edilmiş.. Bir önceki dizine dön.                          
+            fi        
+                      
+      else  # durum dosyası yoksa, lisans dosyasını çalıştır.          
+          chmod +x lisans
+          bash -c "\"$(pwd)\"/lisans >/dev/null 2>&1" 
+            if [ $(grep -c Evet .durum) -eq 1 ]; then # lisans dosyası Evet değeri ile mi kapanmış ?
+                 cd -; echo -e $YESiL"Sözleşme kabul edildi.."$SON
+                                   
+            else # Lisans dosyası Hayır göndermişse...
+                echo -e $SARI"Sözleşme kabul edilmedi. Çıkılıyor..."$SON
+                rm -f .durum; sleep 3; cd -; clear;  exit 1 # oluşan .durum dosyasını sil, önceki dizine dön ve çık.
+            fi
+      fi 
+                       
+else # lisans dosyası uçurulmuşsa...
+    echo -e $SARI"lisans dosyası bulunamadı. Çıkılıyor..."$SON; gerisayim 3; cd -; clear; exit 1
+fi
+    }
+    
+             
+                                       
+    function depo() {
+baglanti    
+sudo cp -n /etc/apt/sources.{list,list_ubuntu-tr-betik_yedekledi}
+echo "\
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum} main restricted
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum}-updates main restricted
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum} universe
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum}-updates universe
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum} multiverse
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum}-updates multiverse
+deb http://nl.archive.ubuntu.com/ubuntu/ ${surum}-backports main restricted universe multiverse
+deb http://archive.canonical.com/ubuntu ${surum} partner
+deb http://security.ubuntu.com/ubuntu ${surum}-security main restricted
+deb http://security.ubuntu.com/ubuntu ${surum}-security universe
+deb http://security.ubuntu.com/ubuntu ${surum}-security multiverse
+###UBUNTU-TR-BETiK tarafından eklenen depolar###" | sudo tee /etc/apt/sources.list > /dev/null
+sudo apt-get update 2>> "${b}"
+    }
+    
+
+sudo apt-get clean
+
+if [[ -e $(pwd)/debpaketleri.tar.gz ]]
+then
+      sleep 0.5
+      zenity --question --title "Deb paketi arşivi bulundu" \
+             --text "Deb paketi arşivi bulundu. \nBetik işlemlerinde kullanmak ister misiniz? \
+             \n\n<big><u>BİLGİ\:</u></big> Onaylarsanız, güncel olan paketler için \ninternetten paket indirilmesi yapılmayacak." \
+             --ok-label "Paketleri kullan" --cancel-label "Bu işlemi atla" 
+             
+   if [ $? -eq 0 ]
+   then        
+        echo -e $YESiL"Deb paketi arşivi bulundu. \nİçe aktarılıyor...."$SON; gerisayim 3
+        echo -e $YESiL"Mevcut APT belleği temizleniyor.."$SON; gerisayim 2
+        
+        sudo apt-get autoclean
+        
+        echo -e $YESiL"Paket arşivi açılıyor.."$SON; gerisayim 2
+        sudo -u "${kullanici}" tar xzvf debpaketleri.tar.gz 2>> "${b}" 
+        
+        echo -e $YESiL"Deb paketleri APT belleğine taşınıyor.."$SON; gerisayim 2
+        sudo mv "$(pwd)"/debpaketleri/*.deb /var/cache/apt/archives 2>> "${b}" 
+        
+        sleep 1; sudo rm -rf debpaketleri* &>/dev/null
+        echo -e $YESiL"İşlem Tamamlandı. Seçim aşamalarına geçiliyor.. "$SON; gerisayim 2; clear     
+   fi   
+fi
+
+
+    function secilen() {
+echo "$@" >> "${b}"
+    }
+          
+          
+    function asama_bir() {
+asama_numara 1
+asama1=`zenity --title="Aşama 1/10 : Ek bileşenlerin kurulumu ve depo işlemleri"  --width=450 --height=450 \
+        --text="<big>Listeden uygulamak istediğiniz işlemleri seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Seçili olanlar, <big><u>önerilen</u></big> işlemlerdir..\nEğer herhangi bir işlem uygulamak istemiyorsanız, \
+        <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " " --column="  Seçenekler " --separator "\n"  --checklist \
+        TRUE "1" "Kaynak listesi (sources.list) düzenlemesi" \
+        TRUE "2" "Güncel dil deposu" \
+        TRUE "3" "Getdeb deposu" \
+        TRUE "4" "Playdeb deposu" \
+        TRUE "5" "Gstreamer, Xine ve DVD çözücüleri" \
+        TRUE "6" "Adobe Flaş Player" \
+        TRUE "7" "Sun Java" \
+        TRUE "8" "Sıkıştırma araçları (rar, unrar, 7zip, unp, unace)" \
+        TRUE "9" "Kısıtlı çözücüler (medibuntu)" \
+        FALSE "10" "Microsoft yazı tipleri" \
+        FALSE "11" "Sun Java yazı tipleri (Sun Java gerektirir)"`
+
+
+if [ $? -eq 0 ]; then    
+     if [[ -z $asama1 ]]; then
+           echo "Aşama 1' de herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+           
+     else
+        secilen $asama1 
+        for secimler1 in $asama1 
+        do  
+            if [ $secimler1 -eq 1 ]; then
+                  if [[ -z $(grep UBUNTU-TR-BETiK /etc/apt/sources.list) ]]; then                      
+                        depo
+                  else
+                  
+                     echo -e $SARI"Daha önceden kaynak listesi düzenlemesi yapılmış.."$SON; sleep 2.5        
+                  fi  
+                                 
+                                 
+            elif [ $secimler1 -eq 2 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/ubuntu-langpack* >/dev/null 2>&1
+                      if [[ -z $(grep ubuntu-langpack /etc/apt/sources.list) ]]; then
+                           echo "deb http://ppa.launchpad.net/ubuntu-langpack/ppa/ubuntu ${surum} main" | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null
+                           anahtar_ekle turkce
+                      else
+                           echo -e $SARI"Güncel dil deposu zaten eklenmiş.."$SON; sleep 1.5     
+                      fi   
+                      
+                             
+            elif [ $secimler1 -eq 3 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/getdeb* >/dev/null 2>&1
+                      if [[ -z $(grep 'getdeb apps' /etc/apt/sources.list) ]]; then
+                           echo "deb http://archive.getdeb.net/ubuntu ${surum}-getdeb apps" | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null
+                           anahtar_ekle getdeb
+                      else 
+                      
+                           echo -e $SARI"Getdeb deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi      
+                          
+            elif [ $secimler1 -eq 4 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/playdeb* >/dev/null 2>&1
+                      if [[ -z $(grep 'getdeb games' /etc/apt/sources.list) ]]; then
+                           echo "deb http://archive.getdeb.net/ubuntu ${surum}-getdeb games" | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null
+                           anahtar_ekle getdeb
+                           
+                      else 
+                           echo -e $SARI"Playdeb deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi    
+                                                            
+            elif [ $secimler1 -eq 5 ]; then
+                   dizi=( gstreamer0.10-ffmpeg gstreamer0.10-pitfdll gstreamer0.10-plugins-bad gstreamer0.10-plugins-bad-multiverse \
+                   gstreamer0.10-plugins-ugly gstreamer0.10-plugins-ugly-multiverse libdvdnav4 libdvdread4 libdvdcss2 libxine1-ffmpeg ffmpeg )
+                   uz=11; gonder 
+                                   
+                                   
+            elif [ $secimler1 -eq 6 ]; then
+                   sudo apt-get -y purge adobe-flashplugin flashplugin-installer flashplugin-nonfree swfdec-mozilla \
+                   mozilla-plugin-gnash flashblock libflashsupport
+                    if [ i686 = `uname -m` ]; then
+                         gonder_kisa flashplugin-nonfree
+                    else
+                    
+                       baglanti
+                       Linux_64_bit_flash="flashplayer10_2_p3_64bit_linux_111710.tar.gz"
+                       wget http://download.macromedia.com/pub/labs/flashplayer10/${Linux_64_bit_flash} 2>> "${b}"
+                       sudo rm -f /usr/lib/mozilla/plugins/*flash*
+                       
+                       sudo rm -f ~/.mozilla/plugins/*flash*
+                       sudo rm -f /usr/lib/firefox/plugins/*flash*
+                       
+                       sudo rm -f /usr/lib/firefox-addons/plugins/*flash*
+                       sudo rm -rfd /usr/lib/nspluginwrapper
+                       
+                       tar xzf ${Linux_64_bit_flash}
+                       rm -rf  ${Linux_64_bit_flash}
+                       sudo mv libflashplayer.so /usr/lib/mozilla/plugins 2>> "${b}"
+                    fi   
+                             
+                             
+            elif [ $secimler1 -eq 7 ]; then
+                   sudo echo sun-java6-jre shared/accepted-sun-dlj-v1-1 select true | \
+                   sudo /usr/bin/debconf-set-selections 2>> "${b}"
+                   gonder_kisa sun-java6-plugin 
+                    
+                             
+            elif [ $secimler1 -eq 8 ]; then
+                   dizi=( rar unrar p7zip-full p7zip-rar unace unp ); uz=6; gonder  
+                                       
+            elif [ $secimler1 -eq 10 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/medibuntu* >/dev/null 2>&1 
+                      if [[ -z $(grep 'medibuntu.org' /etc/apt/sources.list) ]]; then
+                             echo "deb http://packages.medibuntu.org/ ${surum} free non-free" | \
+                             sudo tee -a /etc/apt/sources.list >/dev/null
+                             anahtar_ekle medibuntu
+                             
+                      else 
+                      
+                         echo -e $SARI"Medibuntu deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi   
+                      if [ i686 = `uname -m` ]; then
+                           gonder_kisa w32codecs
+                           
+                      else
+                          gonder_kisa w64codecs
+                      fi  
+                                                    
+            elif [ $secimler1 -eq 11 ]; then
+                   gonder_kisa ttf-mscorefonts-installer; gonder_kisa ttf-liberation 
+                                      
+            elif [ $secimler1 -eq 12 ]; then
+                   gonder_kisa sun-java6-fonts                                                     
+            fi                      
+        done  
+      gerisayim 2     
+     fi    
+else
+   echo "Aşama 1 atlandı." >> "${b}"         
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi
+    }
+
+
+    function asama_iki() {
+asama_numara 2 
+asama2=`zenity --title="Aşama 2/10 : Tarayıcı kurulumu"  --width=450 --height=390 \
+        --text="<big>Listeden kurmak istediğiniz tarayıcıları seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Eğer herhangi bir tarayıcı kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " "  --column="      Tarayıcılar" --separator "\n"  --checklist \
+        TRUE "1" "Chromium" \
+        FALSE "2" "Chromium (Günlük geliştirme sürümü)" \
+        FALSE "3" "Epiphany (Webkit Tabanlı)" \
+        FALSE "4" "Midori (Webkit Tabanlı)" \
+        FALSE "5" "Mozilla SeaMonkey" \
+        FALSE "6" "Opera" \
+        FALSE "7" "Lynx (Uçbirim Tabanlı)" \
+        FALSE "8" "Links (Uçbirim Tabanlı)"`
+        
+                    
+if [ $? -eq 0 ]; then 
+     if [[ -z $asama2 ]]; then
+           echo "Aşama 2' de herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear  
+               
+     else
+        secilen $asama2 
+        for secimler2 in $asama2 
+        do       
+            if [ $secimler2 -eq 1 ]; then
+                 gonder_kisa chromium-browser; gonder_kisa chromium-browser-l10n 
+                                 
+            elif [ $secimler2 -eq 2 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/chromium-daily* > /dev/null 2>&1
+                      if [[ -z $(grep chromium-daily /etc/apt/sources.list) ]]; then    
+                           echo "deb http://ppa.launchpad.net/chromium-daily/ppa/ubuntu ${surum} main" | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Chromium günlük sürüm deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi
+                   anahtar_ekle chromium     
+                   gonder_kisa chromium-browser; gonder_kisa chromium-browser-l10n  
+                           
+            elif [ $secimler2 -eq 3 ]; then
+                   gonder_kisa epiphany-browser
+                                        
+            elif [ $secimler2 -eq 4 ]; then     
+                   gonder_kisa midori    
+                                                     
+            elif [ $secimler2 -eq 5 ]; then
+                   gonder_kisa seamonkey-browser 
+                                                       
+            elif [ $secimler2 -eq 6 ]; then   
+                   sudo rm -f /etc/apt/sources.list.d/opera* > /dev/null 2>&1
+                      if [[ -z $(grep opera.com /etc/apt/sources.list) ]]; then
+                            echo 'deb http://deb.opera.com/opera/ stable non-free' | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null                         
+                      else
+                      
+                         echo -e $SARI"Opera deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi     
+                   anahtar_ekle opera                                                        
+                   gonder_kisa opera 
+                              
+            elif [ $secimler2 -eq 7 ]; then           
+                   gonder_kisa lynx   
+                                   
+            elif [ $secimler2 -eq 8 ]; then         
+                   gonder_kisa links                                
+            fi     
+        done
+      gerisayim 2      
+     fi
+else 
+   echo "Aşama 2 atlandı." >> "${b}"         
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi   
+    }      
+          
+          
+    function asama_uc() { 
+asama_numara 3     
+asama3=`zenity --title="Aşama 3/10 : Anlık iletişim aracı kurulumu"  --width=450 --height=390 \
+        --text="<big>Listeden kurmak istediğiniz anlık iletişim araçlarını seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Eğer herhangi bir iletişim aracı kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " " --column="      Anlık İletişim Araçları"  --separator "\n" --checklist \
+        TRUE "1" "Amsn" \
+        FALSE "2" "Amsn (Günlük geliştirme sürümü)" \
+        FALSE "3" "Emesene" \
+        FALSE "4" "Kopete (KDE Tabanlı)" \
+        FALSE "5" "KMess (KDE Tabanlı)" \
+        FALSE "6" "Pidgin" \
+        FALSE "7" "Finch (Uçbirim Tabanlı)" \
+        FALSE "8" "Xchat" \
+        FALSE "9" "Konversation (KDE Tabanlı)"` 
+        
+       
+if [ $? -eq 0 ]; then        
+     if [[ -z $asama3 ]]; then
+           echo "Aşama 3' te herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; sleep 2.5; clear
+           
+     else
+        secilen $asama3     
+        for secimler3 in $asama3 
+        do 
+            if [ $secimler3 -eq 1 ]; then
+                 gonder_kisa amsn              
+            elif [ $secimler3 -eq 2 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/amsn-daily* > /dev/null 2>&1
+                      if [[ -z $(grep amsn-daily /etc/apt/sources.list) ]]; then
+                           echo "deb http://ppa.launchpad.net/amsn-daily/ppa/ubuntu ${surum} main" | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null   
+                      else
+                      
+                         echo -e $SARI"Amsn daily deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi
+                   anahtar_ekle amsn-daily                     
+                   gonder_kisa amsn
+                    
+            elif [ $secimler3 -eq 3 ]; then        
+                   gonder_kisa emesene  
+                                      
+            elif [ $secimler3 -eq 4 ]; then      
+                   gonder_kisa kopete 
+                                     
+            elif [ $secimler3 -eq 5 ]; then
+                   gonder_kisa kmess  
+                                     
+            elif [ $secimler3 -eq 6 ]; then      
+                   sudo rm -f /etc/apt/sources.list.d/pidgin-developers* > /dev/null 2>&1 
+                      if [[ -z $(grep pidgin-developers /etc/apt/sources.list) ]]; then
+                            echo "deb http://ppa.launchpad.net/pidgin-developers/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                         echo -e $SARI"Pidgin deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi
+                   anahtar_ekle pidgin 
+                   gonder_kisa pidgin 
+                                      
+            elif [ $secimler3 -eq 7 ]; then  
+                   sudo rm -f /etc/apt/sources.list.d/pidgin-developers* > /dev/null 2>&1 
+                      if [[ -z $(grep pidgin-developers /etc/apt/sources.list) ]]; then
+                            echo "deb http://ppa.launchpad.net/pidgin-developers/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Finch deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi
+                   anahtar_ekle pidgin
+                   gonder_kisa finch    
+                                         
+            elif [ $secimler3 -eq 8 ]; then
+                   gonder_kisa xchat
+                   
+            elif [ $secimler3 -eq 9 ]; then
+                   gonder_kisa konversation                     
+            fi            
+        done
+      gerisayim 2     
+     fi
+else
+   echo "Aşama 3 atlandı." >> "${b}"          
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi          
+    }
+    
+                                   
+    function asama_dort() {
+asama_numara 4
+asama4=`zenity --title="Aşama 4/10 : İndirme aracı kurulumu"  --width=450 --height=450 \
+       --text="<big>Listeden kurmak istediğiniz indirme araçlarını seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+       Eğer herhangi bir indirme aracı kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+       --list  --column "#" --hide-column "2" --column " "  --column="      İndirme Araçları" --separator "\n"  --checklist \
+       TRUE "1"  "JDownloader" \
+       FALSE "2" "Fatrat" \
+       FALSE "3" "Kget (KDE Tabanlı)" \
+       FALSE "4" "Gwget" \
+       FALSE "5" "Uget" \
+       FALSE "6" "Multiget" \
+       FALSE "7" "Slimrat" \
+       FALSE "8" "Aria2 (Uçbirim Tabanlı)" \
+       FALSE "9" "Filezilla" \
+       FALSE "10" "Frostwire" \
+       FALSE "11" "Deluge" \
+       FALSE "12" "KTorrent (KDE Tabanlı)" \
+       FALSE "13" "rTorrent (Uçbirim Tabanlı)" \
+       FALSE "14" "qBittorrent" \
+       FALSE "15" "git, subversion, bzr"`
+                   
+                   
+if [ $? -eq 0 ]; then       
+     if [[ -z $asama4 ]]; then
+           echo "Aşama 4' te herhangi bir seçim yapılmadı." >> "${b}" 
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+           
+     else
+        secilen $asama4     
+        for secimler4 in $asama4
+        do       
+            if [ $secimler4 -eq 1 ]; then
+                 sudo rm -f /etc/apt/sources.list.d/*jdownloader* > /dev/null 2>&1
+                    if [[ -z $(grep jdownloader /etc/apt/sources.list) ]]; then   
+                         echo  "deb http://ppa.launchpad.net/jd-team/jdownloader/ubuntu ${surum} main" | \
+                         sudo tee -a /etc/apt/sources.list >/dev/null
+                    else
+                    
+                       echo -e  $SARI"JDownloader deposu zaten eklenmiş"$SON; sleep 1.5
+                    fi   
+                 anahtar_ekle jdownloader
+                 gonder_kisa jdownloader
+                                   
+            elif [ $secimler4 -eq 2 ]; then
+                   gonder_kisa fatrat
+                                      
+            elif [ $secimler4 -eq 3 ]; then
+                   gonder_kisa kget
+                               
+            elif [ $secimler4 -eq 4 ]; then 
+                   gonder_kisa gwget
+                                       
+            elif [ $secimler4 -eq 5 ]; then
+                   gonder_kisa uget
+                                      
+            elif [ $secimler4 -eq 6 ]; then 
+                   gonder_kisa multiget
+                               
+            elif [ $secimler4 -eq 7 ]; then
+                   gonder_kisa slimrat
+                                                               
+            elif [ $secimler4 -eq 8 ]; then
+                   gonder_kisa aria2
+                                      
+            elif [ $secimler4 -eq 9 ]; then 
+                   gonder_kisa filezilla
+                                                 
+            elif [ $secimler4 -eq 10 ]; then                                                                 
+                   sudo rm -f /etc/apt/sources.list.d/getdeb* >/dev/null 2>&1
+                      if [[ -z $(grep 'getdeb apps' /etc/apt/sources.list) ]]; then
+                            echo "deb http://archive.getdeb.net/ubuntu ${surum}-getdeb apps" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else 
+                      
+                         echo -e $SARI"Getdeb deposu eklenmiş.."$SON
+                      fi
+                   anahtar_ekle getdeb
+                   gonder_kisa frostwire
+                                              
+            elif [ $secimler4 -eq 11 ]; then
+                   gonder_kisa deluge  
+                            
+            elif [ $secimler4 -eq 12 ]; then
+                   gonder_kisa ktorrent
+                               
+            elif [ $secimler4 -eq 13 ]; then 
+                   gonder_kisa rtorrent
+                               
+            elif [ $secimler4 -eq 14 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/hydr0g3n* > /dev/null 2>&1 
+                      if [[ -z $(grep hydr0g3n /etc/apt/sources.list) ]]; then
+                            echo "deb http://ppa.launchpad.net/hydr0g3n/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null                   
+                      else
+                      
+                         echo -e $SARI"qBittorrent deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi
+                   anahtar_ekle qbittorrent 
+                   gonder_kisa qbittorrent
+                                        
+            elif [ $secimler4 -eq 15 ]; then
+                   dizi=( git-core subversion bzr ); uz=3; gonder
+            fi     
+        done
+      gerisayim 2     
+     fi
+else   
+   echo "Aşama 4 atlandı." >> "${b}"     
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi    
+      }            
+
+
+    function asama_bes() {
+asama_numara 5
+asama5=`zenity --title="Aşama 5/10 : Müzik oynatıcı kurulumu"  --width=450 --height=480 \
+        --text="<big>Listeden kurmak istediğiniz müzik oynatıcıları seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Eğer herhangi bir oynatıcı kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " "  --column="  Müzik Oynatıcılar" --separator "\n"  --checklist \
+        FALSE "1"  "Amarok (KDE Tabanlı)" \
+        TRUE "2" "Audacious" \
+        FALSE "3" "Aqualung" \
+        FALSE "4" "Clementine" \
+        FALSE "5" "DeadBeeF" \
+        FALSE "6" "Exaile" \
+        FALSE "7" "Listen" \
+        FALSE "8" "Qmmp" \
+        FALSE "9" "Banshee" \
+        FALSE "10" "MOC Player (Uçbirim Tabanlı)" \
+        FALSE "11" "MP3Blaster (Uçbirim Tabanlı)" \
+        FALSE "12" "CMus (Uçbirim Tabanlı)" \
+        FALSE "13" "Open Cubic Player (Uçbirim Tabanlı)"`
+                
+                   
+if [ $? -eq 0 ]; then
+     if [[ -z $asama5 ]]; then
+           echo "Aşama 5' te herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; sleep 3; clear    
+               
+     else
+        secilen $asama5 
+        for secimler5 in $asama5
+        do       
+            if [ $secimler5 -eq 1 ]; then
+                 gonder_kisa amarok
+                  
+            elif [ $secimler5 -eq 2 ]; then
+                   gonder_kisa audacious
+                                
+            elif [ $secimler5 -eq 3  ]; then
+                   gonder_kisa aqualung 
+                  
+            elif [ $secimler5 -eq 4 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/*clementine* > /dev/null 2>&1
+                      if [[ -z $(grep me-davidsansome /etc/apt/sources.list) ]]; then   
+                            echo "deb http://ppa.launchpad.net/me-davidsansome/clementine/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Clementine deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                               
+                   anahtar_ekle clementine
+                   gonder_kisa clementine
+                   
+            elif [ $secimler5 -eq 5 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/alexey-smirnov* > /dev/null 2>&1
+                      if [[ -z $(grep alexey-smirnov /etc/apt/sources.list) ]]; then 
+                            echo "deb http://ppa.launchpad.net/alexey-smirnov/deadbeef/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"DeadBeeF deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle deadbeef
+                   gonder_kisa deadbeef
+                    
+            elif [ $secimler5 -eq 6 ]; then
+                   gonder_kisa exaile
+                                                 
+            elif [ $secimler5 -eq 7 ]; then
+                   gonder_kisa listen
+                                      
+            elif [ $secimler5 -eq 8 ]; then
+                   gonder_kisa qmmp
+                                      
+            elif [ $secimler5 -eq 9 ]; then
+                   gonder_kisa banshee 
+                                           
+            elif [ $secimler5 -eq 10 ]; then
+                   gonder_kisa moc  
+                            
+            elif [ $secimler5 -eq 11 ]; then  
+                   gonder_kisa mp3blaster  
+                             
+            elif [ $secimler5 -eq 12 ]; then
+                   gonder_kisa cmus    
+                           
+            elif [ $secimler5 -eq 13 ]; then
+                   gonder_kisa opencubicplayer                     
+            fi         
+        done
+      gerisayim 2     
+     fi
+else
+   echo "Aşama 5 atlandı." >> "${b}"        
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi   
+    }
+
+
+    function asama_alti() {
+asama_numara 6
+asama6=`zenity --title="Aşama 6/10 : Video oynatıcı kurulumu"  --width=450 --height=390 \
+       --text="<big>Listeden kurmak istediğiniz video oynatıcıları seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+       Eğer herhangi bir video oynatıcı kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+       --list  --column "#" --hide-column "2" --column " " --column="  Video oynatıcılar" --separator "\n"  --checklist \
+       TRUE "1" "VLC" \
+       TRUE "2" "SMPlayer" \
+       FALSE "3" "MPlayer" \
+       FALSE "4" "GNOME MPlayer" \
+       FALSE "5" "Kaffeine (KDE Tabanlı)"`
+
+
+if [ $? -eq 0 ]; then 
+     if [[ -z $asama6 ]]; then
+           echo "Aşama 6' da herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear    
+              
+     else
+        secilen $asama6 
+        for secimler6 in $asama6
+        do 
+            if [ $secimler6 -eq 1 ]; then
+                 gonder_kisa vlc
+                                   
+            elif [ $secimler6 -eq 2 ]; then
+                   gonder_kisa smplayer
+                              
+            elif [ $secimler6 -eq 3]; then
+                   gonder_kisa mplayer
+                                   
+            elif [ $secimler6 -eq 4 ]; then
+                   gonder_kisa gnome-mplayer
+                                                  
+            elif [ $secimler6 -eq 5 ]; then  
+                   gonder_kisa kaffeine                   
+            fi         
+        done
+      gerisayim 2     
+     fi
+else
+   echo "Aşama 6 atlandı." >> "${b}"        
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi                                                                                
+    }
+
+
+    function asama_yedi() {
+asama_numara 7                      
+asama7=`zenity --title="Aşama 7/10 : Masaüstü aracı kurulumu"  --width=450 --height=390 \
+        --text="<big>Listeden kurmak istediğiniz masaüstü araçlarını seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Eğer herhangi bir masaüstü aracı kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " " --column="  Masaüstü araçları" --separator "\n"  --checklist  \
+        TRUE "1" "Cairo-dock" \
+        FALSE "2" "AWN" \
+        FALSE "3" "AWN Trunk (Geliştirme sürümü)" \
+        FALSE "4" "SimDock" \
+        FALSE "5" "Kupfer" \
+        FALSE "6" "Gnome DO" \
+        FALSE "7" "Screenlets" \
+        FALSE "8" "Dockbarx" \
+        FALSE "9" "Wbar" \
+        FALSE "10" "Google Gadgets" \
+        FALSE "11" "Conky" \
+        FALSE "12" "Docky"`
+
+
+if [ $? -eq 0 ]; then 
+     if [[ -z $asama7 ]]; then
+           echo "Aşama 7' de herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear   
+               
+     else
+        secilen $asama7
+        for secimler7 in $asama7
+        do 
+            if [ $secimler7 -eq 1 ]; then
+                 sudo rm -f /etc/apt/sources.list.d/cairo-dock* > /dev/null 2>&1 
+                    if [[ -z $(grep cairo-dock-team /etc/apt/sources.list) ]]; then 
+                         echo "deb http://ppa.launchpad.net/cairo-dock-team/ppa/ubuntu ${surum} main" | \
+                         sudo tee -a /etc/apt/sources.list >/dev/null 
+                    else
+                    
+                       echo -e $SARI"Cairo-dock deposu zaten eklenmiş.."$SON; sleep 1.5
+                    fi                        
+                 anahtar_ekle cairo-dock 
+                 gonder_kisa cairo-dock
+                             
+            elif [ $secimler7 -eq 2 ]; then
+                   gonder_kisa avant-window-navigator    
+                    
+            elif [ $secimler7 -eq 3 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/awn-testing* > /dev/null 2>&1
+                      if [[ -z $(grep awn-testing /etc/apt/sources.list) ]]; then 
+                            echo "deb http://ppa.launchpad.net/awn-testing/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null 
+                      else
+                      
+                         echo -e $SARI"AWN Trunk deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle awn-trunk
+                   gonder_kisa avant-window-navigator-trunk
+                                                                
+            elif [ $secimler7 -eq 4 ]; then
+                   gonder_kisa simdock
+                                   
+            elif [ $secimler7 -eq 5 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/kupfer* > /dev/null 2>&1 
+                      if [[ -z $(grep kupfer-team /etc/apt/sources.list) ]]; then 
+                            echo "deb http://ppa.launchpad.net/kupfer-team/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Kupfer deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle kupfer
+                   gonder_kisa kupfer
+                   
+            elif [ $secimler7 -eq 5 ]; then
+                   gonder_kisa gnome-do
+                                           
+            elif [ $secimler7 -eq 6 ]; then
+                   gonder_kisa screenlets
+                                          
+            elif [ $secimler7 -eq 7 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/dockbar* > /dev/null 2>&1  
+                      if [[ -z $(grep dockbar-main /etc/apt/sources.list) ]]; then 
+                           echo "deb http://ppa.launchpad.net/dockbar-main/ppa/ubuntu ${surum} main"  | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Dockbarx deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle dockbarx
+                   gonder_kisa dockbarx
+                                      
+            elif [ $secimler7 -eq 8 ]; then
+                   gonder_kisa wbar
+                                           
+            elif [ $secimler7 -eq 9 ]; then
+                   gonder_kisa google-gadgets-gtk
+                       
+            elif [ $secimler7 -eq 10 ]; then
+                   gonder_kisa conky-all
+                                    
+            elif [ $secimler7 -eq 11 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/docky* > /dev/null 2>&1  
+                      if [[ -z $(grep docky-core /etc/apt/sources.list) ]]; then 
+                            echo "deb http://ppa.launchpad.net/docky-core/stable/ubuntu ${surum} main"  | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Docky deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle docky
+                   gonder_kisa docky
+            fi                           
+        done
+      gerisayim 2     
+     fi
+else 
+   echo "Aşama 7 atlandı." >> "${b}"        
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi        
+    }
+
+
+    function asama_sekiz() {
+asama_numara 8
+asama8=`zenity --title="Aşama 8/10 : Grafik, ses, video araçları kurulumu"  --width=450 --height=480 \
+        --text="<big>Listeden kurmak istediğiniz uygulamaları seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Eğer herhangi bir uygulama kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " " --column="  Grafik, ses, video araçları " --separator "\n"  --checklist \
+        TRUE "1" "Gimp" \
+        TRUE "2" "Gthumb" \
+        FALSE "3" "Digikam (KDE Tabanlı)" \
+        FALSE "4" "Shutter" \
+        FALSE "5" "KDEnlive (KDE Tabanlı)" \
+        FALSE "6" "Openshot" \
+        FALSE "7" "Avidemux" \
+        FALSE "8" "Blender" \
+        FALSE "9" "Inkscape" \
+        FALSE "10" "Krita (KDE Tabanlı)" \
+        FALSE "11" "Audacity" \
+        FALSE "12" "Mixxx" \
+        FALSE "13" "Ardour"`
+
+
+if [ $? -eq 0 ]; then 
+     if [[ -z $asama8 ]]; then
+           echo "Aşama 8' de herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear   
+               
+     else
+        secilen $asama8
+        for secimler8 in $asama8
+        do 
+            if [ $secimler8 -eq 1 ]; then
+                 gonder_kisa gimp      
+                      
+            elif [ $secimler8 -eq 2 ]; then
+                   gonder_kisa gthumb  
+                    
+            elif [ $secimler8 -eq 3 ]; then
+                   gonder_kisa digikam   
+                            
+            elif [ $secimler8 -eq 4 ]; then
+                   gonder_kisa shutter  
+                             
+            elif [ $secimler8 -eq 5 ]; then
+                   gonder_kisa kdenlive
+                                
+            elif [ $secimler8 -eq 6 ]; then
+                   gonder_kisa openshot
+                                 
+            elif [ $secimler8 -eq 7 ]; then
+                   gonder_kisa avidemux  
+                                      
+            elif [ $secimler8 -eq 8 ]; then
+                   gonder_kisa blender  
+                                           
+            elif [ $secimler8 -eq 9 ]; then
+                   gonder_kisa inkscape  
+                                              
+            elif [ $secimler8 -eq 10 ]; then
+                   gonder_kisa krita     
+                                           
+            elif [ $secimler8 -eq 11 ]; then
+                   gonder_kisa audacity 
+                                           
+            elif [ $secimler8 -eq 12 ]; then
+                   gonder_kisa mixxx      
+                                        
+            elif [ $secimler8 -eq 13 ]; then
+                   gonder_kisa ardour                                                 
+            fi
+        done
+      gerisayim 2     
+     fi
+else 
+   echo "Aşama 8 atlandı." >> "${b}"        
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi                            
+    }
+    
+                              
+    function asama_dokuz() {  
+asama_numara 9                                                                     
+asama9=`zenity --title="Aşama 9/10 : Çeşitli uygulamaların kurulumu"  --width=450 --height=480 \
+        --text="<big>Listeden kurmak istediğiniz uygulamaları seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+        Eğer herhangi bir uygulama kurmak istemiyorsanız, <big>İptal</big>' a basarak bu aşamayı atlayın.." \
+        --list  --column "#" --hide-column "2" --column " " --column="  Seçenekler " --separator "\n"  --checklist \
+        TRUE "1" "Compiz yönetim araçları" \
+        TRUE "2" "Ubuntu Tweak" \
+        TRUE "3" "Ailurus" \
+        FALSE "4" "Mozilla Thunderbird" \
+        FALSE "5" "KMail (KDE Tabanlı)" \
+        FALSE "6" "Claws Mail" \
+        FALSE "7" "Gnomebaker" \
+        FALSE "8" "K3B (KDE Tabanlı)" \
+        FALSE "9" "Miro" \
+        FALSE "10" "Gnote" \
+        FALSE "11" "Guake" \
+        FALSE "12" "Easytag" \
+        FALSE "13" "Qalculate" \
+        FALSE "14" "Nanny - Ebeveyn Denetim Uygulaması" \
+        FALSE "15" "KeepassX" \
+        FALSE "16" "Aptitude" \
+        FALSE "17" "Yazılım derleme araçları"`
+        
+
+if [ $? -eq 0 ]; then 
+     if [[ -z $asama9 ]]; then
+           echo "Aşama 9' da herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+                  
+     else
+        secilen $asama9 
+        for secimler9 in $asama9
+        do 
+            if [ $secimler9 -eq 1 ]; then
+                 gonder_kisa compizconfig-settings-manager; gonder_kisa fusion-icon 
+                     
+            elif [ $secimler9 -eq 2 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/tualatrix* /etc/apt/sources.list.d/ubuntu-tweak* > /dev/null 2>&1                    
+                      if [[ -z $(grep tualatrix /etc/apt/sources.list) ]]; then 
+                            echo "deb http://ppa.launchpad.net/tualatrix/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Ubuntu Tweak deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle ubuntu-tweak
+                   gonder_kisa ubuntu-tweak 
+                                        
+            elif [ $secimler9 -eq 3 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/ailurus* > /dev/null 2>&1                    
+                      if [[ -z $(grep ailurus /etc/apt/sources.list) ]]; then 
+                           echo "deb http://ppa.launchpad.net/ailurus/ppa/ubuntu ${surum} main" | \
+                           sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Ailurus deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle ailurus
+                   gonder_kisa ailurus
+                                  
+            elif [ $secimler9 -eq 4 ]; then
+                   gonder_kisa thunderbird; gonder_kisa thunderbird-locale-tr     
+                                        
+            elif [ $secimler9 -eq 5 ]; then
+                   gonder_kisa kmail
+                                  
+            elif [ $secimler9 -eq 6 ]; then
+                   gonder_kisa claws-mail
+                                  
+            elif [ $secimler9 -eq 7 ]; then
+                   gonder_kisa gnomebaker     
+                             
+            elif [ $secimler9 -eq 8 ]; then
+                   gonder_kisa k3b
+                                   
+            elif [ $secimler9 -eq 9 ]; then
+                   gonder_kisa miro
+                                                                                              
+            elif [ $secimler9 -eq 10 ]; then
+                   gonder_kisa gnote
+                                    
+            elif [ $secimler9 -eq 11 ]; then
+                   gonder_kisa guake  
+                                             
+            elif [ $secimler9 -eq 12 ]; then
+                   gonder_kisa easytag 
+                           
+            elif [ $secimler9 -eq 13 ]; then
+                   gonder_kisa qalculate-gtk                                   
+                                     
+            elif [ $secimler9 -eq 14 ]; then
+                   sudo rm -f /etc/apt/sources.list.d/nanny* > /dev/null 2>&1                    
+                      if [[ -z $(grep nanny /etc/apt/sources.list) ]]; then 
+                            echo "deb http://ppa.launchpad.net/nanny/ppa/ubuntu ${surum} main" | \
+                            sudo tee -a /etc/apt/sources.list >/dev/null
+                      else
+                      
+                         echo -e $SARI"Nanny deposu zaten eklenmiş.."$SON; sleep 1.5
+                      fi                        
+                   anahtar_ekle nanny
+                   gonder_kisa nanny   
+                    
+            elif [ $secimler9 -eq 15 ]; then
+                   gonder_kisa keepassx 
+                                   
+            elif [ $secimler9 -eq 16 ]; then
+                   gonder_kisa aptitude 
+                                           
+            elif [ $secimler9 -eq 17 ]; then
+                   gonder_kisa build-essential; gonder_kisa checkinstall                 
+            fi        
+        done
+      gerisayim 2     
+     fi
+else 
+   echo "Aşama 9 atlandı." >> "${b}"        
+   echo -e $SARI"Bu aşamayı atladınız. Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear
+fi                      
+    }  
+     
+                   
+ 
+ 
+    function asama_on() {
+asama_numara 10          
+asama10=`zenity --title="Aşama 10/10 : Nautilus  ve gconf özelleştirmeleri"  --width=450 --height=480 \
+         --text="<big>Listeden uygulamak istediğiniz işlemleri seçiniz..</big> \n\n<big><u>Bilgi:</u></big> \
+         Seçili olanlar, <big><u>önerilen</u></big> işlemlerdir..\nEğer herhangi bir işlem uygulamak istemiyorsanız, \
+         <big>İptal</big>' a basarak bu aşamayı atlayın.."  \
+         --list  --column "#" --hide-column "2" --column " " --column="  Seçenekler " --separator "\n"  --checklist \
+         TRUE "1" "Nautilus gksu paketini yükle" \
+         TRUE "2" "Nautilus Open Terminal paketini yükle" \
+         TRUE "3" "Nautilus actions paketini yükle" \
+         FALSE "4" "Pencere düğmelerini sağa al" \
+         FALSE "5" "Pencere düğmelerini sola al" \
+         FALSE "6" "Masaüstünde Bilgisayarım simgesini göster" \
+         FALSE "7" "Masaüstüne çöp kutusu ekle" \
+         FALSE "8" "Masaüstünde Ev klasörü simgesini göster" \
+         FALSE "9" "Masaüstünde bağlı diskleri gösterme" \
+         FALSE "10" "Menülerde simgeleri göster" \
+         FALSE "11" "Düğmelerde simgeleri göster" \
+         TRUE "12" "Totem Türkçe alt yazı seçimi" \
+         TRUE "13" "Totem de alt yazıları otomatik ekle"`
+         
+
+if [ $? -eq 0 ]; then 
+     if [[ -z $asama10 ]]; then
+           echo "Aşama 10' da herhangi bir seçim yapılmadı." >> "${b}"
+           echo -e $SARI"Herhangi bir seçim yapmadınız..  Bir sonraki aşamaya geçiliyor.."$SON; gerisayim 2; clear  
+                
+     else
+        secilen $asama10
+        for secimler10 in $asama10
+        do            
+            if [ $secimler10 -eq 1 ]; then
+                 gonder_kisa nautilus-gksu   
+                                     
+            elif [ $secimler10 -eq 2 ]; then
+                   gonder_kisa nautilus-open-terminal 
+                               
+            elif [ $secimler10 -eq 3 ]; then
+                   gonder_kisa nautilus-actions 
+                               
+            elif [ $secimler10 -eq 4 ]; then
+                   echo "Pencere düğmeleri sağa alındı." >> "${b}"
+                   echo -e $YESiL"Pencere düğmeleri sağa alınıyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type string \
+                   --set /apps/metacity/general/button_layout "menu:minimize,maximize,close" 2>> "${b}"
+         
+            elif [ $secimler10 -eq 5 ]; then
+                   echo "Pencere düğmeleri sola alındı." >> "${b}"
+                   echo -e $YESiL"Pencere düğmeleri sola alınıyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type string \
+                   --set /apps/metacity/general/button_layout "minimize,maximize,close:menu" 2>> "${b}"
+
+            elif [ $secimler10 -eq 6 ]; then
+                   echo "Masaüstüne Bilgisayarım simgesi eklendi." >> "${b}"
+                   echo -e $YESiL"Masaüstüne Bilgisayarım simgesi ekleniyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type bool \
+                   --set /apps/nautilus/desktop/computer_icon_visible true 2>> "${b}"
+            
+            elif [ $secimler10 -eq 7 ]; then
+                   echo "Masaüstüne çöp kutusu eklendi." >> "${b}"
+                   echo -e $YESiL"Masaüstüne çöp kutusu ekleniyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type bool \
+                   --set /apps/nautilus/desktop/trash_icon_visible true 2>> "${b}"
+                    
+            elif [ $secimler10 -eq 8 ]; then
+                   echo "Masaüstüne Ev klasörü simgesi eklendi." >> "${b}"
+                   echo -e $YESiL"Masaüstüne Ev klasörü simgesi ekleniyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type bool \
+                   --set /apps/nautilus/desktop/home_icon_visible true 2>> "${b}"
+                    
+            elif [ $secimler10 -eq 9 ]; then
+                   echo "Masaüstünde bağlı diskleri gösterme seçildi." >> "${b}"
+                   echo -e $YESiL"Masaüstünde bağlı diskleri gösterme etkinleştiriliyor..."$SON; sleep 1.5
+                   
+                   sudo -u "$kullanici" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS  gconftool-2 --type bool \
+                   --set /apps/nautilus/desktop/volumes_visible false 2>> "${b}"                              
+
+            elif [ $secimler10 -eq 10 ]; then
+                   echo "Menülerde simgeleri göster seçildi." >> "${b}"
+                   echo -e $YESiL"Menülerde simgeleri göster etkinleştiriliyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS  gconftool-2 --type bool \
+                   --set /desktop/gnome/interface/menus_have_icons true 2>> "${b}" 
+            
+            elif [ $secimler10 -eq 11 ]; then
+                   echo "Düğmelerde simgeleri göster seçildi." >> "${b}"
+                   echo -e $YESiL"Düğmelerde simgeleri göster etkinleştiriliyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type bool \
+                   --set /desktop/gnome/interface/buttons_have_icons true 2>> "${b}"
+                    
+            elif [ $secimler10 -eq 12 ]; then
+                   echo "Totem Türkçe alt yazı seçildi." >> "${b}"
+                   echo -e $YESiL"Totem Türkçe alt yazı seçimi etkinleştiriliyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type string \
+                   --set /apps/totem/subtitle_encoding "ISO-8859-9" 2>> "${b}"     
+
+            elif [ $secimler10 -eq 13 ]; then
+                   echo "Totem de alt yazıları otomatik ekle seçildi." >> "${b}"
+                   echo -e $YESiL"Totem otomatik alt yazı seçimi etkinleştiriliyor..."$SON; sleep 1.5
+                   
+                   sudo -u "${kullanici}" "DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS gconftool-2 --type bool \
+                   --set /apps/totem/autoload_subtitles true 2>> "${b}"            
+            fi
+        done   
+     fi
+else 
+   echo "Aşama 10 atlandı." >> "${b}" 
+fi
+    }
+    
+      
+    function asama_denetle() {
+    [[ -z $var ]] && {
+           as1=0; as2=0; as3=0; as4=0; as5=0; as6=0; as7=0; as8=0; as9=0; as10=0; }
+    }
+
+
+
+if [ $# -ne 0 ] # betik değişken alarak çalıştırılmışsa...
+then
+    function asama_secimi() { # --asama ve --yoksay değişkeni için ortak işlem fonksiyonu. 
+           for argA in $asamalar # --asama ya da --yoksay değişkeninden gelen asamalar değerine göre for döngüsü..
+           do
+              if [ $argA == 1 ]; then # --asama ya da --yoksay değişkeni, aşama 1 için istek göndermişse..
+                   if [ "$as1" != "2" ]; then as1=0; fi  # --yoksay değişkeni asx değerini 2 olarak göndermemişse, ilgili aşama çalışacak.
+              elif [ $argA == 2 ]; then                      # aksi halde ilgili aşama çalışmayacak.
+                     if [ "$as2" != "2" ]; then as2=0; fi
+              elif [ $argA == 3 ]; then
+                     if [ "$as3" != "2" ]; then as3=0; fi
+              elif [ $argA == 4 ]; then
+                     if [ "$as4" != "2" ]; then as4=0; fi
+              elif [ $argA == 5 ]; then
+                     if [ "$as5" != "2" ]; then as5=0; fi     
+              elif [ $argA == 6 ]; then
+                     if [ "$as6" != "2" ]; then as6=0; fi
+              elif [ $argA == 7 ]; then
+                     if [ "$as7" != "2" ]; then as7=0; fi
+              elif [ $argA == 8 ]; then
+                     if [ "$as8" != "2" ]; then as8=0; fi
+              elif [ $argA == 9 ]; then
+                     if [ "$as9" != "2" ]; then as9=0; fi
+              elif [ $argA == 0 ]; then
+                     if [ "$as0" != "2" ]; then as10=0; fi 
+              fi 
+           done           
+    }    
+    
+    
+    function bilg_kapat() { # kapatmadan önce son bir hatırlatma daha.. İptal edilmezse bilgisayar kapatılacak..
+(
+for ((c=5; c<=100; c+=5))
+do
+   echo $c; sleep 1
+done       
+) |
+zenity  --progress --percentage=5 --title "Bilgisayar kapatılacak" --text "20 saniye sonra bilgisayar kapatılacak" --auto-close
+ [ $? -eq 1 ] && { exit 1; } || { sudo shutdown -h now; }                                                        
+ 
+    }
+    
+    
+echo "############### DEĞİŞKENLER ###############" >> "${b}"
+echo "Değişkenler                    : $@" >> "${b}"
+
+var=`echo "$@" | grep -E -- '-a|-y|--a[sş]ama|--yoksay|-bk[ay]|-kb[ay]|-b[ay]|-k[ay]'`
+
+
+# getopt için değişkenlerin özelliklerini tanımladık. Ayrıca hata çıktılarını betik ile ilişkilendirdik.    
+ARGS=$(getopt -n ${0##*/} -o 'a:y:kb' -l "asama:,aşama:,bilgi,kapat,yoksay:" "h" "$@")
+
+[ $? -eq 1 ] && exit 1
+
+eval set -- "$ARGS" 
+    
+    while true
+    do   
+          case $1 in
+           -a|--a[sş]ama)              
+             [[ -n $(echo "$2" | tr -d [0-9]) ]] && { echo hata; exit 1; } || { istenen_asama=$2; }
+                echo "İstenen aşamalar girdisi       : $istenen_asama" >> "${b}" 
+                
+                asamalar=`echo $istenen_asama | sed 's/./&\ \n/g' | sort -n | uniq`
+                echo "Aşamalar [-a|--asama]          : $(echo "$asamalar" | awk '{printf "%s", $0}')" >> "${b}" 
+                asama_secimi
+                shift  ;;
+                
+           -y|--yoksay)
+             # --yoksay için girilen değer tam sayı harici karakter ise, hata ver çık.. Aksi halde girilen değeri kullan..   
+             [[ -n $(echo "$2" | tr -d [0-9]) ]] && { echo hata; exit 1; } || { yoksayilan_asama=$2; }
+             
+                yoksayilan=`echo $yoksayilan_asama | sed 's/./&\ \n/g' | sort -n | uniq`
+                echo "Yoksayılan aşamalar girdisi    : $yoksayilan_asama" >> "${b}"
+                
+                   for argY in $yoksayilan # --yoksay değişkeninden gelen aşama no'ları için çalışma değerini 2 yapan döngü.
+                   do
+                       export "as$argY=2"
+                   done
+                
+                asamalar=`seq 0 9`
+                echo "Aşamalar [-y|--yoksay]         : $(echo $yoksayilan | paste -s -)" >> "${b}"   
+                asama_secimi
+                shift  ;;
+                
+           -k|--kapat)
+             kapatma=0
+             var="$var"
+             asama_denetle ;;
+             
+           -b|--bilgi)
+             bilgi_pen=0
+             var="$var"         # --bilgi değişkeni aşama çalıştıran bir değişkenle
+             asama_denetle ;;  # çalışmamışsa, tüm aşamalara çalıştırma değeri gönderecek.
+             
+           --)
+            shift
+            break ;;
+          esac
+       shift
+    done
+else # Eğer betik herhangi bir değişken almamışsa, tüm aşamalar sırayla çalışacak..
+   var=
+   asama_denetle
+fi  
+
+
+
+    function anahtar_kur() {
+if [[ -e ${anahtar_listesi} ]]
+then
+    TOPLAM=$(cat "${anahtar_listesi}" | wc -l)
+if [ $TOPLAM -ne 0 ]
+then
+    clear; echo -e $SARI"ANAHTARKUR$YESiL başlatılıyor..."$SON; sleep 2 
+    echo "###############" ANAHTAR KURULUM $1 "###############" >> "${b}"
+    cat "${anahtar_listesi}" >> "${b}"
+    
+    
+    function anahtar_kurucu() {
+     sudo apt-key add "$(pwd)"/anahtarlar/$1  2>> "${b}"
+    }
+    
+    
+    e=1
+    while read anahtar_satir
+    do
+        echo "${anahtar_satir} kuruldu" >> "${b}" 
+        echo -e "\033[1;36m :: $SARI${anahtar_satir}$YESiL anahtarı kuruluyor... $SARI[ $YESiL$e $SARI/ $YESiL$TOPLAM $SARI]$SON"; sleep 1.5 
+         
+        anahtar_kurucu ${anahtar_satir}        
+        ((e++))
+    done < "${anahtar_listesi}"
+    sudo apt-get update 2>> "${b}"    
+fi    
+fi
+    }
+    
+    
+    function ana_kurulum() {
+if [[ -e ${kurulacak_listesi} ]]
+then
+    TOPLAM=$(cat "${kurulacak_listesi}" | wc -l)
+if [ $TOPLAM -ne 0 ]
+then
+    clear; echo -e $SARI"KUR$YESiL başlatılıyor..."$SON; sleep 2    
+    echo "############### ANA KURULUM ###############" >> "${b}"
+    
+    cat "${kurulacak_listesi}" >> "${b}"
+    sudo apt-get update 2>> "${b}"
+    
+    function kurucu() {
+     sudo apt-get -y install $1 2>> "${b}"
+     sudo apt-get install -f --yes 2>> "${b}"
+    }
+    
+    
+    e=1
+    while read satir
+    do
+        echo "${satir} kuruldu." >> "${b}"
+        echo -e "\033[1;36m :: $SARI${satir}$YESiL kuruluyor... $SARI[ $YESiL$e $SARI/ $YESiL$TOPLAM $SARI]$SON" ; sleep 2
+        kurucu ${satir} 
+         
+        (($e%5 == 0)) && { baglanti && gerisayim 2; }
+        ((e++))
+    done < "${kurulacak_listesi}"
+fi
+fi
+    }
+
+    function bilgi_penceresi() {
+    zenity --text-info --title 'ubuntu-tr-betik 11' --filename="$(pwd)"/dosyalar/betik-11 --width=400 --height=450 &
+    }
+    
+    
+sozlesme_denetimi    
+# Yukarıdan gelen çalıştırma değerine sahip olanlar, aşağıdaki sıraya göre çalışacak.
+[ ${bilgi_pen:-1} -eq 0 ] && bilgi_penceresi  # fonk betik açılışında arka plana atılacak. 
+[ ${as1:-1} -eq 0 ] && asama_bir && clear
+[ ${as2:-1} -eq 0 ] && asama_iki && clear
+
+[ ${as3:-1} -eq 0 ] && asama_uc && clear
+[ ${as4:-1} -eq 0 ] && asama_dort && clear
+
+[ ${as5:-1} -eq 0 ] && asama_bes && clear
+[ ${as6:-1} -eq 0 ] && asama_alti && clear
+
+[ ${as7:-1} -eq 0 ] && asama_yedi && clear
+[ ${as8:-1} -eq 0 ] && asama_sekiz && clear
+
+[ ${as9:-1} -eq 0 ] && asama_dokuz && clear
+[ ${as10:-1} -eq 0 ] && asama_on
+
+
+[[ -e ${kurulacak_listesi} ]] && {
+zenity --question --title "Deb paketi arşivi oluşturma" \
+       --text "Betik işlemlerinde daha sonra kullanmak için \nindirilecek paketleri yedeklemek ister misiniz? \
+       \n\n<big><u>BİLGİ\:</u></big> Onaylarsanız, güncel olan paketler için \ninternetten paket indirilmesi yapılmayacak." \
+       --ok-label "Paketleri yedekle" --cancel-label "Bu işlemi atla"
+           [ $? -eq 0 ] && yedekle=0 
+}
+     
+         
+anahtar_kur 1; ana_kurulum; # anahtar_kur 2                                                                        #XXX gereksizse elleme...XXX
+
+if [ ${yedekle:-1} -eq 0 ]; then
+     if [[ -n $(ls /var/cache/apt/archives | grep \.deb) ]]; then        
+            echo -e $YESiL"APT belleğindeki paketler yedekleniyor.."$SON; sleep 2.5
+            
+            sudo rm -rf debpaketleri* >/dev/null 2>&1
+            sudo -u "${kullanici}" mkdir debpaketleri >/dev/null
+            
+            cp /var/cache/apt/archives/*.deb "$(pwd)"/debpaketleri 2>> "${b}" 
+            echo -e $YESiL"Yedeklenen paketler sıkıştırılıyor.."$SON; sleep 1.5 
+            
+            sudo -u "${kullanici}" tar czvf debpaketleri.tar.gz  debpaketleri 2>> "${b}"
+            sudo rm -rf debpaketleri >/dev/null 2>&1
+     else
+        echo -e $SARI"Yedeklenecek paket bulunmuyor. \nYeni paket indirilmesi yapılmamış.."$SON; gerisayim 5; clear        
+     fi
+fi
+
+             
+echo -e "\nİşlem sonrası kaynak listesi   : \n$(cat /etc/apt/sources.list) \n\nSources.list.d                 : \n$(cat /etc/apt/sources.list.d/* 2> /dev/null)" >> "${b}"
+
+## Temizlik ##
+sudo rm -f "${kurulacak_listesi}" "${anahtar_listesi}" &> /dev/null
+ 
+echo -e $YESiL"Sistem temizliği yapılıyor..."$SON
+sudo apt-get clean && sudo apt-get autoclean
+sudo apt-get -y autoremove
+ 
+echo  "İşlem bitiş zamanı             : $(date '+%F   %H:%M:%S')" >> "${b}"; clear 
+
+sudo chown 1000:1000 "${b}"
+
+[ ${kapatma:-1} -eq 0 ] &&  bilg_kapat # aşamalar tamamlanınca, kapatma için çalıştırma değeri verilmişse son olarak pc' yi kapatacak.          
+zenity --info  --title "ubuntu-tr-betik" \
+       --text "Betik işlemleri tamamlandı..\! \n\nhttps://launchpad.net/ubuntu-tr-betik \nbetik@ubuntu-tr.net" \
+       --timeout 15                   
+# EOF                                                                       

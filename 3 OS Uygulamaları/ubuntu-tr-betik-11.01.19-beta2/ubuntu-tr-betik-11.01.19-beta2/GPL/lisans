@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import gtk
+def islem(object):
+   dosya = open(".durum","w")
+   dosya.write("Evet")
+   dosya.close()
+   gtk.main_quit()
+def islem1(object):
+   dosya = open(".durum","w")
+   dosya.write("Hayır")
+   dosya.close()
+   gtk.main_quit()   
+window = gtk.Window(gtk.WINDOW_POPUP)
+window.show()
+label = gtk.Label()
+label.set_markup( """                      Ubuntu Türkiye 10.04, 10.10 ve 11.04 Özelleştirmesi  -  UBUNTU-TR-BETİK GNU Bash Betiği
+
+                                                             Copyright (C) 2010-2011   <a href= "http://www.ubuntu-tr.net\" >Ubuntu Türkiye Takımı</a> 
+                                                                           
+                                                                                                 <b>Sürüm: 11.01.19-beta2</b>          
+
+
+ Bu uygulama bir özgür yazılımdır: yeniden dağıtabilirsiniz ve/veya Özgür Yazılım Vakfı (FSF) tarafından yayımlanan
+ (GPL) Genel kamu lisansı sürüm 3  veya daha yeni bir sürümünde belirtilen şartlara uymak kaydıyla, üzerinde
+ değişiklik yapabilirsiniz.   
+   
+ Bu uygulama kullanışlı olabileceği umularak dağıtılmaktadır. Ancak, hiçbir GARANTİSİ YOKTUR; hatta SATILABİLİRLİĞİ 
+ veya HERHANGİ BİR AMACA UYGUNLUĞU için bile garanti verilmez. 
+
+
+ Lisansın bir kopyasını aşağıdaki adresten edinebilirsiniz.
+
+ <a href= "http://www.gnu.org/licenses/" >gnu.org/licenses</a>
+ 
+ 
+                                  <b>Betiği çalıştırabilmek için sözleşmeyi kabul etmeniz gerekmektedir..!</b>
+""")
+
+image = gtk.Image()
+image.set_from_file("logo.png")
+box = gtk.VBox()
+box.set_size_request(770, 500)
+box.add(image)
+box.add(label)
+hbox = gtk.HButtonBox()
+buton = gtk.Button("Kabul Ediyorum")
+buton1 = gtk.Button("Reddediyorum")
+buton1.connect("clicked",islem1)
+buton.connect("clicked",islem)
+
+hbox.add(buton1)
+hbox.add(buton)
+table = gtk.Table(3,3)
+table.set_col_spacings(20)
+table.set_row_spacings(20)
+table.attach(box,1,2,0,1)
+table.attach(hbox,1,2,1,2)
+window.add(table)
+window.set_position(gtk.WIN_POS_CENTER_ALWAYS)
+window.show_all()
+gtk.main()

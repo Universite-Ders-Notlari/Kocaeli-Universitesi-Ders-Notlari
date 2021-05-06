@@ -1,0 +1,480 @@
+{\rtf1\ansi\ansicpg1254\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red100\green56\blue32;\red255\green255\blue255;
+\red196\green26\blue22;\red170\green13\blue145;\red0\green0\blue0;\red46\green13\blue110;\red38\green71\blue75;
+\red92\green38\blue153;\red28\green0\blue207;\red0\green116\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgenericrgb\c39100\c22000\c12500;\csgenericrgb\c100000\c100000\c100000;
+\csgenericrgb\c77000\c10200\c8600;\csgenericrgb\c66500\c5200\c56900;\csgenericrgb\c0\c0\c0;\csgenericrgb\c18100\c5200\c43100;\csgenericrgb\c14900\c27800\c29400;
+\csgenericrgb\c35900\c14900\c60100;\csgenericrgb\c11000\c0\c81000;\csgenericrgb\c0\c45600\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\f0\fs36 \cf2 \expnd0\expndtw0\kerning0
+Fork Child-Parent \'d6rnek1\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\fs24 \cf2 #include <stdio.h>\
+#include <unistd.h>\
+#include <sys/types.h>\
+int main()\
+\{\
+pid_t pid;\
+	/* fork a child process */\
+	pid = fork();\
+	if (pid < 0) \{ /* error occurred */\
+		fprintf(stderr, "Fork Failed\\n");\
+		return 1;\
+	\}\
+	else if (pid == 0) \{ /* child process */\
+		printf("I am the child %d\\n",pid);\
+		execlp("/bin/ls","ls",NULL);\
+	\}\
+	else \{ /* parent process */\
+		/* parent will wait for the child to complete */\
+		printf("I am the parent %d\\n",pid);\
+		wait(NULL);\
+		printf("Child Complete\\n");\
+	\}\
+    return 0;\
+\}\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\fs36 \cf2 ____________________________________________________\
+Fork \'d6rnek_2:
+\fs24 \cf2 \
+#include <stdio.h>\
+#include <sys/types.h>\
+#include <unistd.h>\
+int value = 5;\
+int main()\
+\{\
+	pid_t pid;\
+	pid = fork();\
+	if (pid == 0) \{ /* child process */\
+		value += 15;\
+		return 0;\
+	\}\
+	else if (pid > 0) \{ /* parent process */\
+		wait(NULL);\
+		printf ("PARENT: value = %d\\n",value); /* LINE A */\
+		return 0;\
+	\}\
+\}\
+__________________________________________________________\
+
+\fs36 \cf2 Fork \'d6rnek_3:\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\fs24 \cf2 #include <stdio.h>\
+int main()\
+\{\
+	printf("%d\\n",getpid());\
+	fork();\
+	printf("%d\\n",getpid());\
+	fork();\
+	printf("%d\\n",getpid());\
+	fork();\
+	printf("%d\\n",getpid());\
+	return 0;\
+\}
+\fs36 \cf2 \
+
+\fs24 \cf2 ____Fork ornek 4_\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\f1\fs36 \cf3 \cb4 \kerning1\expnd0\expndtw0 #include \cf5 <stdio.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf6 int\cf7  main()
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     \cf8 \cb4 printf\cf7 \cb4 (\cf5 "%d\\n"\cf7 ,\cf9 \cb4 \ulth \ulc9 g\ulnone etpid\cf7 ());
+\f2\fs24 \cf0 \
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\f1\fs36 \cf7     \cf10 pid_t\cf7  pid;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     pid = \cf9 \ulth f\ulnone ork\cf7 ();
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     \cf6 if\cf7 (pid>\cf11 0\cf7 )
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7         \cf8 printf\cf7 (\cf5 "%d\\n"\cf7 , pid);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     pid = \cf9 fork\cf7 ();
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     \cf6 if\cf7 (pid>\cf11 0\cf7 )
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7         \cf8 printf\cf7 (\cf5 "%d\\n"\cf7 , pid);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     pid = \cf9 fork\cf7 ();
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     \cf6 if\cf7 (pid>\cf11 0\cf7 )
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7         \cf8 printf\cf7 (\cf5 "%d\\n"\cf7 , pid);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7     \cf6 return\cf7  \cf11 0\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 \}
+\f2\fs24 \cf0 \
+\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\f0 \cf2 \cb1 \expnd0\expndtw0\kerning0
+__________________________________________________________________\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\fs36 \cf2 Xcode\'92da \'e7al\uc0\u305 \u351 t\u305 r\
+\'dcretici -t\'fcketici bellek payla\uc0\u351 arak mesajla\u351 ma\
+\'dcretici\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\f1 \cf12 \cb4 \kerning1\expnd0\expndtw0 /**
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  * Simple program demonstrating shared memory in POSIX systems.
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  *
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  * This is the producer process that writes to the shared memory region.
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  *
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  * Figure 3.17
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  *
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  * @author Silberschatz, Galvin, and Gagne
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  * Operating System Concepts  - Ninth Edition
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  * Copyright John Wiley & Sons - 2013
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  */
+\f2\fs24 \cf0 \
+\
+\
+
+\f1\fs36 \cf3 #include \cf5 <stdio.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <stdlib.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <string.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <fcntl.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <sys/shm.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <sys/stat.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <sys/mman.h>
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf6 int\cf7  main()
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 int\cf7  SIZE = \cf11 4096\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 char\cf7  *name = \cf5 "OS"\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 char\cf7  *message0= \cf5 "Studying "\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 char\cf7  *message1= \cf5 "Operating Systems "\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 char\cf7  *message2= \cf5 "Is Fun!"\cf7 ;
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf6 int\cf7  shm_fd;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 void\cf7  *ptr;
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* create the shared memory segment */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	shm_fd = shm_open(name, O_CREAT | O_RDWR, \cf11 0666\cf7 );
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* configure the size of the shared memory segment */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	ftruncate(shm_fd,SIZE);
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* now map the shared memory segment in the address space of the process */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	ptr = mmap(\cf11 0\cf7 ,SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, shm_fd, \cf11 0\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 if\cf7  (ptr == MAP_FAILED) \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		printf(\cf5 "Map failed\\n"\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		\cf6 return\cf7  -\cf11 1\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\}
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /**
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12 	 * Now write to the shared memory region.
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12  	 *
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12 	 * Note we must increment the value of ptr after each write.
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf12 	 */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	sprintf(ptr,\cf5 "%s"\cf7 ,message0);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	ptr += strlen(message0);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	sprintf(ptr,\cf5 "%s"\cf7 ,message1);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	ptr += strlen(message1);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	sprintf(ptr,\cf5 "%s"\cf7 ,message2);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	ptr += strlen(message2);
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf6 return\cf7  \cf11 0\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 \}
+\f2\fs24 \cf0 \
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\f0\fs36 \cf2 \cb1 \expnd0\expndtw0\kerning0
+T\'fcketici__________\
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\f1 \cf3 \cb4 \kerning1\expnd0\expndtw0 #include \cf5 <stdio.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <stdlib.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <fcntl.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <sys/shm.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <sys/stat.h>
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf3 #include \cf5 <sys/mman.h>
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf6 int\cf7  main()
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 char\cf7  *name = \cf5 "OS"\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 const\cf7  \cf6 int\cf7  SIZE = \cf11 4096\cf7 ;
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf6 int\cf7  shm_fd;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 void\cf7  *ptr;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 int\cf7  i;
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* open the shared memory segment */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	shm_fd = shm_open(name, O_RDONLY, \cf11 0666\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 if\cf7  (shm_fd == -\cf11 1\cf7 ) \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		printf(\cf5 "shared memory failed\\n"\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		exit(-\cf11 1\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\}
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* now map the shared memory segment in the address space of the process */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	ptr = mmap(\cf11 0\cf7 ,SIZE, PROT_READ, MAP_SHARED, shm_fd, \cf11 0\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 if\cf7  (ptr == MAP_FAILED) \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		printf(\cf5 "Map failed\\n"\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		exit(-\cf11 1\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\}
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* now read from the shared memory region */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	printf(\cf5 "%s"\cf7 ,ptr);
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf12 /* remove the shared memory segment */
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\cf6 if\cf7  (shm_unlink(name) == -\cf11 1\cf7 ) \{
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		printf(\cf5 "Error removing %s\\n"\cf7 ,name);
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 		exit(-\cf11 1\cf7 );
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 	\}
+\f2\fs24 \cf0 \
+\
+
+\f1\fs36 \cf7 	\cf6 return\cf7  \cf11 0\cf7 ;
+\f2\fs24 \cf0 \
+
+\f1\fs36 \cf7 \}
+\f0 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+\cf2 ____________________________________________\
+Pipe \'f6rnek:\
+Parent Child\'92a mesaj atar\
+\pard\pardeftab720\sl860\sa240\partightenfactor0
+
+\fs24 \cf2 #include <stdio.h>\
+#include <unistd.h>\
+#include <sys/types.h>\
+#include <string.h>\
+#define BUFFER_SIZE 25\
+#define READ_END	0\
+#define WRITE_END	1\
+int main(void)\
+\{\
+	char write_msg[BUFFER_SIZE] = "Greetings";\
+	char read_msg[BUFFER_SIZE];\
+	pid_t pid;\
+	int fd[2];\
+\
+	/* create the pipe */\
+	if (pipe(fd) == -1) \{\
+		fprintf(stderr,"Pipe failed");\
+		return 1;\
+	\}\
+\
+	/* now fork a child process */\
+	pid = fork();\
+\
+	if (pid < 0) \{\
+		fprintf(stderr, "Fork failed");\
+		return 1;\
+	\}\
+\
+	if (pid > 0) \{  /* parent process */\
+		/* close the unused end of the pipe */\
+		close(fd[READ_END]);\
+\
+		/* write to the pipe */\
+		write(fd[WRITE_END], write_msg, strlen(write_msg)+1);\
+\
+		/* close the write end of the pipe */\
+		close(fd[WRITE_END]);\
+	\}\
+	else \{ /* child process */\
+		/* close the unused end of the pipe */\
+		close(fd[WRITE_END]);\
+\
+		/* read from the pipe */\
+		read(fd[READ_END], read_msg, BUFFER_SIZE);\
+		printf("child read %s\\n",read_msg);\
+\
+		/* close the write end of the pipe */\
+		close(fd[READ_END]);\
+	\}\
+	return 0;\
+\}\
+}

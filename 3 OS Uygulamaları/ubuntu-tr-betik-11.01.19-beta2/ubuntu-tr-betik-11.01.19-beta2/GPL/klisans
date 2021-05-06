@@ -1,0 +1,82 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+ 
+
+from PyQt4 import QtCore, QtGui
+import sys
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+	Dialog.setObjectName("Dialog")
+	Dialog.resize(360, 375)
+	Dialog.setMinimumSize(QtCore.QSize(800, 600))
+	Dialog.setMaximumSize(QtCore.QSize(800, 600))
+ 
+	self.textBrowser = QtGui.QTextBrowser(Dialog)
+	self.textBrowser.setGeometry(QtCore.QRect(20, 65, 761, 486))
+ 
+	self.textBrowser.setObjectName("textBrowser")
+
+ 
+	self.buton = QtGui.QPushButton(Dialog)
+	self.buton.setGeometry(QtCore.QRect(20, 555,270, 35)) #1 enine 2 boyuna kordinat 3.sü genişlik 4.cüsü boy
+   
+	self.buton1 = QtGui.QPushButton(Dialog)
+	self.buton1.setGeometry(QtCore.QRect(510, 555,270, 35)) #1 enine 2 boyuna kordinat 3.sü genişlik 4.cüsü boy
+
+
+	QtCore.QObject.connect(self.buton,QtCore.SIGNAL("clicked()"),self.islem)
+	QtCore.QObject.connect(self.buton1,QtCore.SIGNAL("clicked()"),self.isle)
+
+	lab = QtGui.QLabel(Dialog)
+	res1 = QtGui.QPixmap("logo.png")
+	lab.setPixmap(res1 )
+	lab.setGeometry(QtCore.QRect(180,-1, 521, 60))
+	self.retranslateUi(Dialog)
+	QtCore.QMetaObject.connectSlotsByName(Dialog)
+ 
+    def retranslateUi(self, Dialog):
+	Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
+	self.textBrowser.setHtml(QtGui.QApplication.translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Sans\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                      <span style=\" color:#aa0000;\">Ubuntu Türkiye 10.04 ve 10.10 Özelleştirmesi  -  KUBUNTU-TR-10.x GNU Bash betiği</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                                                     Copyright (C) 2010   <a href=\"http://www.ubuntu-tr.net/ \"><span style=\" text-decoration: underline; color:#0000ff;\">Ubuntu Türkiye Takımı</span></a>     </p>\n"
+"<p style=\" margin-top:20px; margin-bottom:0px; margin-left:165px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                              <span style=\" font-weight:600; font-style:italic;\">Sürüm: 10.10.7</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Bu uygulama bir özgür yazılımdır: yeniden dağıtabilirsiniz ve/veya Özgür Yazılım Vakfı (FSF) tarafından yayımlanan</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> (GPL) Genel kamu lisansı sürüm 3  veya daha yeni bir sürümünde belirtilen şartlara uymak kaydıyla, üzerinde</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> değişiklik yapabilirsiniz.   </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Bu uygulama yararlı olması umularak dağıtılmaktdır. Yazılımın kullanımından doğacak sorunlara karşı</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> herhangi bir GARANTi vermemektedir.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Lisansın bir kopyasını aşağıdaki adresten edinebilirsiniz.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> <a href=\"http://www.gnu.org/licenses/ \"><span style=\" text-decoration: underline; color:#0000ff;\">http://www.gnu.org/licenses/ </span></a></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                                 <span style=\" font-weight:600; font-style:italic;\"> Betiği çalıştırabilmek için sözleşmeyi kabul etmeniz gerekmektedir..</span></p></body></html>", None,QtGui.QApplication.UnicodeUTF8))
+	self.buton.setText(QtGui.QApplication.translate("Dialog", "Reddediyorum", None, QtGui.QApplication.UnicodeUTF8))
+	self.buton1.setText(QtGui.QApplication.translate("Dialog", "Kabul Ediyorum" , None, QtGui.QApplication.UnicodeUTF8))
+    def islem(self):
+	dosya = open(".kdurum","w")
+	dosya.write("Hayır")
+	dosya.close()
+	Dialog.destroy()
+    def isle(self):
+	dosya = open(".kdurum","w")
+	dosya.write("Evet")
+	dosya.close()
+	Dialog.destroy()
+app = QtGui.QApplication(sys.argv)
+Dialog = QtGui.QDialog()
+ui = Ui_Dialog()
+ui.setupUi(Dialog)
+Dialog.show()
+sys.exit(app.exec_())
