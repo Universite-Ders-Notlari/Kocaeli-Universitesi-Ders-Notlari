@@ -1,0 +1,135 @@
+//: version "2.0-b10"
+//: property encoding = "iso8859-1"
+//: property locale = "en"
+//: property prefix = "_GG"
+//: property title = "adder.v"
+//: property timingViolationMode = 2
+//: property initTime = "0 ns"
+//: require "tty"
+
+`timescale 1ns/1ns
+
+//: /netlistBegin main
+module main;    //: root_module
+reg w4;    //: /sn:0 {0}(161,96)(183,96)(183,106)(223,106){1}
+reg [3:0] w24;    //: /sn:0 {0}(#:274,299)(274,342)(#:306,342){1}
+reg w1;    //: /sn:0 {0}(635,199)(451,199)(451,85){1}
+reg [3:0] w25;    //: /sn:0 {0}(#:160,299)(160,471)(#:251,471){1}
+reg w11;    //: /sn:0 {0}(635,167)(590,167)(590,98)(558,98)(558,83){1}
+reg w10;    //: /sn:0 {0}(510,84)(510,183)(635,183){1}
+supply0 w27;    //: /sn:0 {0}(400,453)(382,453)(382,490){1}
+reg w5;    //: /sn:0 {0}(152,143)(203,143)(203,122)(223,122){1}
+wire [3:0] w6;    //: /sn:0 {0}(690,272)(690,360)(#:610,360){1}
+wire w7;    //: /sn:0 {0}(770,183)(823,183){1}
+//: {2}(827,183)(873,183)(873,81){3}
+//: {4}(825,181)(825,146){5}
+wire w14;    //: /sn:0 {0}(400,389)(343,389)(343,456)(257,456){1}
+wire w16;    //: /sn:0 {0}(312,347)(385,347)(385,357)(400,357){1}
+wire w19;    //: /sn:0 {0}(535,389)(589,389)(589,375)(604,375){1}
+wire w15;    //: /sn:0 {0}(312,357)(369,357)(369,373)(400,373){1}
+wire w3;    //: /sn:0 {0}(349,81)(349,106)(322,106){1}
+wire [1:0] w0;    //: /sn:0 {0}(#:820,140)(820,116)(819,116)(#:819,95){1}
+wire w21;    //: /sn:0 {0}(604,355)(550,355)(550,357)(535,357){1}
+wire w28;    //: /sn:0 {0}(535,325)(654,325)(654,272){1}
+wire w20;    //: /sn:0 {0}(535,373)(574,373)(574,365)(604,365){1}
+wire w18;    //: /sn:0 {0}(312,327)(385,327)(385,325)(400,325){1}
+wire w22;    //: /sn:0 {0}(604,345)(582,345)(582,341)(535,341){1}
+wire w17;    //: /sn:0 {0}(400,341)(327,341)(327,337)(312,337){1}
+wire w12;    //: /sn:0 {0}(257,486)(337,486)(337,503)(368,503)(368,437)(400,437){1}
+wire w2;    //: /sn:0 {0}(322,122)(380,122)(380,82){1}
+wire w13;    //: /sn:0 {0}(400,405)(354,405)(354,466)(257,466){1}
+wire w9;    //: /sn:0 {0}(770,167)(813,167){1}
+//: {2}(817,167)(853,167)(853,81){3}
+//: {4}(815,165)(815,146){5}
+wire w26;    //: /sn:0 {0}(400,421)(359,421)(359,483)(344,483)(344,476)(257,476){1}
+//: enddecls
+
+  //: LED g4 (w2) @(380,75) /sn:0 /w:[ 1 ] /type:0
+  //: SWITCH g8 (w1) @(451,72) /sn:0 /R:3 /w:[ 1 ] /st:1 /dn:1
+  //: LED g3 (w3) @(349,74) /sn:0 /w:[ 0 ] /type:0
+  //: joint g13 (w9) @(815, 167) /w:[ 2 4 1 -1 ]
+  //: SWITCH g2 (w5) @(135,143) /sn:0 /w:[ 0 ] /st:1 /dn:1
+  //: SWITCH g1 (w4) @(144,96) /sn:0 /w:[ 0 ] /st:1 /dn:1
+  //: DIP g16 (w24) @(274,289) /sn:0 /w:[ 0 ] /st:0 /dn:1
+  //: LED g11 (w9) @(853,74) /sn:0 /w:[ 3 ] /type:0
+  assign w0 = {w9, w7}; //: CONCAT g10  @(820,141) /sn:0 /R:1 /w:[ 0 5 5 ] /dr:0 /tp:0 /drp:1
+  assign {w12, w26, w13, w14} = w25; //: CONCAT g19  @(252,471) /sn:0 /R:2 /w:[ 0 1 1 1 1 ] /dr:0 /tp:1 /drp:0
+  //: SWITCH g6 (w10) @(510,71) /sn:0 /R:3 /w:[ 0 ] /st:1 /dn:1
+  //: SWITCH g7 (w11) @(558,70) /sn:0 /R:3 /w:[ 1 ] /st:1 /dn:1
+  //: LED g9 (w0) @(819,88) /sn:0 /w:[ 1 ] /type:3
+  adder_4bit g15 (.A0(w18), .A1(w17), .A2(w16), .A3(w15), .B0(w14), .B1(w13), .B2(w26), .B3(w12), .Cin(w27), .Cout(w28), .S0(w22), .S1(w21), .S2(w20), .S3(w19));   //: @(401, 309) /sz:(133, 160) /sn:0 /p:[ Li0>1 Li1>0 Li2>1 Li3>1 Li4>0 Li5>0 Li6>0 Li7>1 Li8>0 Ro0<0 Ro1<1 Ro2<1 Ro3<0 Ro4<0 ]
+  assign {w15, w16, w17, w18} = w24; //: CONCAT g17  @(307,342) /sn:0 /R:2 /w:[ 0 0 1 0 1 ] /dr:0 /tp:1 /drp:0
+  full_adder g5 (.A(w11), .B(w10), .Cin(w1), .Cout(w9), .S(w7));   //: @(636, 151) /sz:(133, 64) /sn:0 /p:[ Li0>0 Li1>1 Li2>0 Ro0<0 Ro1<0 ]
+  //: joint g14 (w7) @(825, 183) /w:[ 2 4 1 -1 ]
+  //: LED g24 (w28) @(654,265) /sn:0 /w:[ 1 ] /type:2
+  //: GROUND g21 (w27) @(382,496) /sn:0 /w:[ 1 ]
+  assign w6 = {w19, w20, w21, w22}; //: CONCAT g23  @(609,360) /sn:0 /w:[ 1 1 1 0 0 ] /dr:1 /tp:0 /drp:1
+  //: LED g22 (w6) @(690,265) /sn:0 /w:[ 0 ] /type:2
+  half_adder g0 (.A(w4), .B(w5), .C(w3), .S(w2));   //: @(224, 90) /sz:(97, 48) /sn:0 /p:[ Li0>1 Li1>1 Ro0<1 Ro1<0 ]
+  //: DIP g18 (w25) @(160,289) /sn:0 /w:[ 0 ] /st:0 /dn:1
+  //: LED g12 (w7) @(873,74) /sn:0 /w:[ 3 ] /type:0
+
+endmodule
+//: /netlistEnd
+
+//: /hdlBegin adder_4bit
+//: interface  /sz:(133, 160) /bd:[ Li0>Cin(144/160) Li1>B3(128/160) Li2>B2(112/160) Li3>B1(96/160) Li4>B0(80/160) Li5>A3(64/160) Li6>A2(48/160) Li7>A1(32/160) Li8>A0(16/160) Ro0<S3(80/160) Ro1<S2(64/160) Ro2<S1(48/160) Ro3<S0(32/160) Ro4<Cout(16/160) ] /pd: 0 /pi: 0 /pe: 1 /pp: 1
+//: enddecls
+module adder_4bit(A3,A2,A1,A0, B3,B2,B1,B0, Cin, Cout, S3,S2,S1,S0);
+  input A3,A2,A1,A0, B3,B2,B1,B0;
+  output S3,S2,S1,S0;
+  input Cin;
+  output Cout;
+  wire C1,C2,C3;
+  
+  full_adder fa0(.A(A0), .B(B0), .Cin(Cin), .Cout(C1), .S(S0));
+  full_adder fa1(.A(A1), .B(B1), .Cin(C1), .Cout(C2), .S(S1));
+  full_adder fa2(.A(A2), .B(B2), .Cin(C2), .Cout(C3), .S(S2));
+  full_adder fa3(.A(A3), .B(B3), .Cin(C3), .Cout(Cout), .S(S3));
+  
+endmodule
+//: /hdlEnd
+
+
+`timescale 1ns/1ns
+
+//: /hdlBegin half_adder
+//: interface  /sz:(97, 48) /bd:[ Li0>A(16/48) Li1>B(32/48) Ro0<C(16/48) Ro1<S(32/48) ] /pd: 0 /pi: 0 /pe: 1 /pp: 1
+//: enddecls
+module half_adder(A, B, S, C);
+  input A;
+  input B;
+  output S;
+  output C;
+  
+  xor xor1(S, A, B);
+  and and1(C, A, B);
+endmodule
+//: /hdlEnd
+
+
+`timescale 1ns/1ns
+
+//: /hdlBegin full_adder
+//: interface  /sz:(133, 64) /bd:[ Li0>A(16/64) Li1>B(32/64) Li2>Cin(48/64) Ro0<Cout(16/64) Ro1<S(32/64) ] /pd: 0 /pi: 0 /pe: 1 /pp: 1
+//: enddecls
+module full_adder(A, B, Cin, Cout, S);
+  input A;
+  input B;
+  input Cin;
+  output Cout;
+  output S;
+  
+  wire w1;
+  wire w2;
+  wire w3;
+  
+  half_adder ha1(.A(A), .B(B), .C(w1), .S(w2));
+  half_adder ha2(.A(w2), .B(Cin), .C(w3), .S(S));
+  or or1(Cout, w1, w3);
+endmodule
+//: /hdlEnd
+
+
+`timescale 1ns/1ns
+
