@@ -1,0 +1,44 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="145">
+  <tr valign="top"> 
+    <td width="78%" height="638"> 
+      <p class="baslik">8.3. ÜÇ DURUMLU MANTIK KAPILARIYLA ÇOĞULLAYICI TASARIMI<br>
+      </p>
+      <p>Daha önce iki durumlu mantık kapıları kullanılarak tasarımını yaptığımız 
+        iki-kanal 1-ikil çoğullayıcı devresini, üç durumlu mantık kapılarını kullanarak 
+        tasarlamak da mümkündür. Aşağıdaki şekilde üç durumlu tampon kapılarıyla 
+        tasarlanmış iki-kanal 1-ikil çoğullayıcıya ilişkin mantık devresi sunulmaktadır.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B08/SM08085.swf">
+          <param name=quality value=high>
+          <embed src="pics/B08/SM08085.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Üç durumlu tampon kapılarıyla tasarlanmış iki-kanal 1-ikil 
+        çoğullayıcıya ilişkin mantık devresi </p>
+      <p>Şekilden görüleceği üzere, çoğullayıcının giriş kanalları olan A ve B, 
+        her ikisi de ayrı birer tampon kapısının girişine bağlanmaktadır. Çoğullayıcının 
+        A giriş kanalı G1 tamponunun girişini, B giriş kanalı ise G2 tamponunun 
+        girişini oluşturmaktadır. Girişlerde hangisinin çıkışa aktarılacağını 
+        belirlemek için kullanılan kodun geldiği S seçici hattı ise, tampon kapılarının 
+        E uçlarına bağlanmıştır. S=1 olduğunda G1 tamponunun E ucunun değeri 1 
+        olur ve G1 çalışır, ancak G2 tampon kapısının E ucuna S seçici hattı DEĞİL 
+        kapısı ile bağlandığından, G2 tamponunun E ucu 0 değerini alır ve G2 tamponu 
+        çalışmaz. Bu nedenle çoğullayıcının C çıkışına A girişinin değeri aktarılır.</p>
+      <p>S=0 olduğunda ise G1 tamponunun E ucunun değeri 0 olur ve G1 &quot;çalışmaz&quot; 
+        durumuna geçer. Buna karşılık G2 tampon kapısının E ucuna S seçici hattı 
+        DEĞİL kapısı ile bağlandığından, G2 tamponunun E ucu 1 değerini alır ve 
+        G2 tamponu &quot;çalışır&quot; durumuna gelir. Bu defa çoğullayıcının 
+        C çıkışına B girişinin değeri aktarılmış olur.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

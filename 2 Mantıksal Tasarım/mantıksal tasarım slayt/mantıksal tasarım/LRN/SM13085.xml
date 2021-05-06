@@ -1,0 +1,115 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Yazmaç dizilerinde ortak kullanýlan veri baðlantýlarýna ne ad verilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Yazmaç yollarý</secenek> 
+			<secenek>Yazma baðlantýsý</secenek> 
+			<secenek>Veri baðlantýsý</secenek>
+			<secenek dogru="true">Veri yolu</secenek> 
+			<secenek>Veri adresi</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>4 X 4 yazmaç dizisi kaç yazmaçtan oluþur?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">4</secenek> 
+			<secenek>8</secenek> 
+			<secenek>16</secenek>
+			<secenek>32</secenek> 
+			<secenek>64</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>4 X 4 yazmaç dizisinde verinin yükleneceði yazmaç kaç ikillik kod kullanýlarak seçilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek> 
+			<secenek>4</secenek>
+			<secenek>8</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>4 X 4 yazmaç dizisinde veri hatlarýnýn sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2</secenek> 
+			<secenek dogru="true">4</secenek> 
+			<secenek>8</secenek>
+			<secenek>16</secenek> 
+			<secenek>32</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>8 X 4 yazmaç dizisi kaç tane yazmaçtan oluþur?</sorumetni>
+		<secenekler type="radio">
+			<secenek>4</secenek> 
+			<secenek dogru="true">8</secenek> 
+			<secenek>16</secenek>
+			<secenek>32</secenek> 
+			<secenek>64</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>4 X 8 yazmaç dizisi kaç tane yazmaçtan oluþur?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">4</secenek> 
+			<secenek>8</secenek> 
+			<secenek>16</secenek>
+			<secenek>32</secenek> 
+			<secenek>10</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>8 X 4 yazmaç dizisinde verinin yükleneceði yazmaç kaç ikillik kod kullanýlarak seçilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2</secenek> 
+			<secenek dogru="true">3</secenek> 
+			<secenek>4</secenek>
+			<secenek>8</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>4 X 8 yazmaç dizisinde verinin yükleneceði yazmaç kaç ikillik kod kullanýlarak seçilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek> 
+			<secenek>4</secenek>
+			<secenek>8</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>8 X 4 yazmaç dizisini tasarlamak için kaç tane 4 X 4 yazmaç dizisi kullanýlmalýdýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek> 
+			<secenek>4</secenek>
+			<secenek>5</secenek> 
+			<secenek>10</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>16 X 4 yazmaç dizisinin veri hattý sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2</secenek> 
+			<secenek dogru="true">4</secenek> 
+			<secenek>8</secenek>
+			<secenek>16</secenek> 
+			<secenek>32</secenek> 
+		</secenekler>
+	</soru>
+
+	
+
+</quiz>

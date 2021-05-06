@@ -1,0 +1,66 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="487">
+  <tr valign="top"> 
+    <td width="78%" height="479"> 
+      <p class="baslik">11.1.1. İki-İkil Senkron İleri Sayıcı Durum Diyagramı</p>
+      <p class="content">Sıralı mantık devrelerinde olduğu gibi, sıralı bir mantık 
+        devresi olan sayıcıların durum diyagramları da, devrenin durumlarının 
+        ve bu durumların arasındaki bağlantıların grafik gösterimidir. Aşağıdaki 
+        şekilde 2-ikil senkron ileri sayıcının durum diyagramı gösterilmektedir.</p>
+      <p class="content"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B11/SM11020.swf">
+          <param name=quality value=high>
+          <embed src="pics/B11/SM11020.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p><span class="imgdesc">2-ikil senkron ileri sayıcı durum diyagramı</span><br>
+      </p>
+      <p class="content">Durum diyagramlarında durumlar daire içine alınarak belirlenmektedir. 
+        Durum değişkeni olarak <b>q</b> harfi kullanılmıştır. q<sub>0</sub>, q<sub>1</sub>, 
+        q<sub>2</sub> ve q<sub>3</sub> olmak üzere 4 durum tanımlanmıştır. q<sub>n</sub> 
+        durum değişkeninin n indisi 0, 1, 2 ve 3 ile belirtilerek devrenin kaçıncı 
+        durumu olduğunu belirtir.</p>
+      <p class="content">Durumlar arasındaki geçişler ise, bir daireden diğerine 
+        yönlendirilen oklarla temsil edilmektedir. Okun çıktığı durum değişkeni 
+      </p>
+      <table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolor="#000000" bgcolor="#FFFFCC">
+        <tr> 
+          <td><font size="2"><b>Kural:</b> Her durum için girişlerin bütün olasılıkları 
+            tanımlanmalıdır. </font> </td>
+        </tr>
+      </table>
+      <p class="content">Bunun anlamı ise, tek girişi olan bir sayıcı devresinde 
+        bu tek girişin 0 veya 1 olmak üzere iki giriş birleşiminin bulunması demektir. 
+        Bu nedenle aşağıdaki iki işlem de uygulanmalıdır.</p>
+      <ol>
+        <li> Her duruma girişin 0 değerinin uygulanıp çıkışın ve bir sonraki durumun 
+          ne olduğunun belirlenmesi gerekir.</li>
+        <li>Her duruma girişin 1 değerinin uygulanıp çıkışın ve bir sonraki durumun 
+          ne olduğunun belirlenmesi gerekir.</li>
+      </ol>
+      <p>Saatli sayıcılar için 1 değeri, saat geçişi olması anlamında kullanılır. 
+        Durumlar arasındaki okun yönü, şimdiki durumdan ilgili giriş altında oluşacak 
+        gelecek duruma doğrudur. Ok, şimdiki durumda belirtilen giriş geldiğinde 
+        devrenin hangi duruma geçeceğini gösterir. Okun üzerine yazılan ve &quot;/&quot; 
+        ile ayrılan değerlerin sol tarafta olanı giriş değerini, sağ tarafta olanı 
+        çıkış değerini göstermektedir. Örneğin q<sub>0</sub> durumunda iken, girişe 
+        0 değeri gelince çıkışı 00 olmakta ve devre q<sub>0</sub> durumunda kalmayı 
+        sürdürmektedir. Başka bir ifadeyle, q<sub>0</sub> durumunda devre girişine 
+        0 geldiğinde gelecek durum da q<sub>0</sub> olur. q<sub>0</sub>'ın üzerindeki 
+        kendine dönen ok ile bu olay anlatılmaktadır.</p>
+      <p> Devre q<sub>0</sub> durumlarında iken, bu defa girişe 1 gelince çıkış 
+        01 olur ve devrenin durumu q<sub>0</sub>'dan q<sub>1</sub>'e değişir. 
+        Buradan hareketle q<sub>0'</sub>da girişe 1 geldiğinde gelecek durumun 
+        q<sub>1</sub> olacağı söylenebilir.</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

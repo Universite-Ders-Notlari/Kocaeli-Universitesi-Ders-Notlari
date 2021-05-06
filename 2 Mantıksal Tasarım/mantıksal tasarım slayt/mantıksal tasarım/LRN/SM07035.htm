@@ -1,0 +1,41 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="271">
+  <tr valign="top"> 
+    <td width="77%" height="551"> 
+      <p class="baslik">7.1.2. İki-İkil Öncelikli Kodlayıcı</p>
+      <p class="content">Birden çok girişi etkin (1) olduğunda da çıkışlarında 
+        kod üreten bir kodlayıcı tasarlamak mümkündür. Bu şekilde çalışabilen 
+        kodlayıcılara <b>öncelikli kodlayıcılar</b> adı verilir. Öncelikli kodlayıcının 
+        çıkışlarında her zaman bir kod üretilir, böylece &quot;dikkate alınmaz&quot; 
+        durumları oluşmaz. Öncelikli kodlayıcıların çoğu, yüksek - derece veri 
+        hattı kodlayıcılarıdır. Bunun anlamı şudur: Aynı anda birden çok giriş 
+        etkin olduğunda, bu girişlere karşılık düşen kodlar içinden en büyük değere 
+        sahip olan kod en öncelikli kod kabul edilir ve çıkışta bu kod üretilir. 
+        Örneğin I<sub>2</sub> ve I<sub>3</sub> aynı anda etkin olduğunda, çıkışta 
+        I<sub>3</sub>'e ilişkin 11 kodu üretilir. Çünkü 11 kodu I<sub>2</sub>'yi 
+        temsil eden 10 kodundan daha büyük bir sayıdır. </p>
+      <p class="content">Öncelik özelliğini kullanarak 2 - ikil öncelikli kodlayıcıya 
+        ilişkin doğruluk tablosunu aşağıdaki gibi oluşturabiliriz.</p>
+      <p class="content"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B07/SM07035.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/SM07035.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object><br>
+      </p>
+      <p class="content">Tablonun ilk satırında hiçbir giriş etkin olmadığı için, 
+        yani I<sub>0</sub>, I<sub>1</sub>, I<sub>2</sub> ve I<sub>3</sub> hepsi 
+        0 olduğu için çıkışta hiçbir kod üretilmemekte ve çıkışlar &quot;Dikkate 
+        alınmaz&quot; durumundadır.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

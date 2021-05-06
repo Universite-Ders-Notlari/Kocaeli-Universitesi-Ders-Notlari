@@ -1,0 +1,51 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="185">
+  <tr valign="top"> 
+    <td width="78%" height="656"> 
+      <p class="baslik">9.1.2.1. Eşlik Üreteç/Denetçi Mantık Devresi ve Çalışması</p>
+      <p>Aşağıdaki şekilde 4-bit eşlik üreteç/denetçi mantık devresi gösterilmektedir.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B09/SM09035.swf">
+          <param name=quality value=high>
+          <embed src="pics/B09/SM09035.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">4-bit eşlik üreteç/denetçi mantık devresi</p>
+      <p>Şekildeki G1, G2 ve G3 Özel-VEYA kapıları, daha önce tasarladığımız eşlik 
+        üreteç devresinde olduğu gibi D<sub>3</sub>, D<sub>2</sub>, D<sub>1</sub> 
+        ve D<sub>0</sub> veri girişi ikillerini toplamaktadır. Bu nedenle bu alt 
+        devrenin S çıkışı, D<sub>3</sub> D<sub>2 </sub>D<sub>1 </sub>D<sub>0</sub>'ın 
+        eşliği çift ise 0 ve D<sub>3 </sub>D<sub>2 </sub>D<sub>1 </sub>D<sub>0</sub>'ın 
+        eşliği tek ise 1 olur.</p>
+      <p>Çift eşlik denetimi için S mantık sıfırsa ve eşlik ikili ÇG'de mantık 
+        0 ise, G4 Özel-VEYA kapısının çıkışı mantık 0 olacaktır. Buna karşılık 
+        S mantık 1 ise, D<sub>3 </sub>D<sub>2 </sub>D<sub>1 </sub>D<sub>0</sub> 
+        tek eşlik gösterir, fakat eşlik ikili ÇG mantık 1 olur ve çift eşlik oluşturmaya 
+        çalışır. Böylece G4 kapısının çıkışı, mantık 0 olacaktır. G4'ün girişindeki 
+        bütün diğer koşullar, eşlik hatasını belirtmek üzere mantık 1 çıkışı üretecektir.</p>
+      <p>Tek eşlik denetimi için, S mantık 1 ise ve eşlik ikili ÇT'de mantık 0 
+        ise, G5 kapısının çıkışı mantık 0 olacaktır. Buna karşılık, S mantık 0 
+        ise ve D<sub>3 </sub>D<sub>2 </sub>D<sub>1 </sub>D<sub>0</sub> girişlerinin 
+        çift eşlik olduğunu gösterirse, ancak eşlik ikili (ÇT) mantık 1 olarak 
+        tek eşlik oluşturmaya çalışır. Böylece G5 Özel-VEYA kapısının çıkışı mantık 
+        0 olacaktır. G5 kapısının girişindeki bütün diğer koşullar eşlik hatasını 
+        belirtir ve G5 çıkışında mantık 1 üretilecektir.</p>
+      <p>Buradan çift eşlik devresi için <img src="pics/B09/e%E7.gif" width="20" height="27" align="absmiddle"> 
+        mantık 0 ise, eşlik hatası olmadığı, buna karşılık <img src="pics/B09/e%E7.gif" width="20" height="27" align="absmiddle"> 
+        mantık 1 olursa bir eşlik hatası olduğu anlamına gelir. Benzer şekilde 
+        tek eşlik denetiminde <img src="pics/B09/et.gif" width="19" height="25" align="absmiddle"> 
+        mantık 0 ise, eşlik hatası olmadığı, <img src="pics/B09/et.gif" width="19" height="25" align="absmiddle"> 
+        mantık 1 ise eşlik hatası olduğunu gösterir. <br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

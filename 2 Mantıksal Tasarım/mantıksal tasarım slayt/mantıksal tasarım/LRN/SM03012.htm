@@ -1,0 +1,83 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="1102">
+  <tr valign="top"> 
+    <td width="80%" height="1356"> 
+      <p><span class="baslik">3.2. MANTIK DEVRELERİNİN ANALİZİ</span><br>
+      </p>
+      <p><font color="#9900FF" class="yonelt">! Mantık kapılarında oluşan fonksiyonları 
+        görmek için fareyi ilgili mantık kapısına sürükleyiniz.</font></p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03012.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03012.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Şekil - Mantık Devreleri</p>
+      <p class="content"><b>(1).</b> mantık devresinin giriş değişkenleri <b>A</b>, 
+        <b>B</b>, <b>C</b> ve <b>(2).</b> mantık devresinin giriş değişkenleri 
+        de <b>D</b>, <b>E</b>, <b>F</b> ve <b>G</b>'dir. Çıkış değişkenleri ise 
+        <b>Z</b> ve <b>Y</b>'dir. Z ve Y çıkış değişkenleri bağımlı değişkenlerdir 
+        ve hangi değeri alacakları, bağımsız değişkenler olan giriş değişkenlerine 
+        bağlıdır. Mantık denklemleri ise, çıkış değişkenlerinin girişler tarafından 
+        nasıl bir fonksiyonla belirlendiğini veren eşitliklerdir. Önce Z çıkışına 
+        ilişkin mantık denklemini oluşturalım. Bunun için Z çıkışıyla ilişkili 
+        A, B, C bağımsız değişkenlerini (1). devre boyunca takip ederek, rastladıkları 
+        her kapının çıkış fonksiyonu bulunmalıdır. Böylece son çıkış olan Z'ye 
+        kadar gelinir ve son adımda da Z çıkışı bulunur. Yukarıdaki şekilde A 
+        ve B girişi önce bir VE kapısından geçmektedir. Bu kapının çıkışından 
+        <b>A &middot; B</b> fonksiyonu oluşur. Bu fonksiyon daha sonra VEYA kapısının 
+        girişine gelir ve VEYA kapısının girişlerinden birini oluşturur. Zaten 
+        bu VEYA kapısının çıkışı, aynı zamanda mantık devresinin de Z çıkışıdır. 
+        VEYA kapısının ikinci girişi ise C değişkenidir. Bu durumda VEYA kapısının 
+        girişleri aşağıdaki gibidir:</p>
+      <p><img src="pics/B03/SM03012_1.gif" width="183" height="93"></p>
+      <p class="content">Hatırlanacağı üzere VEYA işlemi + işlemiydi. Dolayısıyla 
+        Z çıkışı <b>Z=(A &middot; B)+C</b> olur. Böylece Z çıkışına ilişkin mantık 
+        denklemi elde edilmiş olur.</p>
+      <p>Bu denklemde <b>A &middot; B</b> işleminin parantez içinde verilmesinin 
+        nedeni, bu işlemin VEYA işleminden önce elde edilmiş olduğunu belirtmek 
+        içindir. Böylelikle <b>A &middot; B</b> tek bir değişken olarak işleme 
+        katılır. </p>
+      <p>Benzer şekilde Y çıkışı için de mantık denklemi bulunur. Y çıkışıyla 
+        ilişkili D, E, F ve G giriş değişkenleri izlenir ve rastladıkları her 
+        mantık kapısının çıkış fonksiyonu oluşturularak, en sonunda Y çıkışına 
+        ulaşılır ve sonunda Y çıkış denklemi elde edilir. Devrede önce D girişinin 
+        tersi <b>(<img src="pics/B03/degil_d_bold.gif" width="8" height="12">)</b> 
+        elde edilir. Bunun nedeni ise, D girişinin tersleyici kapısından geçmesidir. 
+        D girişi, tersleyici kapısından geçtikten sonra <img src="pics/B03/degil_d_bold.gif" width="8" height="12"> 
+        olarak E girişiyle birlikte VEYA kapısının girişlerine gelir, VEYA çıkışı 
+        <b>(<img src="pics/B03/degil_d_bold.gif" width="8" height="12">+E)</b> 
+        aşağıdaki gibi oluşur:</p>
+      <p><img src="pics/B03/SM03012_2.gif" width="194" height="88"></p>
+      <p>Bu çıkış <b>(<img src="pics/B03/degil_d_bold.gif" width="8" height="12">+E)</b>, 
+        daha sonra VE kapısının üç girişinden birini oluşturur. VE kapısının diğer 
+        iki girişi ise, F giriş değişkeni ile tersinir G değişkenidir. G değişkeni 
+        tersleyici kapısından geçerek <img src="pics/B03/degil_g_bold.gif" width="7" height="12"> 
+        değeriyle VE kapısına gelmiştir. VE kapısının çıkışı zaten Y çıkış değişkenini 
+        verir.</p>
+      <p><img src="pics/B03/SM03012_3.gif" width="276" height="93"></p>
+      <p>Böylece şekildeki (2). mantık devresinin Y çıkış denklemi <b>Y = (<img src="pics/B03/degil_d_bold.gif" width="8" height="12">+E) 
+        &middot; F &middot; </b> <b><img src="pics/B03/degil_g_bold.gif" width="7" height="12"></b> 
+        olarak bulunur. Burada da<b> (<img src="pics/B03/degil_d_bold.gif" width="8" height="12">+E)</b> 
+        işleminin parantez içinde verilmesinin nedeni, bu işlemin VE işleminden 
+        önce olduğunu belirtmek içindir.</p>
+      <p><b>Sonuç:</b></p>
+      <p>Mantık denklemleri;</p>
+      <ul>
+        <li> <b>Z=(A &middot; B)+C</b></li>
+        <li><b>Y=(<img src="pics/B03/degil_d_bold.gif" width="8" height="12"> 
+          + E) &middot; F &middot; <img src="pics/B03/degil_g_bold.gif" width="7" height="12"></b></li>
+      </ul>
+      <p>şeklindedir.</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

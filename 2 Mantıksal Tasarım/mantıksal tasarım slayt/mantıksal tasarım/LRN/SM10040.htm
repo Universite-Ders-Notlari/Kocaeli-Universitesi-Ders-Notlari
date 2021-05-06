@@ -1,0 +1,56 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="678">
+  <tr valign="top"> 
+    <td width="78%" height="675"> 
+      <p class="baslik">10.4.1. Kapılı S-R VEDEĞİL Mandalının Çalışması</p>
+      <p class="content">Kapılı S-R VEDEĞİL mandalına ilişkin zamanlama çizgesi 
+        örneği aşağıdaki şekilde verilmektedir. Bu zaman çizgesi S ve R girişlerinin 
+        durum değişimlerine göre farklı 9 zaman aralığına ayrılmıştır. Mandalın 
+        her zaman aralığındaki durumları ayrı ayrı aşağıda incelenmektedir.</p>
+      <p class="content"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B10/SM10040.swf">
+          <param name=quality value=high>
+          <embed src="pics/B10/SM10040.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Kapılı S-R VEDEĞİL mandalı zamanlama çizgesi</p>
+      <ol>
+        <li>Mandal başlangıçta &quot;sıfırlanmıştır&quot; (RESET), fakat bu aralıkta 
+          S'nin durumu mantık 1 seviyesine değişmesine rağmen, G=0 olduğundan 
+          mandal durumunu değiştirmeyecektir.</li>
+        <li>Şimdi G'nin durumu mantık 1 seviyesindedir ve mandalın S ve R girişleri 
+          &quot;çalışır&quot; durumdadır. Bu aralıkta S mantık 1 durumunda olduğu 
+          için, mandal şimdi &quot;kurulu&quot; hale gelir.</li>
+        <li>Bu aralıkta G mantık 0 seviyesinde ve mandal girişleri &quot;çalışmaz&quot; 
+          durumdadır. Ancak önceki durum mandallanır, değişim olmaz ve mandal 
+          &quot;kurulu&quot; kalır. Bu aralık sürecinde S ve R durum değiştirir, 
+          ancak G=0 olduğundan mandalın durumlarını etkilemezler.</li>
+        <li>Şimdi R etkinken, G mantık 1 seviyesindedir, bu durum ise mandalın 
+          &quot;sıfırlanmasına&quot; sebep olur.</li>
+        <li>G mantık 0 seviyesindedir, bu nedenle S ve R'deki değişimler mandalın 
+          durumunu etkilemez. Mandal &quot;sıfırlanmış&quot; durumunu korur.</li>
+        <li>Şimdi G mantık 1 seviyesindedir, ancak S ve R etkisiz konumdadır. 
+          Bu nedenle mandal &quot;sıfırlanmış&quot; durumunu sürdürür.</li>
+        <li>Şimdi G=1 iken S etkin durumdadır, bunun sonucunda mandal &quot;kurulu&quot; 
+          (SET) durumuna geçer.</li>
+        <li>G=1 iken S ve R etkisiz durumdadır ve mandal &quot;kurulu&quot; durumda 
+          kalır.</li>
+        <li>Şimdi G=1 iken R etkin duruma geçer, bunun sonucunda mandal &quot;sıfırlanır&quot; 
+          (RESET) ve bu durumda kalır.</li>
+      </ol>
+      <p>Bu çalışma aralıklarından da görüldüğü gibi, S ve R girişlerinin durumları 
+        sadece ve sadece G kapı girişi etkin ise mandalın durumu üzerinde etkili 
+        olabilirler. <br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

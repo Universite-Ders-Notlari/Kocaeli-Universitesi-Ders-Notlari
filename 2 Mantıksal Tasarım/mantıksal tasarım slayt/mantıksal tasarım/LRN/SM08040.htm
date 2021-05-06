@@ -1,0 +1,56 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="750">
+  <tr valign="top"> 
+    <td width="78%" height="734"> 
+      <p class="baslik">8.1.6. 4-Kanal Çoğullayıcı Tasarımı<br>
+      </p>
+      <p>4-kanal çoğullayıcı, geleneksel tasarım yöntemi ile tasarlamaya çalışıldığında 
+        işlemleri çok uzun ve karmaşık olacaktır. Böyle olmasının nedeni şu şekilde 
+        açıklanabilir: 4-kanal çoğullayıcının mantık sembolünde görüldüğü gibi, 
+        4 tane veri girişi ve bu girişlerin hangisinin çıkışa aktarılacağını seçmek 
+        için 2 tane daha seçici girişleri (S<sub>1</sub> ve S<sub>0</sub>) olmak 
+        üzere toplam 6 adet girişi vardır. Geleneksel yöntemle tasarım yapmak 
+        için girişler ve çıkışlar arasındaki bağlantıyı gösteren doğruluk tablosunun 
+        oluşturulması gereklidir. Doğruluk tablosunda giriş birleşimlerin tamamı 
+        yer almalıdır. Oysa 4-kanal çoğullayıcının 6 girişi olduğu için, 2<sup>6</sup> 
+        formülü ile 64 farklı giriş birleşimi söz konusu olacaktır. Böyle bir 
+        doğruluk tablosunu oluşturmak ve çıkış denklemini sadeleştirmek pratik 
+        olayacaktır. Bu nedenle, 4-kanal çoğullayıcı devresini, geleneksel yöntemle 
+        tasarlamak yerine, seçim işlemini kod çözücü kullanarak yapmak tasarımı 
+        önemli ölçüde kolaylaştıracaktır. Aşağıdaki şekilde, kod çözücü kullanılarak 
+        tasarlanmış 4- kanal çoğullayıcı mantık devresi gösterilmektedir.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="350">
+          <param name=movie value="pics/B08/SM08040.swf">
+          <param name=quality value=high>
+          <embed src="pics/B08/SM08040.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="350">
+          </embed> 
+        </object></p>
+      <p><font color="#9900FF" class="imgdesc">4-Kanal Çoğullayıcı mantık devresi</font><br>
+      </p>
+      <p>4-kanaldan gelen koda göre biri seçilecek ve seçilen kanalın verisi X 
+        çıkışına aktarılacaktır. 4-kanalı seçmek için S<sub>1</sub> ve S<sub>0</sub> 
+        ile gösterilen iki ikilden oluşan kod kullanılmaktadır. O halde kullanılması 
+        gereken kodçözücünün 4 çıkışı olmalıdır. S<sub>1</sub> ve S<sub>0</sub>'a 
+        gelen koda göre, kodçözücünün çıkışlarından biri etkin duruma gelecektir 
+        (Mantık 1 durumu). Etkin durumdaki çıkış ile seçtiği giriş kanalı birer 
+        VE kapısının girişlerini oluşturmaktadır. Örneğin; kodçözücünün O<sub>0</sub> 
+        çıkışı A girişini, O<sub>1</sub> çıkışı B girişini, O<sub>2</sub> çıkışı 
+        C girişini ve O<sub>3</sub> çıkışı D girişini seçmek için tasarlanmıştır. 
+        Bu nedenle 4 adet VE kapısı kullanılmaktadır. VE kapılarının çıkışları 
+        ise bir VEYA kapısının girişlerini oluşturur. Kodçözücünün etkin olan 
+        çıkışı dışındaki diğer 3 çıkışın bağlandığı VE kapılarının çıkışlarında 
+        mantık Ø durumu oluşacaktır; çünkü seçilmeyen kodçözücü çıkışlarında mantık 
+        O durumu vardır ve VE kapılarının girişlerine bağlı oldukları için kapıların 
+        çıkışları da O durumuna geçer.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="586">
+  <tr valign="top">
+    <td width="30%" height="591" bgcolor="#FFFFFF">
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+          <param name=movie value="pics/B01/SM01125.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/SM01125.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+          </embed> 
+        </object></p>
+      <p><span class="imgdesc"><b>BCD-Binary Coded Decimal</b></span><b><span class="imgdesc"> 
+        (ikili kodlu ondalık)</span></b><span class="imgdesc"> kodu karşılıkları</span></p>
+    </td>
+    <td width="70%" height="591" bgcolor="#FFFFFF"> 
+      <p class="baslik">1.12.1. Ondalık Sayıların İkili Kodlanması (BCD-Binary 
+        Coded Decimal)<br>
+      </p>
+      <p>Kodlanacak grubun eleman sayısı, 2'nin katları olmadığı zaman bazı ikil 
+        birleşimlerinin temsil edeceği sayı kalmadığı için <b>&quot;boş&quot;</b> 
+        kalır. Örneğin 0,1,2.....9'dan oluşan on ondalık hane böyle bir grubu 
+        oluşturur. On ögeyi birbirinden ayıran ikili bir kodun en az dört ikil 
+        işlemesi gerekir; bunun nedeni ise üç ikilin en fazla sekiz ögeyi birbirinden 
+        ayırabilmesidir. Dört ikil ise 16 farklı birleşim oluşturabilir, çünkü 
+        16 farklı şekilde dizilebilir. Ancak sadece on basamak kodlandığı için, 
+        kalan altı birleşim boştur ve kullanılmaz. </p>
+      <p>Sonuç olarak, ondalık sayı simgeleri için ikili kodlar en az dört ikil 
+        gerektirir. Dört veya daha fazla ikili olası on ayrı birleşimle düzenleyerek 
+        çok çeşitli kodlar elde edilebilir. Yandaki tabloda ondalık sayılar için 
+        en yaygın olarak kullanılan ikili kodlardan biri olan <b>&quot;BCD-Binary 
+        Coded Decimal (ikili kodlu ondalık)&quot;</b> kodu karşılıkları verilmektedir.</p>
+      <p>BCD doğrudan bir ikili eşdeğer düzenlemesidir. İkili ikillere, konumlarına 
+        göre ağırlık vermek suretiyle kodlama yapılır. BCD kodunun ağırlıkları 
+        2<sup>3</sup>, 2<sup>2</sup>, 2<sup>1</sup>, 2<sup>0</sup> yani 8, 4, 
+        2 ve 1'dir. Örneğin 0101 ikil düzenlemesi, ondalık hane 5'i gösterecek 
+        şekilde ağırlıklarla yorumlanabilir, çünkü</p>
+      <p> 0x2<sup>3</sup> + 1x2<sup>2</sup> + 0x2<sup>1</sup> + 1x2<sup>0</sup> 
+        = 0x8 + 1x4 + 0x2 + 1x1 = 5 </p>
+      <p>elde edilir.</p>
+      <table width="100%" border="1" cellspacing="0" cellpadding="3" bgcolor="#FFFFCC" bordercolor="#000000">
+        <tr> 
+          <td><font size="2">Yukarıda da vurgulandığı üzere ikili dönüşüm işlemi 
+            ile kodlamayı birbirine karıştırmamak son derece önemlidir. Örneğin 
+            ondalık sayı <b>0</b> ile <b>9</b> arasında bir tamsayı olduğu sürece 
+            BCD kodu, hem bir kod hem de doğrudan ikili bir dönüşümdür. <b>9</b>'dan 
+            büyük sayılar durumunda dönüşüm ve kodlama tamamen farklıdır. Ondalık 
+            <b>12</b> sayısının ikili çevrimi <b>1100</b>'dır, halbuki aynı sayının 
+            BCD kodu <b>00010010</b>'dır.</font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

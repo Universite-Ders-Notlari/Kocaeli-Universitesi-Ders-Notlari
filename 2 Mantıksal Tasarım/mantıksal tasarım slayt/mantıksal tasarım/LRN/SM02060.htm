@@ -1,0 +1,85 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="2374">
+  <tr valign="top"> 
+    <td width="80%" height="2372"> 
+      <p> <span class="baslik">2.4. MANTIK KAPILARI</span><br>
+      </p>
+      <p>Üç temel mantık fonksiyonu olarak adlandırılan <b>DEĞİL</b>, <b>VE</b> 
+        ve <b>VEYA</b> işlemlerini anahtarlama devreleriyle inceledik. Bu fonksiyonların 
+        anlamlarını, eşitliklerini ve tablolarını öğrendik. Anahtarlama devreleri 
+        sadece kavramsal modellerdir ve sayısal cihazlarda kullanılmazlar. Onun 
+        yerine aynı temellere göre işleyen, ancak farklı tasarımları olan devreler 
+        kullanılmaktadır. Bu devreler <b>&quot;mantık kapıları&quot;</b> ya da 
+        kısaca <b>&quot;kapılar&quot;</b> olarak adlandırılır.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B02/SM02060_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B02/SM02060_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Şekil - Genel Mantık Kapısı Modeli</p>
+      <p>Genellikle mantık kapısı, bir ya da daha çok girişi ve bir çıkışı olan 
+        bir kutu olarak gösterilir. Bu kutunun girişleri ve çıkışı 1, 0 ikili 
+        sayılarıdır. Kapı, bu ikili sayıları girişleri olarak alır ve kendi işlevine 
+        göre çıkış, 0 ya da 1 sayısını üretir. Mantık kapısının çıkışı, kapının 
+        girişlerindeki ikili birleşimlere bağlı olarak değer aldığı için <b>bağımlı 
+        değişken</b> olarak belirtilir.</p>
+      <p>Anahtarlama devreleri gibi, mantık kapısının işlevi de, bağımlı ve bağımsız 
+        değişkenlerle ilişkili olan <i>doğruluk tablosu</i> ve <i>mantık denklemi</i> 
+        kullanılarak açıklanabilir.</p>
+      <p>Şekildeki kutunun içinde bir elektronik devre vardır. Bu elektronik devre, 
+        mantık kapısına ilişkin işlevleri yerine getirir. Bu kutunun içindeki 
+        işleyiş ise, gözle görülmez işaretlerin kutuya girişleri ve çıkışları 
+        şeklindedir. 1 ve 0 ikilleri kutunun girişlerine uygulanır ve çıkışta 
+        gerilim şeklinde ölçülür. Genellikle +5 volt <b>&quot;Mantık 1&quot;</b> 
+        ve 0 volt (toprak potansiyel değeri) <b>&quot;Mantık 0&quot;</b> olarak 
+        sunulur. Mantık 1, yüksek seviye ve Mantık 0, alçak seviye olarak değerlendirilir.</p>
+      <p>Anahtarlama devrelerinin doğruluk tablosu, bağımsız değişkenlerin durumlarının 
+        mümkün olan bütün birleşimleri için, L lambası bağımlı değişkenin durumunun 
+        saptanmasıyla elde edilmekteydi. Bu birleşimler ikili sayma sırası izlemektedir. 
+        Bağımsız değişkenlerin (girişlerin) olası bütün birleşimlerine bakılırsa, 
+        n ikilin ikili birleşim sayısının <b>2<sup>n</sup></b> bağıntısı ile bulunacağı 
+        anlaşılır. Buradan tek girişi olan bir kapının doğruluk tablosunda, <b>2<sup>1</sup>=2</b> 
+        olduğu için 2 giriş olasılığı olacağı görülür; <b>0</b> ya da <b>1</b>.</p>
+      <table border="1" cellspacing="0" cellpadding="5" bgcolor="#CAE4FF" bordercolor="#000000">
+        <tr> 
+          <td bgcolor="#D8EBEB"> 
+            <p><img src="pics/B02/SM02060_1.gif" width="164" height="67"></p>
+            </td>
+        </tr>
+      </table>
+      <p>İki girişi olan bir mantık kapısının doğruluk tablosunda olası giriş 
+        birleşimlerinin sayısı <b>2<sup>2</sup>=4</b> olacaktır.</p>
+      <table border="1" cellspacing="0" cellpadding="5" bgcolor="#CAE4FF" bordercolor="#000000">
+        <tr> 
+          <td bgcolor="#D8EBEB"> 
+            <p><img src="pics/B02/SM02060_2.gif" width="204" height="193"></p></td>
+        </tr>
+      </table>
+      <p>Üç girişi olan bir mantık kapısının doğruluk tablosunda <b>2<sup>n</sup>=2<sup>3</sup>=8</b> 
+        farklı giriş olasılığı olacaktır.</p>
+      <table border="1" cellspacing="0" cellpadding="5" bgcolor="#CAE4FF" bordercolor="#000000">
+        <tr> 
+          <td bgcolor="#D8EBEB"> <p><img src="pics/B02/SM02060_3.gif" width="224" height="353"></p></td>
+        </tr>
+      </table>
+      <p>Dört girişi olan bir mantık kapısının doğruluk tablosunda <b>2<sup>n</sup>=2<sup>4</sup>=16</b> 
+        farklı giriş olasılığı olacaktır.</p>
+      <table border="1" cellspacing="0" cellpadding="5" bgcolor="#CAE4FF" bordercolor="#000000">
+        <tr> 
+          <td bgcolor="#D8EBEB"><img src="pics/B02/SM02060_4.gif" width="270" height="710"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

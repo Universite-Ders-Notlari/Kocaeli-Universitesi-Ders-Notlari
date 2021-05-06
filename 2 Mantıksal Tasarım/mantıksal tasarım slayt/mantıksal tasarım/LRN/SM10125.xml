@@ -1,0 +1,115 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Sýralý mantýk devrelerinin birleþik mantýk devrelerinden farký aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Devrenin çýkýþlarý sadece giriþlere baðlýdýr.</secenek> 
+			<secenek>Sýralý mantýk devresinin çýkýþlarý düzgün bir sýra izler.</secenek> 
+			<secenek>Sýralý mantýk devresinin giriþleri düzgün bir sýra izler.</secenek>
+			<secenek>Sýralý mantýk devresinin giriþleri hem giriþlere hem de devrenin durumlarýna baðlýdýr.</secenek> 
+			<secenek dogru="true">Sýralý mantýk devresinin çýkýþlarý hem giriþlere hem de devrenin durumlarýna baðlýdýr.</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Sýralý mantýk devrelerinde veri saklamak için kullanýlan eleman aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>VE kapýlarý</secenek> 
+			<secenek>VEYA kapýlarý</secenek> 
+			<secenek>Özel - VEYA kapýlarý</secenek>
+			<secenek dogru="true">Ýkidurumlular</secenek> 
+			<secenek>Hiçbiri</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Etkin - düþük seviyesi aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>mantýk 1</secenek> 
+			<secenek dogru="true">mantýk 0</secenek> 
+			<secenek>Saat 1</secenek>
+			<secenek>Saat darbe aralýðý</secenek> 
+			<secenek>Yüksek empedans</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Kapýlý bir VEYADEÐÝL S - R mandalýný oluþturan VEYADEÐÝL kapýlarýnýn sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek> 
+			<secenek>4</secenek>
+			<secenek>5</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>"Geçiþ" ifadesi aþaðýdaki hangi durumu tanýmlar?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Bir mantýk seviyesinden diðer bir mantýk seviyesine geçiþi</secenek> 
+			<secenek>Bir mantýk kapýsýndan diðer bir mantýk kapýsýna geçiþi</secenek> 
+			<secenek>Bir ikidurumludan diðer bir ikidurumluya geçiþi</secenek>
+			<secenek>Bir mandal devresinden diðer bir mandal devresine geçiþi</secenek> 
+			<secenek>VE kapýsýndan DEÐÝL kapýsýna geçiþi</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Mantýk 0'dan mantýk 1'e deðiþime ne ad verilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Geçiþ</secenek> 
+			<secenek>Dönüþüm</secenek> 
+			<secenek dogru="true">Pozitif geçiþ</secenek>
+			<secenek>Negatif geçiþ</secenek> 
+			<secenek>Pozitif dönüþüm</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>S - R ikidurumlusunun denetim giriþlerinin sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>1</secenek> 
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek>
+			<secenek>4</secenek> 
+			<secenek>8</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>T ikidurumlusunda Q^n=0 ise, Q^(n+1) deðeri ne olur?</sorumetni>
+		<secenekler type="radio">
+			<secenek>0</secenek> 
+			<secenek>10</secenek> 
+			<secenek dogru="true">1</secenek>
+			<secenek>15</secenek> 
+			<secenek>010</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>D ikidurumlusunda aþaðýdaki eþitliklerden hangisi doðrudur?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Q^(n+1)=D</secenek> 
+			<secenek>Q^n=D</secenek> 
+			<secenek>Q^(n+1)=Q^n</secenek>
+			<secenek>D=Q^(n+1)-1</secenek> 
+			<secenek>D=Q^n-1</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Bir J - K ikidurumlusunda Q^n=0 ve Q^(n+1)=0 durumlarý için J ve K deðerleri ne olur?</sorumetni>
+		<secenekler type="radio">
+			<secenek>J = 1, K = X</secenek> 
+			<secenek dogru="true">J = 0, K = X</secenek> 
+			<secenek>J = 1, K = 1</secenek>
+			<secenek>J = 0, K = 1</secenek> 
+			<secenek>J = 0, K = 0</secenek> 
+		</secenekler>
+	</soru>
+
+	
+
+</quiz>

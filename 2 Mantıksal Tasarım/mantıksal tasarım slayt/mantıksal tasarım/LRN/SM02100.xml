@@ -1,0 +1,118 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Aþaðýdakilerden hangisi temel mantýk iþlemlerinden biridir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = 0</secenek> 
+			<secenek>Z = 1</secenek> 
+			<secenek dogru="true">Z = A . B</secenek>
+			<secenek>Z = ½</secenek> 
+			<secenek>Hiçbiri</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Aþaðýdakilerden hangisi VEYA iþlemidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = A / B</secenek> 
+			<secenek>Z = A . B</secenek> 
+			<secenek dogru="true">Z = A + B</secenek>
+			<secenek>Z = (A * B)</secenek> 
+			<secenek>Z = 1</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Dört (4) giriþli bir mantýk kapýsýnýn doðruluk tablosundaki giriþ olasýlýklarýnýn sayýsý aþaðýdaki hangi formülle hesaplanýr?  </sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">2^4</secenek> 
+			<secenek>2^2</secenek> 
+			<secenek>2^1</secenek>
+			<secenek>2^0</secenek> 
+			<secenek>Hiçbiri</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>Üç (3) giriþli bir mantýk kapýsýnýn doðruluk tablosunda kaç farklý giriþ olasýlýðý yeralmalýdýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Üç</secenek> 
+			<secenek>Beþ</secenek> 
+			<secenek>Altý</secenek>
+			<secenek>Yedi</secenek> 
+			<secenek dogru="true">Sekiz</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Aþaðýdakilerden hangisi “tampon kapýsý” mantýk denklemidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>B = A + C</secenek> 
+			<secenek>B = (A + C)</secenek> 
+			<secenek>B = A + B</secenek>
+			<secenek dogru="true">B = A</secenek> 
+			<secenek>B = 1</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Giriþ deðiþkenleri A = 1 ve B = 0 olan bir VE kapýsýnýn Z çýkýþ deðiþkeninin deðeri ne olur?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Z = 0</secenek> 
+			<secenek>Z = 1</secenek> 
+			<secenek>Z = 10</secenek>
+			<secenek>Z = 01</secenek> 
+			<secenek>Z = ½</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Giriþ deðiþkenleri A = 1 ve B = 0 olan bir VEYA kapýsýnýn Z çýkýþ deðiþkeninin deðeri ne olur? </sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = 0</secenek> 
+			<secenek dogru="true">Z = 1</secenek> 
+			<secenek>Z = 10</secenek>
+			<secenek>Z = 01</secenek> 
+			<secenek>Hiçbiri</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>Beþ giriþli bir VEYA kapýsýnýn mantýk denklemi aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = A + B </secenek> 
+			<secenek>Z = A + B + C</secenek> 
+			<secenek>Z = A . B . C</secenek>
+			<secenek dogru="true">Z = A + B + C + D + E</secenek> 
+			<secenek>Z = A . B . C . D . E</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Bir VE kapýsýnýn çýkýþý DEÐÝL kapýsýnýn giriþine baðlanarak elde edilen mantýk kapýsý aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>DEÐÝL Kapýsý</secenek> 
+			<secenek dogru="true">VEDEÐÝL Kapýsý</secenek> 
+			<secenek>VEYADEÐÝL Kapýsý</secenek>
+			<secenek>DEÐÝLVE Kapýsý</secenek> 
+			<secenek>DEÐÝLVEYA Kapýsý</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Üç giriþli bir VEDEÐÝL kapýsýnýn mantýk denklemi aþaðýdakilerden hangisidir? </sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = A + B + C </secenek> 
+			<secenek>Z = A . B . C</secenek> 
+			<secenek>Z = A + B + C + D + E</secenek>
+			<secenek dogru="true">Z = (A . B . C)'</secenek> 
+			<secenek>Z = (A + B + C)'</secenek> 
+		</secenekler>
+	</soru>
+
+
+
+
+</quiz>

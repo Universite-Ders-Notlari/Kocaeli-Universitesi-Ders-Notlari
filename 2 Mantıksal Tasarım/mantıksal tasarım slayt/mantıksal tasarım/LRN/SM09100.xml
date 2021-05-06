@@ -1,0 +1,118 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Eþlik devrelerinin kullanýlma amacý nedir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Veri yollama</secenek> 
+			<secenek>Veri tümleme</secenek> 
+			<secenek>Ýkil eþleme</secenek>
+			<secenek dogru="true">Hata denetimi</secenek> 
+			<secenek>Aritmetik denetimi</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Kaç çeþit eþlik vardýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek> 
+			<secenek>4</secenek>
+			<secenek>5</secenek> 
+			<secenek>10</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Tek eþlik tanýmý aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Ýletilen bütün ikili kodlar tek sayýdaki 1-ikillerinden oluþur.</secenek> 
+			<secenek>Ýletilen bütün ikili kodlar tek sayýdaki 0-ikillerinden oluþur.</secenek> 
+			<secenek>Ýletilen bütün ikili kodlar çift sayýdaki 1-ikillerinden oluþur.</secenek>
+			<secenek>Ýletilen bütün ikili kodlar çift sayýdaki 0-ikillerinden oluþur.</secenek> 
+			<secenek>Ýletilen bütün ikili kodlar çift sayýdaki 11’lerden oluþur.</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>Çift eþlik devresinde iletilen 0011 verisi için eþlik deðeri nedir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>1100</secenek> 
+			<secenek>01</secenek> 
+			<secenek>0011</secenek>
+			<secenek dogru="true">0</secenek> 
+			<secenek>1</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Tek eþlik devresinde iletilen 110001100 verisi için eþlik deðeri nedir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>11</secenek> 
+			<secenek dogru="true">1</secenek> 
+			<secenek>0</secenek>
+			<secenek>00</secenek> 
+			<secenek>1100</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>4-ikil eþlik devresinin kaç çýkýþý vardýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>12</secenek> 
+			<secenek dogru="true">2</secenek> 
+			<secenek>3</secenek>
+			<secenek>4</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Bir aritmetik mantýk birimi genel olarak aþaðýdaki hangi bloklardan oluþur? </sorumetni>
+		<secenekler type="radio">
+			<secenek>Toplama, Çýkarma, Tümleme</secenek> 
+			<secenek>Toplama, Tümleme</secenek> 
+			<secenek>Aritmetik, Mantýk</secenek>
+			<secenek dogru="true">Aritmetik, Mantýk, Karþýlaþtýrma</secenek> 
+			<secenek>Toplama, VE, DEÐÝL</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>4-ikil aritmetik mantýk biriminin veri giriþi sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>4</secenek> 
+			<secenek>6</secenek> 
+			<secenek dogru="true">8</secenek>
+			<secenek>12</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>8-ikil aritmetik mantýk biriminin iþlem “sonuç” çýkýþlarýnýn sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>4</secenek> 
+			<secenek dogru="true">8</secenek> 
+			<secenek>16</secenek>
+			<secenek>32</secenek> 
+			<secenek>64</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>6 farklý aritmetik iþlem yapan bir aritmetik mantýk biriminde iþlem seçimi için kaç tane seçici hattýna gerek vardýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2</secenek> 
+			<secenek dogru="true">3</secenek> 
+			<secenek>4</secenek>
+			<secenek>6</secenek> 
+			<secenek>8</secenek> 
+		</secenekler>
+	</soru>
+
+
+
+
+</quiz>

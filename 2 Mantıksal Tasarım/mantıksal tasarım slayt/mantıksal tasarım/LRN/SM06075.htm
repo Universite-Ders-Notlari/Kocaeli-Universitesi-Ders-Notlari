@@ -1,0 +1,57 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="875">
+  <tr valign="top"> 
+    <td width="77%" height="1436"> 
+      <p class="baslik">6.3.6. İki-İkillik Toplayıcı Devresi Tasarımı</p>
+      <p>Koşut ikili toplayıcılar, toplanacak sayıların ikil sayısına göre sınıflandırılmaktadır. 
+        2 - ikillik sayılar toplanacak ise, toplayıcı mantık devresi <b>2 - ikillik 
+        koşut ikili toplayıcı</b> olarak adlandırılır. Benzer şekilde 4 - ikillik 
+        sayıları toplayan toplayıcıya ise <b>4 - ikillik koşut ikili toplayıcı</b> 
+        denir. Koşut ikili toplayıcılar, her büyüklükte olabilir ve toplanacak 
+        sayıların büyüklüğü dışında devre işlevi ve tasarımı bakımından aralarında 
+        bir fark yoktur. Aşağıdaki şekilde 2 - ikillik koşut toplayıcının mantık 
+        sembolü verilmektedir.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B06/SM06075.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/SM06075.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p>Devre iki tane 2 - ikillik sayıyı toplayacaktır. Bu sayılar <img src="pics/B06/636.gif" width="64" height="27" align="absmiddle"> 
+        ve <img src="pics/B06/636_1.gif" width="64" height="27" align="absmiddle"> 
+        sayılarıdır. A ve B sayıları toplandığında 2 - ikillik toplam sayısı <img src="pics/B06/636_2.gif" width="55" height="27" align="absmiddle"> 
+        ve bir elde çıkışı (E) oluşur.</p>
+      <p>Şimdi bu iki sayının toplama işlemini inceleyelim:</p>
+      <p><img src="pics/B06/636_3.gif" width="63" height="99"></p>
+      <p>Görüldüğü gibi sayıların en az anlamlı ikilleri (A sayısının en az anlamlı 
+        ikili A<sub>0</sub>, B sayısının en az anlamlı ikili B<sub>0</sub>) birbiriyle ve en çok anlamlı 
+        ikiller de (A sayısının en çok anlamlı ikili A<sub>1</sub>, B sayısının en çok anlamlı 
+        ikili B<sub>1</sub>) birbiriyle toplanmaktadır.</p>
+      <p>Yukarıdaki toplama işlemi bir yarım - toplayıcı ve bir tam - toplayıcı 
+        kullanılarak gerçekleştirilir.</p>
+      <p><br>
+        Yarım - toplayıcı ile yapılan toplama işlemi:<br>
+      </p>
+      <p><img src="pics/B06/636_4.gif" width="52" height="96"> </p>
+      <p>Tam - toplayıcı ile yapılan toplama işlemi ise:</p>
+      <p><img src="pics/B06/636_5.gif" width="51" height="99"></p>
+      <p>Aşağıdaki şekilde, 2 - ikillik iki sayıyı toplayan 2 - ikillik koşut 
+        toplayıcının mantık devresi gösterilmektedir.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B06/SM06075_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/SM06075_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

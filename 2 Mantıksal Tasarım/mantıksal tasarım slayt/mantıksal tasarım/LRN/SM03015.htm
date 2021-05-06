@@ -1,0 +1,96 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="1406">
+  <tr valign="top"> 
+    <td width="80%" height="1871"> 
+      <p><span class="baslik">3.2.1. Doğruluk Tabloları</span><br>
+        <br>
+        Önce <b>Z = (A &middot; B) + C</b> çıkış fonksiyonuna ilişkin doğruluk 
+        tablosu oluşturalım. Doğruluk tablosu, bağımsız değişkenlerin (A, B, C) 
+        aldıkları değerlere göre, her mantık kapısının çıkışının ayrı ayrı incelenmesiyle 
+        oluşturulur. Tablonun en solunda çıkışı (Z) oluşturan bağımsız değişkenler, 
+        en sağında ise çıkış değişkeni (Z) yer alır. Mantık kapılarına ilişkin 
+        çıkış fonksiyonları ise, tablonun orta bölümünde yardımcı adımlar olarak 
+        yerleştirilir. Üç tane bağımsız değişken (A, B, C) olduğuna göre <b>2<sup>n</sup></b> 
+        formülünde <b>n=3</b> olacağından <b>2<sup>3</sup>=8</b> bulunur. Anlamı 
+        ise, 8 farklı olası giriş birleşiminin tabloda yer alması gerektiğidir. 
+        Bu 8 farklı giriş birleşimi ve Z çıkışına ilişkin doğruluk tablosu aşağıda 
+        verilmektedir:</p>
+      <p class="imgdesc">Tablo - Doğruluk Tablosu Giriş Birleşimleri</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03015_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03015_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p>Görüldüğü üzere, olası giriş birleşimleri 8 tanedir. Son satırın 7 sayısıyla 
+        numaralandırılmasının nedeni, ilk satırın 0 ile başlatılması ve toplam 
+        8 satır olmasıdır. A, B, C bağımsız giriş değişkenlerinin aldıkları bu 
+        durumlar satır satır incelenir ve her satır için <b>A &middot; B</b> değeri 
+        ve <b>(A &middot; B)+C</b> değeri hesaplanır. Örneğin ilk satır için;</p>
+      <blockquote> 
+        <p>A = 0<br>
+          B = 0<br>
+          C = 0</p>
+      </blockquote>
+      <p> şeklindedir. <b>A &middot; B</b> değeri için A ve B'nin değerleri yerleştirilerek, 
+        <b>0 &middot; 0</b> işleminden 0 sonucu bulunur. Benzer şekilde <b>(A 
+        &middot; B) + C</b> için ise <b>(0 &middot; 0)+0</b> işleminin sonucu 
+        0 olacaktır. </p>
+      <p>İkinci satır için devam edersek; </p>
+      <blockquote>
+        <p>A = 0 <br>
+          B = 0<br>
+          C = 1 </p>
+      </blockquote>
+      <p>şeklindedir. <b>A &middot; B</b> değeri, <b>0 &middot; 0</b> işleminden 
+        0 olarak bulunur. <b>(A &middot; B) + C</b> işleminde ise, <b>(0 &middot; 
+        0)+1</b>'den 1 hesaplanır.</p>
+      <p>Üçüncü, dördüncü,.........., onbeşinci satırlar için de aynı işlemlere 
+        devam edilerek, tablonun bütün satırlarına ilişkin değerler hesaplanarak 
+        yerleştirilir ve doğruluk tablosu tamamlanır.</p>
+      <p><span class="imgdesc">Tablo - Z Çıkış Fonksiyonuna İlişkin Doğruluk Tablosu 
+        (Tamamlanmış Tablo)</span></p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03015_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03015_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="content">Benzer şekilde, <b>Y = (<img src="pics/B03/degil_d_bold.gif" width="8" height="12"> 
+        + E) &middot; F &middot; <img src="pics/B03/degil_g_bold.gif" width="7" height="12"></b> 
+        çıkış denklemine ilişkin durum tablosunu oluşturabiliriz. Tablonun en 
+        solunda D, E, F, G bağımsız değişkenleri, en sağında Y çıkış değişkeni 
+        ve orta kademelerde ise mantık kapılarının çıkış fonksiyonları yer alacaktır. 
+        Y çıkışı 4 adet giriş değişkenine bağlı olduğundan, <b>2<sup>n</sup></b> 
+        formülünde bu defa <b>n=4</b> olur ve <b>2<sup>4</sup>=16</b> adet olası 
+        giriş birleşimi tabloda belirtilmelidir. Bu ise tablonun 16 satır olacağını 
+        gösterir.</p>
+      <p class="imgdesc">Tablo - Doğruluk Tablosu Olası Giriş Birleşimleri</p>
+      <p class="imgdesc"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03015_3.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03015_3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="content">Olası giriş birleşimlerinin 16 tane olduğu görülmektedir. 
+        Son satırın 15 sayısıyla numaralandırılmasının nedeni, ilk satırın 0 ile 
+        başlaması ve toplam 16 satır olmasıdır.</p>
+      <p class="imgdesc">Tablo - Y Çıkış Fonksiyonuna İlişkin Doğruluk Tablosu</p>
+      <p class="imgdesc"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03015_4.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03015_4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

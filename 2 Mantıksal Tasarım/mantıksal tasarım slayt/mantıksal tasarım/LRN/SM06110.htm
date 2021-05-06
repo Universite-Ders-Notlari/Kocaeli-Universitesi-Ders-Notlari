@@ -1,0 +1,82 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="903">
+  <tr valign="top">
+    <td width="23%" height="1141"> 
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+          <param name=movie value="pics/B06/SM06110_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/SM06110_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">X eşitlik çıkışına ilişkin K - haritası</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+          <param name=movie value="pics/B06/SM06110_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/SM06110_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Büyüktür çıkışına (Y çıkışı) ilişkin K - haritası ve 
+        komşu 1'lerin grupları</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+          <param name=movie value="pics/B06/SM06110_3.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/SM06110_3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Küçüktür çıkışına (Z çıkışı) ilişkin K - haritası ve 
+        komşu 1'lerin grupları</p>
+    </td>
+    <td width="77%" height="1141"> 
+      <p class="baslik">6.5.1.2. İki-İkillik Karşılaştırma Devresi Çıkışlarının 
+        Sadeleştirilmesi</p>
+      <p>Doğruluk tablosundan X, Y ve Z çıkış değişkenlerine ilişkin 1 değerleri 
+        K - haritalarına yerleştirilerek sadeleştirme işlemleri yapılır. Yandaki 
+        şekilde X eşitlik çıkışına ilişkin K - haritası verilmiştir.</p>
+      <p>K - haritasından görüldüğü üzere, hiçbir 1 hücresi birbirine komşu değildir, 
+        bütün 1 hücreleri çarpraz olarak yerleşmiştir, dolayısıyla X çıkışında 
+        K - haritasıyla bir sadeleştirme mümkün değildir. X çıkış denklemi:</p>
+      <p><img src="pics/B06/6512.gif" width="355" height="31"></p>
+      <p>Ancak iki sayının eşit olmasını sağlayan koşulları düşünerek bazı sadeleştirmeler 
+        yapma olanağı olabilir. </p>
+      <p>A ve B sayılarının eşit olması demek, bu iki sayının ikillerinin eşit 
+        olması demektir. Bu durumu aşağıdaki gibi yazabiliriz:</p>
+      <p><img src="pics/B06/6512_1.gif" width="139" height="72"></p>
+      <p>olmak zorundadır.</p>
+      <p>Bu durumda Özel - VEYA mantık kapısının çalışmasını düşünürsek, bu mantık 
+        kapısında girişlerin ikisi de aynı değerde olduğunda çıkış 0 olmakta, 
+        ancak girişler birbirinden farklı ise çıkış 1 olmaktadır. Bu özelliğinen 
+        dolayı, X çıkışını sadeleştirmek için Özel - VEYA kapısı kullanılabilir.</p>
+      <p>A ve B sayıları birbirine eşitse bu durumda;<br>
+      </p>
+      <p><img src="pics/B06/6512_2.gif" width="84" height="72"> </p>
+      <p>yazılabilir.</p>
+      <p>Burada tasarlanan karşılaştırma devresi ise iki sayının eşitlik durumunda 
+        X çıkışında 1 üreteceği için, yukarıdaki Özel - VEYA işlemlerine DEĞİL 
+        işlemini uygulamak gerekir. Sonuçta X çıkışına ilişkin sadeleşmiş mantık 
+        denklemi aşağıdaki gibi bulunur:</p>
+      <p><img src="pics/B06/6512_3.gif" width="177" height="29"></p>
+      <p>Bu denklem önceki X denkleminden daha az sayıda mantık kapısı gerektirir.</p>
+      <p>Büyüktür çıkışına (Y çıkışı) ilişkin Karnaugh - haritası ve komşu 1'lerin 
+        grupları yandaki şekilde gösterilmektedir.</p>
+      <p>Yukarıdaki şekilden gruplara ilişkin terimlerin toplamı alınarak Y çıkışına 
+        ilişkin sadeleşmiş mantık denklemi bulunur:</p>
+      <p><img src="pics/B06/6512_4.gif" width="208" height="31"></p>
+      <p>Küçüktür çıkışına (Z çıkışı) ilişkin Karnaugh - haritası ve komşu 1'lerin 
+        grupları yanda verilmektedir.</p>
+      <p>Yukarıdaki şekilden gruplara ilişkin terimler toplanarak Z çıkışına ilişkin 
+        sadeleşmiş mantık denklemi bulunur.<br>
+      </p>
+      <p><img src="pics/B06/6512_5.gif" width="205" height="31"><br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
