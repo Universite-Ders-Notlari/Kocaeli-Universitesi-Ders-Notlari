@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="15">
+  <tr class="content"> 
+    <td>
+      <p class="baslik">1.1.2.1. Örnek 1.3</p>
+      <p class="baslik"><img src="pics/B01/fimg0114.GIF" width="461" height="332"></p>
+      <p><strong>M<sub>1.3</sub></strong>’ün tanımında görüldüğü gibi, deterministik 
+        olmayan modelde bazı durumlardan bazı giriş simgeleri ile birden çok duruma 
+        geçilebilmektedir. Bazı durumlardan bazı giriş simgeleri ile de hiçbir 
+        duruma geçilememektedir. Bu nedenle, deterministik modelde, başlangıç 
+        durumu ve uygulanan giriş dizgisi bilindiğinde makinenin hangi durumda 
+        bulunacağı kesin olarak bellidir. Buna karşılık, deterministik olmayan 
+        modelde başlangıç durumu ve uygulanan giriş dizgisi bilinen makinenin 
+        son durumu belirsiz olabilir. Örneğin başlangıç durumu <strong>q<sub>0</sub></strong> 
+        olan <strong>M<sub>1.3</sub></strong>’e <strong>w </strong>=<strong> 000</strong> 
+        giriş dizgisi uygulandığında, makinenin son durumu <strong>q<sub>0</sub></strong>, 
+        <strong>q<sub>1</sub></strong> ve <strong>q<sub>3</sub></strong> durumlarından 
+        herhangi biri olabilir.</p>
+      <p class="yonelt">! Animasyonu izlemek için &quot;Çalıştır&quot; düğmesine 
+        tıklayınız.</p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="300">
+          <param name="movie" value="pics/B01/1_1_2e.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_1_2e.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300"></embed> 
+        </object>
+      </p>
+      <p class="imgdesc">Çizim 1.4. <strong>M<sub>1.3</sub></strong>’ün Deterministik 
+        Olmayan Geçiş Çizeneği </p>
+      <p>Deterministik olmayan bir sonlu özdevinirin (NFA) bir giriş dizgisini 
+        tanıması için, geçiş çizeneğinde, bu giriş dizgisi için, başlangıç durumundan 
+        başlayarak bir uç duruma ulaşan bir yol bulunabilmesi gerekir. Örneğin 
+        <strong>M<sub>1.3</sub></strong>, <strong>w</strong> = <strong>10001</strong> 
+        giriş dizgisini tanır. Çünkü bu giriş dizgisine karşı gelen ve <strong>q<sub>0</sub></strong>’dan 
+        başlayarak tek uç durum olan <strong>q<sub>3</sub></strong>’te son bulan 
+        bir yol </p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B01/1_1_2F.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_1_2F.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140"></embed> 
+        </object>
+      </p>
+      <p>bulunabilmektedir. Buna karşılık <strong>M<sub>1.3</sub></strong>, <strong>w</strong> 
+        = <strong>010</strong> giriş dizgisini tanımaz. Çünkü <strong>q<sub>0</sub></strong> 
+        ve <strong>q<sub>3</sub></strong> durumları arasında bu giriş dizgisine 
+        karşı gelen bir yol bulmak mümkün değildir.</p>
+      <p> Deterministik olmayan geçiş çizeneklerinin oluşturulması ve okunması, 
+        deterministik çizeneklere göre daha kolaydır. Örneğin Çizim 1.4 incelendiğinde, 
+        <strong>M<sub>1.3</sub></strong>’ün tanıdığı kümenin “<strong>{ 0, 1 }</strong> 
+        alfabesinde, içinde <strong>00</strong> ya da <strong>11</strong> altdizgisi 
+        bulunan dizgiler kümesi” olduğu kolaylıkla bulunabilr. Oysa Çizim 1.3 
+        incelenerek, <strong>M<sub>1.2</sub></strong>’nin tanıdığı kümeyi bulmak, 
+        başka bir deyişle Çizim 1.3’deki deterministik geçiş çizeneğini oluşturmak 
+        hiç de kolay değildir. Bir karşılaştırma olanağı sağlamak için Çizim 1.5’de 
+        <strong>M<sub>1.1</sub></strong> ve <strong>M<sub>1.2</sub></strong>’nin 
+        deterministik olmayan geçiş çizenekleri verilmiştir.</p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="300">
+          <param name="movie" value="pics/B01/1_1_2g.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_1_2g.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300"></embed> 
+        </object>
+      </p>
+      <p><span class="imgdesc">Çizim 1.5. M<sub>1.1</sub> ve M<sub>1.2</sub>’nin 
+        Deterministik Olmayan Geçiş Çizenekleri</span></p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

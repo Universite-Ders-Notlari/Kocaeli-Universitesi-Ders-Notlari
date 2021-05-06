@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">7.2.3. LR(k) Dilbilgileri</p>
+      <p>LR(k) adlandırmasında: </p>
+      <p class="yonelt">! Açıklamaların devamını görmek için &quot;Devam&quot; 
+        düğmesine tıklayınız.</p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B07/BD07060.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07060.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140"></embed> 
+        </object>
+      </p>
+      <p>Bilindiği gibi aşağıdan-yukarıya ayrıştırmada, ayrıştırılacak sözcük 
+        <strong>(w)</strong> üzerinde bir dizi indirgeme (reduction) yapılarak 
+        dilbilgisinin başlangıç simgesi elde edilmeye çalışılır. Bunun için başlangıçta 
+        <strong>w = uv </strong>olarak bölünür ve örüntü eşleme (pattern matching) 
+        tekniği ile, sağ tarafı <strong>u</strong>’nun soneki olan bir yeniden 
+        yazma kuralı bulunmaya çalışılır. Ancak bu işlem deterministik olmayan 
+        ve belirsizlik düzeyi yüksek bir işlemdir. Çünkü öncelikle <strong>w</strong>’nin 
+        <strong>uv</strong> biçiminde bölünmesi tek değildir. Ayrıca sağ tarafı 
+        <strong>u</strong>’nun son ekine eşit birden çok yeniden yazma kuralı 
+        bulunabilir. Bu nedenle aşağıdan-yukarıya ayrıştırma algoritması deterministik 
+        olmayan bir algoritmadır. LR(k) ayrıştırma ise, <strong>k </strong>ileri 
+        bakış simgesi ile aşağıdan yukarıya ayrıştırmanın deterministik bir biçimde 
+        yütütüldüğü bir ayrıştırmadır. </p>
+      <p>Aşağıdan-yukarıya ayrıştırma algoritması, yukarıdan-aşağıya ayrıştırma 
+        algoritmasına göre daha karmaşık ve belirsizlik düzeyi daha yüksek bir 
+        algoritmadır. Buna paralel olarak LR(k) ayrıştırma da, LL(k) ayrıştırmaya 
+        göre daha karmaşık bir ayrıştırmadır. Bu nedenle eğer bir dilbilgisi hem 
+        LL(k), hem de LR(k) dilbilgisi ise, bu dilbilgisi için LL(k) ayrıştırma 
+        tercih edilir. LR(k) olan, ancak LL(k) olmayan dilbilgileri için ise, 
+        deterministik ayrıştırma yapılmak istendiğinde LR(k) ayrıştırma tek seçenektir.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

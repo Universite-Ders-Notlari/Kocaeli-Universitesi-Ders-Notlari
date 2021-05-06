@@ -1,0 +1,380 @@
+﻿1
+00:00:02,160 --> 00:00:03,780
+Hi, I'm Jonas
+
+2
+00:00:03,780 --> 00:00:05,779
+Do you know what open source is?
+
+3
+00:00:06,340 --> 00:00:07,779
+Well, let me explain it for you
+
+4
+00:00:08,119 --> 00:00:11,879
+Basically, it means that the recipe, of any given work
+
+5
+00:00:11,940 --> 00:00:14,600
+is shared and free for anybody to use
+
+6
+00:00:15,460 --> 00:00:17,420
+Let me take you back where it all started
+
+7
+00:00:18,120 --> 00:00:19,280
+In the 1880's
+
+8
+00:00:19,420 --> 00:00:23,500
+A guy named Richard Stallmann had a problem with the software in his printer
+
+9
+00:00:24,060 --> 00:00:25,840
+He could fix the printer himself
+
+10
+00:00:25,900 --> 00:00:31,119
+But unfortunately, he was not allowed to get inside "the black box" by the manufacturer
+
+11
+00:00:31,580 --> 00:00:35,519
+This frustration was the beginning of the Free and Open Source movements
+
+12
+00:00:36,380 --> 00:00:39,220
+The essential benefits of Open Source are:
+
+13
+00:00:39,220 --> 00:00:42,740
+Access to the source, or recipe, of any given work
+
+14
+00:00:43,020 --> 00:00:46,180
+Free remix and redistribution of any given work
+
+15
+00:00:46,340 --> 00:00:48,880
+An end to predatory vendor lock-in
+
+16
+00:00:48,980 --> 00:00:51,599
+And a higher degree of cooperation
+
+17
+00:00:52,420 --> 00:00:55,880
+Open Source is originally a software related term
+
+18
+00:00:56,240 --> 00:00:59,080
+- but let's take a nontechnical example of where
+
+19
+00:00:59,100 --> 00:01:02,000
+the open source mindset is actually used today
+
+20
+00:01:02,480 --> 00:01:03,160
+Here's Dave
+
+21
+00:01:03,240 --> 00:01:05,320
+He is a really passionate skateboarder
+
+22
+00:01:05,319 --> 00:01:09,360
+He loves the community because everyone share tips and tricks, openly
+
+23
+00:01:09,960 --> 00:01:14,660
+This means that everybody has access to the source of becoming a better skateboarder
+
+24
+00:01:15,060 --> 00:01:20,060
+Dave has the opportunity of remixing an existing trick and making it even better
+
+25
+00:01:20,220 --> 00:01:22,400
+He becomes more skilled, faster
+
+26
+00:01:23,200 --> 00:01:24,780
+If Dave's skateboard breaks
+
+27
+00:01:24,860 --> 00:01:28,240
+he doesn't necessarily have to go back to the vendor to get it fixed
+
+28
+00:01:28,240 --> 00:01:32,039
+He can also fix it himself with the help of one of his friends from the community
+
+29
+00:01:32,260 --> 00:01:35,720
+This is because the design of the skateboard is Open Source
+
+30
+00:01:36,140 --> 00:01:40,560
+In the skateboard community you share new ideas and remix each others tricks
+
+31
+00:01:40,920 --> 00:01:45,680
+You cooperate and reach much higher standards than any skateboarder could reach alone
+
+32
+00:01:46,100 --> 00:01:47,839
+Now, let's take another example
+
+33
+00:01:48,040 --> 00:01:49,500
+Here's Susan and Michael
+
+34
+00:01:49,640 --> 00:01:52,660
+They have just bought a new property and now need a new house
+
+35
+00:01:52,960 --> 00:01:55,640
+John is an Open Source architect
+
+36
+00:01:55,780 --> 00:02:00,000
+and offers three designs that Susan and Michael can base their dream house on
+
+37
+00:02:00,660 --> 00:02:03,940
+They choose option A, because it best fits their needs
+
+38
+00:02:04,660 --> 00:02:07,100
+But Susan wants a conservatory as well
+
+39
+00:02:07,300 --> 00:02:08,340
+so Michael draws one
+
+40
+00:02:08,400 --> 00:02:11,400
+and adds that as an extension to their chosen house design
+
+41
+00:02:11,460 --> 00:02:12,520
+- option A
+
+42
+00:02:12,820 --> 00:02:16,060
+Susan and Michael choose Company A to help build the house
+
+43
+00:02:16,420 --> 00:02:19,019
+It should be easy for Company A to build it
+
+44
+00:02:19,080 --> 00:02:22,980
+because the architectural drawings and guidelines are already produced
+
+45
+00:02:23,020 --> 00:02:25,300
+- by John the Open Source architect
+
+46
+00:02:25,300 --> 00:02:26,420
+But during the process
+
+47
+00:02:26,520 --> 00:02:28,060
+Susan and Michael find out
+
+48
+00:02:28,140 --> 00:02:31,799
+that Company A's employees are very slow and not very polite
+
+49
+00:02:32,160 --> 00:02:35,060
+They therefore get Company B to finish the work
+
+50
+00:02:35,440 --> 00:02:37,880
+It's easy for Company B to take over the project
+
+51
+00:02:38,000 --> 00:02:40,920
+because everything is openly documented
+
+52
+00:02:40,920 --> 00:02:45,160
+Fortunately Company B does an amazing job of completing the construction project
+
+53
+00:02:45,780 --> 00:02:46,800
+In the meantime
+
+54
+00:02:46,860 --> 00:02:49,880
+Koko and Jun have shared a new solar cell design
+
+55
+00:02:49,960 --> 00:02:52,120
+as an extension to option A as well
+
+56
+00:02:52,520 --> 00:02:55,820
+Susan and Michael also decide to add that to their home
+
+57
+00:02:58,200 --> 00:03:02,780
+Susan and Michael are now happy owners of a beautiful and customized new home
+
+58
+00:03:02,900 --> 00:03:04,360
+But John is also happy
+
+59
+00:03:04,500 --> 00:03:08,380
+He can now add two new extensions to his professional portfolio
+
+60
+00:03:08,460 --> 00:03:10,300
+- without having done anything himself
+
+61
+00:03:10,820 --> 00:03:15,060
+So now, I have given you a taste of some of the many benefits of Open Source
+
+62
+00:03:15,180 --> 00:03:16,460
+But before I leave you
+
+63
+00:03:16,520 --> 00:03:19,520
+I have to put an end to some of the myths that still exist
+
+64
+00:03:20,140 --> 00:03:20,859
+First
+
+65
+00:03:20,920 --> 00:03:22,980
+You have no control over your work
+
+66
+00:03:23,280 --> 00:03:24,640
+That's not true
+
+67
+00:03:24,780 --> 00:03:28,040
+As the initiator, John - the Open Source architect
+
+68
+00:03:28,120 --> 00:03:32,540
+verifies extensions and chooses what can be added to his specific project
+
+69
+00:03:32,620 --> 00:03:35,740
+and therefore also decides where the project is heading
+
+70
+00:03:36,560 --> 00:03:37,200
+Second
+
+71
+00:03:37,540 --> 00:03:40,060
+Open = Unsafe
+
+72
+00:03:40,400 --> 00:03:41,340
+Not true
+
+73
+00:03:41,640 --> 00:03:43,299
+In an Open Source project
+
+74
+00:03:43,380 --> 00:03:44,700
+many people are involved
+
+75
+00:03:44,800 --> 00:03:47,380
+and cooperate to make an even safer product
+
+76
+00:03:47,460 --> 00:03:49,880
+and to keep unauthorized people out
+
+77
+00:03:50,420 --> 00:03:51,440
+And third
+
+78
+00:03:51,440 --> 00:03:53,140
+Everything is free
+
+79
+00:03:53,340 --> 00:03:54,000
+No
+
+80
+00:03:54,140 --> 00:03:56,760
+the source itself is free and publicly available
+
+81
+00:03:57,000 --> 00:04:01,700
+but the house must, for example, still be built, customized, maintained
+
+82
+00:04:01,800 --> 00:04:04,340
+and provided with water, power and heat
+
+83
+00:04:04,340 --> 00:04:07,940
+Hopefully, you can now better understand the positive term; Open Source
+
+84
+00:04:08,000 --> 00:04:09,240
+and the principles within
+
+85
+00:04:09,660 --> 00:04:11,200
+Please, start opening up
+
+86
+00:04:11,300 --> 00:04:14,020
+and use the extreme beneficial principles
+
+87
+00:04:14,100 --> 00:04:15,480
+the way they deserve
+
+88
+00:04:15,620 --> 00:04:17,480
+As mentioned, my name is Jonas
+
+89
+00:04:17,560 --> 00:04:19,560
+and I'm representing BIT BLUEPRINT
+
+90
+00:04:19,680 --> 00:04:23,540
+We have, in collaboration with Moving Monday, made this video
+
+91
+00:04:23,580 --> 00:04:27,240
+to help scale the positive principles within the Open Source paradigm
+
+92
+00:04:27,240 --> 00:04:30,360
+We have, of course, made this video free for everyone
+
+93
+00:04:30,420 --> 00:04:32,300
+to use, modify and share
+
+94
+00:04:32,380 --> 00:04:33,740
+- so feel free to do that
+
+95
+00:04:34,160 --> 00:04:35,240
+Thanks for watching!
+

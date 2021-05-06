@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td valign="top" width="215"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="215" height="140">
+        <param name="movie" value="pics/B01/BD01050b.swf">
+        <param name="quality" value="high">
+        <embed src="pics/B01/BD01050b.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="215" height="140">
+        </embed> 
+      </object></td>
+    <td valign="top"> 
+      <p class="baslik">1.1.3. Lambda (<img src="pics/symbols/outfuncBig.gif" width="19" height="27" align="absmiddle">) 
+        Geçişi</p>
+      <p>Sonlu özdevinirlerde durum geçişleri, giriş simgelerinin işlenmesi ile 
+        gerçekleşir. Makine belli bir durumdayken, bir giriş simgesinin uygulanması 
+        makinenin bir sonraki duruma geçmesine neden olur. Geçiş işlevi ile tanımlanan 
+        “sonraki durum” deterministik modelde tek bir durumdur. Deterministik 
+        olmayan modelde ise “sonraki durum” durumlar kümesinin bir altkümesi olup 
+        bu altkümede sıfır, bir ya da birçok durum bulunabilir. Şimdiye kadar 
+        yapılan tanımlara göre, DFA ya da NFA modeline uygun bir makine, giriş 
+        simgesi uygulanmadığı sürece bulunduğu durumu korur. </p>
+    </td>
+  </tr>
+  <tr> 
+    <td colspan="2"> 
+      <p>Lambda (<img src="pics/symbols/outfunc.gif" width="13" height="16" align="absmiddle">) 
+        geçişi ile, deterministik olmayan modelle genişletilen ve kullanımı kolaylaştırılan 
+        sonlu özdevinir tanımı daha da genişletilir. Lambda ve lambda-geçişi soyut 
+        kavramlardır. Lambda boş simge olarak düşünülebilir. Lambda-geçişi ise, 
+        hiçbir giriş simgesi uygulanmadan (ya da işlenmeden) gerçekleşen durum 
+        geçişine karşı gelir. Bir makinenin <strong>q<sub>1</sub></strong> ve 
+        <strong>q<sub>2</sub></strong> durumları arasında <img src="pics/B01/fimg0118.GIF" width="110" height="32" align="absmiddle"> 
+        biçiminde tanımlanan <img src="pics/symbols/outfunc.gif" width="13" height="16" align="top">-geçişi 
+        varsa, <strong>q<sub>1</sub></strong> durumunda bulunan makinenin, hiçbir 
+        giriş simgesi işlenmeden, kendiliğinden <strong>q<sub>2</sub></strong> 
+        durumuna geçebileceği anlaşılır. </p>
+      <p>Lambda geçişi, modelin esnekliğini arttıran; geçiş çizeneklerinin daha 
+        kolay oluşturulmasını ve okunmasını sağlayan soyut bir kavramdır. Diğer 
+        geçişler gibi, lambda geçişi de tek yönlüdür. <strong>q<sub>1</sub></strong> 
+        ve <strong>q<sub>2</sub></strong> durumları arasındaki, <strong>q<sub>1</sub></strong>’den 
+        <strong>q<sub>2</sub></strong>’ye <img src="pics/symbols/outfunc.gif" width="13" height="16" align="absmiddle">-geçişi, 
+        hiçbir giriş simgesi uygulanmadan makinenin <strong>q<sub>1</sub></strong> 
+        durumundan <strong>q<sub>2</sub></strong> durumuna geçebileceği gösterir. 
+        Buna göre, <strong>q<sub>1</sub></strong> durumunda bulunan makinenin 
+        aynı zamanda <strong>q<sub>2</sub></strong> durumunda da bulunduğu anlamı 
+        çıkar. Ancak bunun tersi doğru değildir. </p>
+      <p><strong>q<sub>1</sub></strong> ve <strong>q<sub>2</sub></strong> durumları 
+        arasında, <strong>q<sub>1</sub></strong>’den <strong>q<sub>2</sub></strong>’ye 
+        <img src="pics/symbols/outfunc.gif" width="13" height="16" align="absmiddle">-geçişi 
+        varsa, işlevsel olarak:</p>
+      <ul>
+        <li>eğer <strong>q<sub>1</sub></strong> başlangıç durumu ise, <strong>q<sub>2</sub></strong> de başlangıç durumu, </li>
+        <li>eğer <strong>q<sub>2</sub></strong> bir uç durum ise, <strong>q<sub>1</sub></strong> de 
+          bir uç durum </li>
+      </ul>
+      <p>niteliği kazanır.</p>
+      </td>
+  </tr>
+</table>
+
+</body>
+</html>

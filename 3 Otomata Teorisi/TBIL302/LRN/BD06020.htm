@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content">
+      <p class="baslik">6.1.1. Turing Makinelerinin Temel Modeli</p>
+      <p>Biçimsel olarak, Turing makinesinin temel modeli bir yedili olarak tanımlanır. 
+      </p>
+      <p><img src="pics/B06/fimg0601_1.gif" width="241" height="42"> </p>
+      <blockquote> 
+        <p><img src="pics/symbols/q.gif" width="16" height="19"> : Sonlu sayıda 
+          durum içeren Durumlar Kümesi</p>
+        <p> <img src="pics/symbols/yigitalf.GIF" width="16" height="16"> : Sonlu 
+          sayıda giriş simgesinden oluşan Giriş Alfabesi</p>
+        <p> <strong>q<sub>0</sub></strong> : Sonlu sayıda simge içeren Şerit Alfabesi. 
+          Şerit alfabesi, giriş alfabesinin tüm simgelerini içeren bir kümedir:<img src="pics/B06/fimg0601_2.gif" width="63" height="25" align="absmiddle"> 
+        </p>
+        <p> <strong>q<sub>0</sub></strong> : Başlangıç durumu <strong>(q<sub>0</sub> 
+          <img src="pics/symbols/element.gif" width="13" height="15" align="absmiddle"> 
+          <img src="pics/symbols/q.gif" width="16" height="19" align="absmiddle">)<br>
+          </strong> Başlangıç durumu durumlar kümesinin bir elemanı olduğuna göre 
+          <strong><img src="pics/symbols/q.gif" width="16" height="19" align="absmiddle"></strong> 
+          boş olmayan bir kümedir.</p>
+        <p> <strong>B</strong>: Şerit alfabesindeki simgelerden blank olarak adlandırılan 
+          özel bir simge. <strong>B</strong> şerit alfabesinde yer alan ancak 
+          giriş alfabesinde yer almayan bir simgedir:<img src="pics/B06/fimg0601_3.gif" width="145" height="20" align="absmiddle"></p>
+        <p>
+          <strong>F</strong> : Uç durumlar kümesi <br>
+          Durumlar kümesinin bir altkümesidir : <img src="pics/B06/fimg0601_4.gif" width="69" height="28" align="absmiddle"></p>
+        <p> <img src="pics/symbols/trnsfunc.gif" width="11" height="16" align="absmiddle"> 
+          : Geçiş ya da hareket işlevi (transition or move function)<br>
+          Turing makinelerinin temel modeli deterministik bir modeldir. Bu modelde, 
+          hareket işlevi</p>
+        <p> <img src="pics/B06/fimg0601_5.gif" width="284" height="29"></p>
+        <p> bir eşleme oluşturur. Bu tanımda yer alan L ve R simgeleri, hareketin 
+          sonunda okuma kafasının bir sağdaki <strong>(R)</strong> ya da bir soldaki 
+          <strong>(L)</strong> hücreye geçeceğini gösterir. Okuma kafasının hareketiyle 
+          ilgili seçenekler arasına “sağa/sola hareket etmeyip aynı hücre üzerinde 
+          kalma<strong> (S)</strong>” seçeneğini eklemek ve iki elemanlı <strong>{ 
+          L, R }</strong> kümesi yerine üç seçenekli <strong>{ L, R, S }</strong> 
+          kümesini kullanmak da mümkündür. Ancak bu kitapta çoğunlukla <strong>{ 
+          L, R }</strong> kümesi kullanılacak ve Turing makineleri oluşturulurken, 
+          okuma kafasının her harekette bir sağ ya da bir sol hücreye geçmesi 
+          sağlanacaktır. Buna göre Turing makinesinin hareketleri aşağıdaki örneklerde 
+          görüldüğü gibi tanımlanacak, istenirse hareketler bir çizenekle de gösterilecektir.</p>
+      </blockquote>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B06/6_1_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/6_1_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object></p>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

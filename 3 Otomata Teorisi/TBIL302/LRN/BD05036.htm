@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">5.1.4.1. Örnek 5.1</p>
+      <strong>L<sub>5.1</sub></strong> dili aşağıdaki gibi tanımlanıyor:
+<p><img src="pics/B05/fimg0505.GIF" width="295" height="35"></p>
+      <p>Bu dili türeten bir dilbilgisi aşağıdaki gibi tanımlanabilir:</p>
+      <p><img src="pics/B05/fimg0506.GIF" width="267" height="141"></p>
+      <p>L<sub>5.1</sub>’i tanıyan PDA’yı tanımlayalım:</p>
+      <p><img src="pics/B05/fimg0507.GIF" width="301" height="171"></p>
+      <p><span class="altbaslik">PDA’nın çalışma ilkesi:</span> PDA’nın tanıdığı 
+        dizgiler, <strong>{0, 1}</strong> alfabesindeki herhangi bir <strong>w</strong> 
+        altdizgisi ile bunun tersinden oluşmaktadır. <strong>w</strong> ile <strong>w<sup>R</sup></strong> 
+        arasında da “<strong>c</strong>” simgesi yer almaktadır. Bu dizgileri 
+        tanıyan PDA: </p>      
+      <ul>
+        <li> Önce <strong>w</strong>’nin simgelerini okur ve okuduğu her simgeyi 
+          yığıta ekler. Ekleme sırasında PDA <strong>q<sub>0</sub></strong> durumunda 
+          bulunur.</li>
+        <li> <strong>c</strong>’yi okuduğunda, <strong>w</strong>’nin bittiğini 
+          anlar, yığıtta bir değişiklik yapmaz ve durum değiştirerek <strong>q<sub>1</sub></strong> 
+          durumuna geçer.</li>
+        <li> Sonra <strong>w<sup>R</sup></strong>’nin simgelerini okur, ve okuduğu 
+          her simge için eğer yığıtın tepesinde aynı simge varsa bunu yığıttan 
+          çıkarır (siler). </li>
+        <li> Giriş dizgisinin tüm simgeleri okunduktan sonra, eğer yığıtın tepesinde 
+          <strong>Z<sub>0</sub></strong> varsa, bunu da siler ve yığıtı tamamen 
+          boşaltır.</li>
+      </ul>
+      <p>Yukarıda sözlü olarak tanımlanan işlemleri yapan PDA’nın hareket işlevi 
+        biçimsel olarak aşağıdaki gibi tanımlanır:</p>
+      <p><img src="pics/B05/fimg0558.GIF" width="460" height="262"></p>
+      <p>Örnek olarak verilen <strong>M<sub>5.1</sub></strong> deterministik bir 
+        PDA’dır.</p>      
+      <p>PDA’nın hareket işlevi yukarıdaki gibi tanımlanabileceği gibi, bir çizenek 
+        ile de tanımlanabilir (Çizim 5.2). Çizenekte, her hareket iki durum arasındaki 
+        bir yay ile gösterilmekte ve yayın üzerine bir üçlü yazılmaktadır. Üçlünün 
+        birinci elemanı şeritten okunan giriş simgesini, ikinci elemanı yığıtın 
+        tepesinde bulunan ve silinen yığıt simgesini, üçüncü elemanı ise yığıta 
+        eklenen yığıt simgeleri dizgisini göstermektedir. Bu üçlü ingilizce sözcüklerle 
+        kısaca “read, pop, push” üçlüsü olarak gösterilebilir. Temel PDA modeline 
+        göre (Bkz. 5.1) bu üçlünün birinci ve sonuncu elemanı <img src="pics/symbols/outfunc.gif" width="13" height="16" align="absmiddle"> 
+        olabilir. </p>
+      <p>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="400">
+          <param name="movie" value="pics/B05/BD05035_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B05/BD05035_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="400"></embed> 
+        </object>
+      </p>
+      <p class="imgdesc">Çizim 5.2. L<sub>5.1</sub> Dilini Tanıyan PDA’nın (M<sub>5.1</sub>) 
+        Geçiş Çizeneği</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

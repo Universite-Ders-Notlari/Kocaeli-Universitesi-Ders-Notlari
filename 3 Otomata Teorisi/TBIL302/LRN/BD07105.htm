@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">7.2.4.5. LR(1) Ayrıştırma Sürecinin 
+        Yürütülmesi</p>
+      <p> LR(1) ayrıştırma işlemi, aşağıdan-yukarıya ayrıştırmaya uygun olarak 
+        oluşturulan PDA(<img src="pics/symbols/OkYu.GIF" align="absmiddle">) modeli 
+        ile LR(1) ayrıştırma çizelgesi kullanılarak gerçekleştirilir. LR(1) ayrıştırma 
+        çizelgesi ile, PDA(<img src="pics/symbols/OkYu.GIF" align="absmiddle">) 
+        modelinin taşıdığı belirsizlik (kaydırma mı yoksa indirgeme mi yapılacak? 
+        İndirgeme yapılcaksa hangi kurala göre yapılacak?) çözülür ve ayrıştırma 
+        işlemi deterministik bir işleme dönüştürülür. Her kaydırma işleminden 
+        sonra hangi duruma gidileceği ayrıştırma çizelgesinde yer almaktadır. 
+        Her indirgeme işleminden sonra hangi duruma gidileceği ise ayrıştırma 
+        çizelgesinde yer almaz. Bunun ayrıştırma sırasında dinamik biçimde bulunması 
+        gerekir. Bunun için de, kaydırma işlemlerinde, yığıta bir simge eklenirken, 
+        kaydırma işleminin hangi durumda yapıldığı bilgisinin de yığıta eklenmesi 
+        gerekir. Ayrıştırma sürecinin nasıl yürütüldüğünü ve her indirgeme işleminden 
+        sonra hangi duruma gidileceğinin nasıl bulunduğu bir örnek üzerinde açıklanacaktır. 
+      </p>
+      <p>Örnek olarak <strong>G<sub>7.6</sub></strong> dilbilgisi tarafından türetilmiş olan <br>
+        <strong>w = aaabcc</strong> <br>
+        tümcesi için ayrıştırma sürecinin nasıl yürütüleceği incelenecektir. Ayrıştırma 
+        işlemlerinde Çizim 7.3’deki PDA(<img src="pics/symbols/OkYu.GIF" align="absmiddle">) 
+        modeli ile Çizelge 7.3’de yer alan ayrıştırma çizelgesi kullanılır.</p>
+      <ol>
+        <li> Başlangıçta PDA <strong>q<sub>0</sub></strong> durumundadır, yığıtta 
+          <strong>Z<sub>0</sub></strong> simgesi vardır, okuma kafası <strong>w</strong>’nin 
+          ilk simgesi <strong>(a)</strong> üzerindedir. Ayrıştırıcı ise 1 numaralı 
+          durumdadır (ayrıştırma çizelgesinin 1. satırı).</li>
+        <li> İlk işlem olarak <strong>w</strong>’nin ilk simgesi <strong>(a)</strong> 
+          yığıta kaydırılır. Kaydırma işlemi 1 numaralı durumda yapıldığı için, 
+          yığıta <strong>a</strong> simgesinin yanına durum numarası olarak da 
+          <strong>1</strong> yazılır. Kaydırma işleminden sonra ayrıştırıcı 2' 
+          numaralı duruma gider.</li>
+        <li> İkinci yapılan işlem <strong>w</strong>’nin ikinci simgesinin <strong>(a)</strong> 
+          yığıta kaydırılmasıdır. Kaydırma işlemi 2' numaralı durumda yapıldığı 
+          için, yığıta <strong>a</strong> simgesinin yanına durum numarası olarak 
+          2' yazılır. Kaydırma işleminden sonra ayrıştırıcı 2 numaralı duruma 
+          gider.</li>
+        <li>Üçüncü işlem olarak <strong>w</strong>’nin üçüncü simgesi <strong>(a)</strong> 
+          yığıta kaydırılır. Kaydırma işlemi 2 numaralı durumda yapıldığı için, 
+          yığıta <strong>a</strong> simgesinin yanına durum numarası olarak 2 
+          yazılır. Kaydırma işleminden sonra ayrıştırıcı 2 numaralı durumda kalır.</li>
+        <li> Dördüncü işlem olarak <strong>w</strong>’nin dördüncü simgesi<strong> 
+          (b)</strong> yığıta kaydırılır. Kaydırma işlemi 2 numaralı durumda yapıldığı 
+          için, yığıta<strong> b</strong> simgesinin yanına durum numarası olarak 
+          da 2 yazılır. Kaydırma işleminden sonra ayrıştırıcı 3 numaralı duruma 
+          gider.</li>
+        <li> Ayrıştırıcı 3 numaralı durumda bulunduğu, ileri bakış simgesi de 
+          <strong>w</strong>’nin beşinci simgesi <strong>(c)</strong> olduğu için, 
+          beşinci olarak yapılacak işlem<strong> (ab <img src="pics/symbols/ok.gif" align="absmiddle">A)</strong> 
+          indirgeme işlemidir. Bunun için yığıttan <strong>ab</strong> çıkarılır 
+          ve yığıta <strong>A</strong> eklenir. Yığıttan <strong>ab</strong> çıkarıldığında 
+          2 numaralı duruma dönülmüş olur. Çünkü <strong>ab</strong>’nin ilk simgesi 
+          olan <strong>a</strong> yığıta 2 numaralı durumda eklenmiştir. Ayrıştırma 
+          çizelgesine göre 2 numaralı durumda A işlendiği için de ayrıştırıcı 
+          5 numaralı duruma geçer.</li>
+        <li> İndirgeme işleminde giriş şeridi değişmediği için ileri bakış simgesi 
+          (<strong>w</strong>’nin beşinci simgesi olan <strong>c</strong>) de 
+          değişmemiştir. Ayrıştırıcı da 5 numaralı durumda bulunduğu için altıncı 
+          işlem olarak <strong>w</strong>’nin beşinci simgesi <strong>(c)</strong> 
+          yığıta kaydırılır. Kaydırma işlemi 5 numaralı durumda yapıldığı için, 
+          yığıta <strong>c</strong> simgesinin yanına durum numarası olarak da 
+          5 yazılır. Kaydırma işleminden sonra ayrıştırıcı 7 numaralı duruma gider.</li>
+        <li> Ayrıştırıcı 7 numaralı durumda bulunduğu, ileri bakış simgesi de 
+          <strong>w</strong>’nin son simgesi <strong>(c)</strong> olduğu için, 
+          yedinci olarak yapılacak işlem <strong>(aAc <img src="pics/symbols/ok.gif" align="absmiddle">S)</strong> 
+          indirgeme işlemidir. Bunun için yığıttan <strong>aAc</strong> çıkarılır 
+          ve yığıta <strong>S</strong> eklenir. Yığıttan <strong>aAc</strong> 
+          çıkarıldığında 2' numaralı duruma dönülmüş olur. Çünkü <strong>aSc</strong>’nin 
+          ilk simgesi olan <strong>a</strong> yığıta 2' numaralı durumda eklenmiştir. 
+          Ayrıştırma çizelgesine göre 2' numaralı durumda <strong>S</strong> işlendiği 
+          için de ayrıştırıcı 4 numaralı duruma geçer.</li>
+        <li> İndirgeme işleminde giriş şeridi değişmediğ için ileri bakış simgesi 
+          (<strong>w</strong>’nin son simgesi olan <strong>c</strong>) de değişmemiştir. 
+          Ayrıştırıcı da 4 numaralı durumda bulunduğu için sekizinci işlem olarak 
+          <strong>w</strong>’nin son simgesi <strong>(c)</strong> yığıta kaydırılır. 
+          Kaydırma işlemi 4 numaralı durumda yapıldığı için, yığıta <strong>c</strong> 
+          simgesinin yanına durum numarası olarak da 4 yazılır. Kaydırma işleminden 
+          sonra ayrıştırıcı 6 numaralı duruma gider.</li>
+        <li> Ayrıştırıcı 6 numaralı durumda bulunduğu, ileri bakış simgesi de 
+          <strong>ds</strong> (dizgi sonu) olduğu için, dokuzuncu olarak yapılacak 
+          işlem <strong>(aSc <img src="pics/symbols/ok.gif" align="absmiddle"> 
+          S)</strong> indirgeme işlemidir. Bunun için yığıttan <strong>aSc</strong> 
+          çıkarılır ve yığıta <strong>S</strong> eklenir. Yığıttan <strong>aSc</strong> 
+          çıkarıldığında 1 numaralı duruma dönülmüş olur. Çünkü <strong>aSc</strong>’nin 
+          ilk simgesi olan <strong>a</strong> yığıta 1 numaralı durumda eklenmiştir. 
+          Ayrıştırma çizelgesine göre 1 numaralı durumda <strong>S</strong> işlendiği 
+          için de ayrıştırıcı 9 numaralı duruma geçer.</li>
+        <li> Ayrıştırıcı 9 numaralı durumda bulunduğu, ileri bakış simgesi de 
+          <strong>ds</strong> olduğu için ayrıştırma süreci biter ve <strong>(w 
+          = aaabcc)</strong> tümcesi kabul edilir.</li>
+      </ol>
+      <p>Yukarıda ayrıntılı olarak anlatılan ayrıştırma sürecini, aşağıdaki çizimle 
+        özetlemek mümkündür.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="320">
+          <param name=movie value="pics/B07/BD07105.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07105.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="320">
+          </embed> 
+        </object></p>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

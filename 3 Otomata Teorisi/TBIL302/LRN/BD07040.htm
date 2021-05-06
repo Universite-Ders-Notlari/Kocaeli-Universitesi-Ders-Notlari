@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">7.2.1. LL(k) Dilbilgileri</p>
+      <p> LL(k) adlandırmasında:</p>
+      <ul>
+        <li> ilk L ayrıştırılacak sözcüğün soldan sağa doğru tarandığını, </li>
+        <li> ikinci L, ayrıştırıcının soldan (sol öncelikli) türetme gerçekleştirdiğini,</li>
+        <li> k ise ileri-bakış simgesi sayısını</li>
+      </ul>
+      <p> gösterir. Buna göre bağlamdan-bağımsız bir dilbilgisinin <strong>LL(k)</strong> 
+        dilbilgisi olması, bu dilbilgisi tarafından türetilen tümcelerin, soldan-sağa 
+        doğru taranarak ve k ileri-bakış simgesi kullanılarak, yukarıdan-aşağıya 
+        türetme ile deterministik olarak ayrıştırılabileceğini gösterir. </p>
+      <p>Yukarıdan-aşağıya ayrıştırma işlemlerinde ileri-bakış tekniğinin kullanılmasını 
+        bir örnekle göstermeye çalışalım. Örnek olarak <strong>G<sub>7.3</sub></strong> 
+        ile türetilen <strong>w = aababbaba</strong> sözcüğünün ayrıştırılmasını 
+        düşünelim. Bu dilbilgisinin üç <strong>S</strong> kuralı vardır. Ayrıştırma 
+        işleminin deterministik olmasını sağlamak için, ayrıştırmanın her adımında 
+        tek bir yeniden yazma kuralı kullanılabilmelidir. <strong>w</strong>’nin 
+        ilk simgesi <strong>a</strong>’dır. <strong>S</strong> kurallarından ilk 
+        ikisi kullanılarak <strong>a</strong> ile başlayan tümceler türetilebilir. 
+        Ancak <strong>(S <img src="pics/symbols/ok.gif" align="absmiddle"> B)</strong> 
+        kuralı kullanılarak <strong>a</strong> ile başlayan tümceler türetilemez. 
+        Böylece <strong>w</strong>’nin ilk simgesine baktığımızda kullanılabilecek 
+        kural sayısını üçten ikiye indirebiliriz. Ancak bu deterministik ayrıştırma 
+        için yeterli değildir. Oysa <strong>w</strong>’nin ilk iki simgesine baktığımızda, 
+        <strong>aa</strong> ile başlayan tümcenin türetilebilmesi için ilk olarak 
+        <strong>(S <img src="pics/symbols/ok.gif" align="absmiddle"> aS)</strong> 
+        kuralının kullanılması gerektiği görülür. <strong>S <img src="pics/symbols/ok.gif" align="absmiddle"> 
+        aS</strong> kuralı ile <strong>w</strong>’nin ilk simgesi türetilmiş olur. 
+        Bu aşamada sonraki iki simge <strong>ab</strong>’dir. <strong>ab</strong> 
+        simgeleri, <strong>S</strong> kuralarından <strong>(S <img src="pics/symbols/ok.gif" align="absmiddle"> 
+        aS)</strong> ya da <strong>(S <img src="pics/symbols/ok.gif" align="absmiddle"> 
+        AB)</strong>’nin kullanılabileceğini gösterir; ancak bu iki kuraldan hangisinin 
+        kullanılacağına karar vermek için yetersiz kalır. Demek ki, <strong>G<sub>7.3</sub></strong> 
+        dilbilgisi tarafından türetilen tümceler yukarıdan-aşağıya ayrıştırılırken, 
+        ayrıştırmanın deterministik olması için iki ileri-bakış simgesi de yeterli 
+        değildir. Başka bir deyişle <strong>G<sub>7.3</sub></strong> bir <strong>LL(2)</strong> 
+        dilbilgisi değildir. Aslında bu dilbilgisi bir <strong>LL(k)</strong> 
+        dilbilgisi değildir.<strong> w = ababababab….</strong> örneğini düşünelim. 
+        Bu sözcüğün türetilmesimde kullanılan ilk kural <strong>(S <img src="pics/symbols/ok.gif" align="absmiddle"> 
+        aS)</strong> ya da <strong>(S <img src="pics/symbols/ok.gif" align="absmiddle"> 
+        AB)</strong> olabilir. Bu iki kuraldan hangisinin kullanıldığını belirleyebilmek 
+        için ya sözcük sonunu ya da <strong>bb</strong> örüntüsünü görmek gerekir. 
+      </p>
+      <p class="yonelt">! Örneğin çözümlerini incelemek için &quot;1. Adım&quot;, 
+        &quot;2. Adım&quot; düğmelerine tıklayınız.</p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B07/BD07040.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07040.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300"> 
+          </embed> </object>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

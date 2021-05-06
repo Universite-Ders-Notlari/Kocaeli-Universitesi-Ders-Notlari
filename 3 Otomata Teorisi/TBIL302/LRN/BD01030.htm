@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr>
+    <td class="content"><p class="baslik">1.1.1.2. DFA’nın Tanıdığı Dizgiler Kümesi</p>
+      <p class="content">Tanımlanan modele göre, DFA’nın girişine her seferinde 
+        bir giriş simgesi uygulanır. Her giriş simgesi DFA’nın bir sonraki duruma 
+        geçmesine neden olur. DFA, bulunduğu durumu yeni bir giriş simgesi uygulanana 
+        kadar korur. Uygulanan giriş simgelerinin sayısı ne kadar çok olursa olsun, 
+        deterministik olduğu için model çalışır. Başlangıçta <strong>q<sub>0</sub></strong> 
+        durumunda bulunan DFA, belirli sayıda giriş simgesinden oluşan bir dizginin 
+        (string) uygulanmasından sonra belli bir duruma ulaşır. Uygulanan giriş 
+        dizgisini <strong>w</strong>, bu dizgi uygulandıktan sonra DFA’nın ulaştığı 
+        durumu da <strong>q<sub>i</sub></strong> ile gösterlelim. <strong>q<sub>0</sub></strong>, 
+        <strong>w</strong> ve <strong>q<sub>i</sub></strong> arasındaki ilişkiyi, 
+        durum geçiş işlevini kullanarak ve bu işlevin anlamını biraz genişleterek 
+        aşağıdaki gibi gösterebiliriz:</p>
+      <p class="content"><img src="pics/B01/fimg0106.GIF" width="110" height="32"></p>
+      <p class="content"><strong>q<sub>0</sub></strong> durumundan başlayan ve 
+        <strong>w</strong> giriş dizgisinin uygulanmasından sonra <strong>q<sub>i</sub></strong> 
+        durumuna ulaşan DFA, eğer <strong>q<sub>i</sub></strong> bir uç durum 
+        ise <strong>w</strong> giriş dizgisini tanır. Giriş alfabesi <img src="pics/B01/fimg0107.GIF" width="152" height="25" align="absmiddle"> 
+        olan bir DFA’ya uygulanabilecek giriş dizgileri kümesi sonsuz bir kümedir. 
+        Giriş alfabesindeki simgelerden oluşan sonlu ya da sonsuz uzunluktaki 
+        her dizgi bu kümede yer alır. Giriş alfabesindeki simgelerden oluşan dizgilerin 
+        bir kısmı DFA tarafından tanınan, diğer bir kısmı ise tanınmayan dizgilerdir. 
+        Bu aşamada, bir sonlu özdevinir <strong>(M)</strong> tarafından tanınan 
+        dizgiler kümesini aşağıdaki gibi tanımlamak mümkündür:</p>
+      <p class="content"><img src="pics/B01/fimg0108.GIF" width="289" height="31"></p>
+      <p>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B01/1_1_1_2_.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_1_1_2_.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140"></embed> 
+        </object>
+      </p>
+      <p>Buna göre DFA’ya uygulanabilecek dizgiler kümesi, DFA tarafından tanınan 
+        ve tanınmayan olmak üzere, iki altkümeye ayrılmaktadır. DFA’nın tanıdığı 
+        küme, DFA’yı başlangıç durumundan bir uç duruma götüren dizgilerin kümesidir. 
+        Örnek 1.1’de tanımlanan DFA’yı <strong>(M<sub>1.1</sub>)</strong> incelersek, 
+        örneğin <strong>0101</strong> dizgisinin <strong>M<sub>1.1</sub></strong> 
+        tarafından tanınmadığını; buna karşılık <strong>0110</strong> dizgisinin 
+        M<sub>1.1</sub> tarafından tanındığını görürüz. Çünkü <strong>q<sub>0</sub></strong> 
+        durumundan başlayan <strong>M<sub>1.1</sub></strong>, <strong>0101</strong> 
+        uygulandıktan sonra <strong>q<sub>1</sub></strong> durumuna ulaşır ve 
+        <strong>q<sub>1</sub></strong> bir uç durum değildir. Buna karşılık <strong>0110</strong> 
+        dizgisi <strong>M<sub>1.1</sub></strong>’i başlangıç durumundan <strong>q<sub>2</sub></strong> 
+        durumuna götürür ve <strong>q<sub>2</sub></strong> bir uç durumdur. <strong>M<sub>1.1</sub></strong>’in 
+        tanıdığı dizgiler kümesi sonsuz bir kümedir. Bu kümedeki dizgilerden birkaç 
+        örnek aşağıda gösterilmiştir.</p>
+      <p class="content"><strong>T(M<sub>1</sub>) = { 11, 011, 110, 0110, 0110, 
+        01011, … } </strong></p>
+      <p>Çizim 1.1’deki geçiş çizeneği incelendiğinde, bir dizginin <strong>M<sub>1.1</sub></strong> 
+        tarafından tanınabilmesi için, dizgide ardarda iki tane <strong>1</strong> 
+        bulunmasının gerekli ve yeterli olduğu görülür. Buna göre, <strong>T(M<sub>1.1</sub>)</strong> 
+        sözlü olarak, <strong>{ 0, 1 }</strong> alfabesinde, içinde <strong>11</strong> 
+        altdizgisi bulunan dizgiler kümesi olarak tanımlanabilir.<br>
+      </p></td>
+  </tr>
+</table>
+</body>
+</html>

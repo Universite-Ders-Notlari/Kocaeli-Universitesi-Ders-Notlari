@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15">
+  <tr> 
+    <td height="114" class="content" colspan="2">
+      <p class="baslik">1.3.2.1. Mealy Makinelerinin İndirgenmesi</p>
+      <p> Mealy makinelerinin indirgenmesi <strong>M<sub>1.11</sub></strong> makinesi 
+        örnek alınarak incelenecektir. Daha önce belirtildiği gibi, hiçbir giriş 
+        uygulanmadan Mealy makinesinin durumları ayırdedilemez. Başka bir deyişle 
+        Mealy makinesinin tüm durumları 0-denktir.<br><br>
+        <strong>P<sub>0</sub> = (ABCDEFG)</strong> </p>
+      <p><strong>P<sub>1</sub></strong> denklik bölümlemesini bulmak için durum 
+        çizelgesinin incelenmesi yeterlidir. <strong>M<sub>1.11</sub></strong>’in 
+        durum çizelgesinde, <strong>E</strong> dışındaki tüm durumlar için, x 
+        geçişi sırasında üretilen çıkış değerinin birinci kolonda <strong>0</strong>, 
+        ikinci kolonda ise <strong>1</strong> olduğu görülür. Buna göre <strong>E</strong> 
+        dışındaki durumlar 1-denktir.<br><br>
+        <strong>P<sub>1</sub> = (ABCDFG)(E)</strong></p>
+      <p><strong>P<sub>2</sub></strong> denklik bölümlemesini bulmak için Teorem 
+        1.3’den yararlanılır. <strong>M<sub>1.11</sub></strong> makinesinin iki 
+        durumunun 2-denk olabilmesi için, hem bu iki durumun, hem de bu iki durumun 
+        <strong>0</strong> ve <strong>1</strong>-ardıllarının 1-denk olması; bunun 
+        için de<strong> P<sub>1</sub></strong> denklik bölümlemesinde aynı bölümde 
+        bulunması gerekir. </p>
+      <p> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B01/1_3_2_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_3_2_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object> </p>
+      <p><strong>P<sub>1</sub></strong> bölümlemesinde aynı bölümde bulunan <strong>ABCDFG</strong> 
+        durumlarının<strong> 0</strong>-ardılları,<strong> P<sub>1</sub></strong> 
+        bölümlemesinde aynı bölümde yer aldığı için, 1-denktir. Ancak bu durumlarının 
+        <strong>1</strong> ardıllarının tümü 1-denk değildir. Burdan, <strong>ADF</strong> 
+        durumlarının kendi aralarında, <strong>BCG</strong> durumlarının da kendi 
+        aralarında 2-denk olduğu anlaşılır ve aşağıdaki <strong>P<sub>2</sub></strong> 
+        denklik bölümlemesi elde edilir:<br>
+        <strong>P<sub>2</sub> = (ADF)(BCG)(E)</strong></p>
+      <p><br>
+        <strong>P<sub>3</sub> </strong>denklik bölümlemesini bulmak için <strong>ADF</strong> 
+        ve <strong>BCG</strong> durumlarının <strong>0</strong> ve <strong>1</strong>-ardılları 
+        incelenir: </p>
+      <p> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B01/1_3_2_1_b.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_3_2_1_b.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object> </p>
+      <p>Yapılan incemede<strong> ADF</strong> durumlarının <strong>1</strong> 
+        ardıllarının <strong>P<sub>2</sub></strong>’de aynı bölümde yer aldığı, 
+        ancak <strong>0</strong>-ardıllarının<strong> P<sub>2</sub></strong>’de 
+        aynı bölümde yer almadığı görülür. Bu nedenle<strong> DF</strong> durumlarının 
+        3-denk olduğu, ancak <strong>A</strong> durumunun <strong>D</strong> ve 
+        <strong>F</strong> durumlarına 3-denk olmadığı anlaşılır ve <strong>P<sub>3</sub></strong>’de 
+        <strong>A</strong> durumu <strong>DF</strong> durumlarından ayrılır. <strong>BCG</strong> 
+        durumlarına gelince, bu durumların hem <strong>0</strong> hem de <strong>1</strong>-ardılları<strong> 
+        P<sub>2</sub></strong>’de aynı bölümde yer almaktadır. Buna göre <strong>BCG</strong> 
+        durumları 3 denk durumlardır ve <strong>P<sub>3</sub></strong><sub> </sub>denklik 
+        bölümlemesinde aynı bölümde yer alacaklardır. Sonuç olarak<strong> P<sub>3</sub></strong><sub> 
+        </sub>denklik bölümlemesi aşağıdaki gibi oluşur:<br><br>
+        <strong>P<sub>3</sub> = (A)(DF)(BCG)(E)</strong></p>
+      <p><strong>P<sub>4</sub></strong><sub> </sub>denklik bölümlemesini bulmak 
+        için <strong>DF</strong> ve <strong>BCG</strong> durumlarının <strong>0</strong> 
+        ve <strong>1</strong>-ardıllarını incelemek gerekir. <strong>BCG</strong> 
+        durumlarının, daha önce incelenen ve yukarıda yer alan <strong>0</strong> 
+        ve <strong>1</strong> ardılları <strong>P<sub>3</sub></strong>’de de aynı 
+        bölümde yer almaktadır. Bu nedenle <strong>BCG </strong>durumları <strong>P<sub>4</sub></strong>’de 
+        de aynı bölümde yer alacaktır. </p>
+      <p> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="140">
+          <param name="movie" value="pics/B01/1_3_2_1_c.swf">
+          <param name=quality value=high>
+          <embed src="pics/B01/1_3_2_1_c.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object> </p>
+      </td>
+  </tr>
+  <tr> 
+    <td width="215" class="content" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="215" height="300">
+        <param name="movie" value="pics/B01/1_3_2_1_d.swf">
+        <param name=quality value=high>
+        <embed src="pics/B01/1_3_2_1_d.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+        </embed> 
+      </object></td>
+    <td class="content" valign="top"> 
+      <p class="content"><strong>DF</strong> durumlarının ardılları incelendiğinde 
+        ise, bu iki durumun <strong>0</strong> ve <strong>1</strong> ardıllarının<strong> 
+        P<sub>3</sub></strong>’de aynı bölümde yer aldığı görülür. Bu nedenle<strong> 
+        DF</strong> durumları <strong>P<sub>4</sub></strong>’de aynı bölümde yer 
+        alacaktır. Sonuç olarak, <strong>P<sub>4</sub></strong> denklik bölümlemesi 
+        <strong>P<sub>3</sub></strong>'e eşittir.<br><br>
+        <strong>P<sub>4</sub> = P<sub>3</sub> = (A)(DF)(BCG)(E)</strong></p>
+      <p>Böylece M<sub>1.11 </sub>makinesinin denklik bölümlemesi:<br><br>
+        <strong>P = (A)(DF)(BCG)(E)</strong></p>
+      <p>olarak elde edilir. Denklik bölümlemesinde 4 bölüm olduğu için, <strong>M<sub>1.11</sub></strong>’e 
+        denk en küçük makinenin 4 durumu olacaktır. En küçük makinenin durumları:<br><br>
+        <strong>A</strong> için <strong>S<sub>0</sub></strong><sub>,</sub><br>
+        <strong>DF</strong> için <strong>S<sub>1</sub></strong>,<br>
+        <strong>BCG</strong> için <strong>S<sub>2</sub></strong>,<br>
+        <strong>E</strong> için <strong>S<sub>3</sub></strong></p>
+      <p>diye adlandırılırsa, <strong>M<sub>1.11</sub></strong> makinesine denk 
+        en küçük makinenin durum çizelgesi yandaki gibi bulunur. </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">5.1.4.3. <span class="baslik">Örnek 
+        5.3</span></p>
+      <p><strong>L<sub>5.3</sub></strong> dili, <strong>{ 0, 1 }</strong> alfabesindeki 
+        palindram’ları içeren dil olarak tanımlanıyor. Palindram, her iki yönden 
+        okunuşu aynı olan dizgiler kümesidir. Türkçedeki palindram’lara örnek 
+        olarak ebe, aba, kok, talat, kepek, teğet, kelek,.. gibi sözcükler verilebilir. 
+        <strong>{0, 1}</strong> alfabesindeki palindramlara örnek olarak ise<strong> 
+        <img src="pics/symbols/outfunc.gif" align="absmiddle">, 0, 1, 00, 11, 
+        000, 010, 100001, 101101,.. </strong>gibi dizgiler sayılabilir. <strong>{ 
+        0, 1 }</strong> alfabesindeki palindramlar, biçimsel olarak aşağıdaki 
+        gibi tanımlanabilir: </p>
+      <p><img src="pics/B05/fimg0513.GIF" width="431" height="56"></p>
+      <p>Bu dili türeten bir dilbilgisi aşağıdaki gibi tanımlanabilir:</p>
+      <p><img src="pics/B05/fimg0513a.gif" width="340" height="146"></p>
+      <p><strong>L<sub>5.3</sub></strong>’ü tanıyan PDA’yı tanımlayalım:</p>
+      <p><img src="pics/B05/fimg0513b.gif" width="274" height="145"></p>
+      <p><span class="altbaslik">PDA’nın çalışma ilkesi:</span> PDA’nın tanıdığı 
+        dizgiler, <strong>{0, 1}</strong> alfabesindeki herhangi bir w altdizgisi 
+        ile bunun tersinden oluşmaktadır. <strong>w</strong> ile <strong>w<sup>R</sup></strong> 
+        arasında herhangi bir simge yer almayabileceği gibi, <strong>0</strong> 
+        ya da <strong>1</strong> simgesi de yer alabilir. Bu dizgileri tanıyan 
+        PDA:</p>      
+      <ul>
+        <li> Önce <strong>w</strong>’nin simgelerini okur ve yığıta ekler. <strong>w</strong>’nin 
+          simgeleri okunurken PDA <strong>q<sub>0</sub> </strong>durumundadır. 
+        </li>
+        <li> <strong>w</strong> bitip, <strong>w<sup>R</sup></strong> başladığında 
+          PDA <strong>q<sub>1</sub></strong> durumuna geçecektir. Ancak giriş 
+          dizgisinde, <strong>w</strong>’nin bitip <strong>w<sup>R</sup></strong>’nin 
+          başladığını belirten özel bir simge yoktur. Okunan simge <strong>w</strong>’nin 
+          bir sonraki simgesi olabileceği gibi, <strong>w</strong> ve <strong>w<sup>R</sup></strong> 
+          arasındaki orta simge ya da <strong>w<sup>R</sup></strong>’nin ilk simgesi 
+          de olabilir. Hareketlerin buna göre tanımlanması gerekir. PDA deterministik 
+          olmayacaktır. </li>
+        <li> Silme durumuna <strong>(q<sub>1</sub>)</strong> geçen PDA <strong>w<sup>R</sup></strong>’nin 
+          simgelerini okur, ve okuduğu her simge için eğer yığıtın tepesinde aynı 
+          simge varsa bunu yığıttan çıkarır (siler). </li>
+        <li> Giriş dizgisinin tüm simgeleri okunduktan sonra, eğer yığıtın tepasinde 
+          <strong>Z<sub>0</sub></strong> varsa, PDA bunu da siler ve yığıtı tamamen 
+          boşaltır.</li>
+      </ul>
+      <p>Yukarıda sözlü olarak tanımlanan işlemleri yapan PDA’nın hareket işlevi 
+        biçimsel olarak aşağıdaki gibi tanımlanır:</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="330">
+          <param name=movie value="pics/B05/BD05038.swf">
+          <param name=quality value=high>
+          <embed src="pics/B05/BD05038.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="330">
+          </embed> 
+        </object></p>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

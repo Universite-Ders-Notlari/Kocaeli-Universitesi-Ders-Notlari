@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">6.4. CHOMSKY SIRADÜZENİ</p>
+      <p> Sonlu özdevinir, yığıtlı özdevinir (PDA) ve Turing makinesi adlarıyla 
+        sunulan üç modelden birincisi sonlu bellekli, diğer ikisi ise sonsuz bellekli 
+        modellerdir. Sonlu özdevinir modelinde bilgi saklamak için kullanılan 
+        açık bir birim yoktur. Modelin saklama kapasitesi durumlarla sınırlıdır. 
+        Durum sayısı sınırlı olduğu için de model sonlu bellekli bir modeldir. 
+        Yığıtlı özdevinir ve Turing makinesi modellerinde ise bilgi saklamak için 
+        kullanılan sonsuz kapasiteli birer birim (yığıt ve şerit) vardır. Sonsuz 
+        bellekli modellerin işlem gücünün sonlu bellekli modelden daha büyük olduğu 
+        açıktır. Sonsuz bellekli modellerde ise, Turing makinesinin gücü yığıtlı 
+        özdevinirden daha büyüktür. Yığıtlı özdevinir ve Turing makinesi modellerinin 
+        işlem gücü açısından farkı bellek kapasitesinden değil, modelin yapısından 
+        kaynaklanmaktadır. Turing makinesi modeli, yığıtlı özdevinir modeline 
+        göre daha güçlü bür modeldir. </p>
+      <p>Biçimsel diller ve biçimsel dillere karşı gelen makine modellerini aşağıdaki 
+        gibi sıralayabiliriz : </p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="300">
+          <param name="movie" value="pics/B06/BD06050_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/BD06050_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300"></embed> 
+        </object>
+      </p>
+      <p>Yukarıdaki çizelgede yer alan biçimsel dil sınıflarının tümü ile makine 
+        sınıflarının üçü bu derste incelenmektedir. Doğrusal-sınırlı özdevinirler 
+        (linear-bounded automata – LBA) olarak adlandırılan makine modeli ise, 
+        diğer üç model kadar yaygın kullanılan bir model olmadığı için bu ders 
+        kapsamına alınmamıştır. Çok kısa olarak LBA modeli, Turing makinesi modelinin 
+        şerit kapasitesi sınırlı bir biçimidir ve şerit kapasitesindeki sınırlama 
+        giriş dizgisi tarafından belirlenir.</p>
+      <p>Biçimsel dil ve makine sınıfları arasındaki ilişki ise aşağıdaki gibi 
+        özetlenebilir :</p>
+      <ol>
+        <li> Sonlu özdevinirler düzgün dilleri tanıyan makinelerdir.</li>
+        <li> Yığıtlı özdevinirler bağlamdan-bağımsız dilleri tanıyan makinelerdir.</li>
+        <li> Doğrusal-sınırlı özdevinirler bağlama-bağımlı dilleri tanıyan makinelerdir.</li>
+        <li> Turing makineleri ise kısıtlamasız dilleri tanıyan makinelerdir.</li>
+      </ol>
+      <p>Yukarıda sıralanan dil sınıfları birbirinden bağımsız değildir. Biçimsel 
+        dil sınıfları arasındaki sıradüzen Chomsky sıradüzeni (Chomsky hierarchy) 
+        olarak bilinir ve kısaca aşağıdaki gibi ifade edilebilir (Çizim 6.2):</p>
+      <ol>
+        <li> Her bağlama-bağımlı dil aynı zamanda bir kısıtlamasız dildir. Başka 
+          bir deyişle bağlama-bağımlı dil sınıfı kısıtlamasız dil sınıfının bir 
+          altsınıfıdır.</li>
+        <li> Her bağlamdan-bağımsız dil aynı zamanda bir bağlama-bağımlı dildir. 
+          Başka bir deyişle bağlamdan-bağımsız dil sınıfı, bağlama-bağımlı dil 
+          sınıfının bir altsınıfıdır.</li>
+        <li> Her düzgün dil aynı zamanda bir bağlamdan-bağımsız dildir. Başka 
+          bir deyişle düzgün diller sınıfı, bağlamdan bağımsız diller sınıfının 
+          bir altsınıfıdır. </li>
+      </ol>
+      <p classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="300"> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="300">
+          <param name="movie" value="pics/B06/BD06050_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B06/BD06050_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300"></embed> 
+        </object>
+      </p>
+      <p class="imgdesc">Çizim 6.2. Biçimsel Dil Sınıfları Sıradüzeni: Chomsky 
+        Sıradüzeni </p></td>
+  </tr>
+</table>
+</body>
+</html>

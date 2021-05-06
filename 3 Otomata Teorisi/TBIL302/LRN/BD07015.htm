@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"><p class="baslik">7.1. AYRIŞTIRMA İŞLEMLERİ (PARSING) 
+      </p>
+      <p>Ayrıştırma işleminin amacı, verilen bir tümcenin <strong>(w)</strong>, 
+        belirli bir dilbilgisi <strong>(G)</strong> tarafından türetilip türetilmediğinin 
+        bulunması; eğer tümce dilbilgisi tarafından türetilmiş ise de nasıl türetildiğine 
+        ilişkin bilginin elde edilmesidir. Ayrıştırma işlemi bağlamdan-bağımsız 
+        dilbilgileri için incelenecektir. Bağlamdan-bağımsız dilbilgileri için, 
+        ayrıştırma işleminin amacının, ayrıştırma ağacının elde edilmesi olduğunu 
+        söyleyebiliriz. Eğer ayrıştırma ağacı elde edilemiyorsa, verilen tümcenin 
+        <strong>(w)</strong> ilgili dilbilgisi <strong>(G)</strong> tarafından 
+        türetilmediği; başka bir deyişle sözdizim açısından <strong>w</strong>’nin 
+        yanlış olduğu sonucu çıkarılır. Eğer ayrıştırma ağacı elde edilir, başka 
+        bir deyişle <strong>w</strong>’nin elde edilebilmesi için <strong>G</strong>’nin 
+        hangi kurallarının hangi sırada uygulanması gerektiği ortaya konulursa, 
+        hem <strong>w</strong>’nin sözdizim açısından doğru olduğu sonucu çıkarılır, 
+        hem de <strong>w</strong>’nin taşıdığı <strong>anlam (semantic)</strong> 
+        belirlenmiş olur. Bu nedenle ayrıştırma işlemi derleme ya da yorumlama 
+        açısından son derece önemli bir işlemdir. </p>
+      <p>Eğer bir dilbilgisi ile, aynı tümce için birden çok soldan türetme bulunabiliyorsa 
+        bu dilbilgisi <strong>belirsizlik taşıyan</strong> <strong>(ambiguous)</strong> 
+        bir dilbilgisidir. Aynı tümce için birden çok soldan türetme oluşturulabilmesi, 
+        bu tümce için derleyici tarafından birden çok kod kümesi oluşturulabilmesi 
+        anlamına gelir. Bu kod kümelerinden yalnız biri tümcenin beklenen amacına 
+        karşı gelir. Diğer kod kümeleri ise, tümceyi oluşturanın düşüncesinden 
+        farklı sonuçlar doğurur. </p>
+    
+      <p class="yonelt">! Örnekleri incelemek için düğmelere tıklayınız.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B07/BD07015.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07015.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p>Görüldüğü gibi “belirsizlik” dilin değil dilbilgisinin bir özelliğidir. 
+        Ancak bazı diller için, dili türeten ve belirsizlik taşımayan bir dilbilgisi 
+        bulmak mümkün değildir. Bu tür dillere ise <strong>doğal olarak belirsiz 
+        (inherently ambiguous)</strong> diller denir.</p>
+      <p>Ayrıştırma işleminde kullanılan dilbilgilerinin, belirsizlik taşımayan,<strong> 
+        belirgin (unambiguous)</strong> dilbilgileri olduğunu varsayacağız.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link href="abstyle.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="15" cellspacing="0" class="content">
+  <tr> 
+    <td class="content"> 
+      <p class="baslik">7.2.4.4. LR(1) Ayrıştırma Çizelgesinin Oluşturulması</p>
+      <p> LR(1) ayrıştırıcı geçiş çizeneğindeki bilgilerden yararlanılarak, LR(1) 
+        ayrıştırma çizelgesi aşağıdaki gibi oluşturulur.</p>
+      <ul>
+        <li> Geçiş çizeneğindeki sonlu özdevinirin her durumu için çizelgede bir 
+          satır bulunur.</li>
+        <li> Dilbilgisindeki her uç simge ve değişken ile dizgi sonu <strong>(ds)</strong> 
+          için çizelgede bir kolon bulunur.</li>
+        <li> Geçiş çizeneğindeki her</li>
+      </ul>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="140">
+          <param name=movie value="pics/B07/BD07100_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07100_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object></p>
+      <p>geçişi için, çizelgenin i. satır <strong>a</strong> başlıklı kolonundaki 
+        elemanına <strong>“Kaydır, j”</strong> yazılır. Bu ifadenin anlamı <strong>“a’yı 
+        yığıta kaydır (shift a)</strong> <b>ve</b> <strong>j numaralı duruma git 
+        (go to j)</strong><b>”</b>dir. Yığıta eklenecek (kaydırılacak) simgenin 
+        hangisi olduğu kolon başlığında görülmektedir. Bu nedenle çizelgede <strong>“Kaydır, 
+        j”</strong> kısa gösterimine yer verilmektedir.</p>
+      <ul>
+        <li> Geçiş çizelgesindeki her </li>
+      </ul>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="140">
+          <param name=movie value="pics/B07/BD07100_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07100_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object></p>
+      <p>geçişi için, çizelgenin i. satır <strong>A</strong> başlıklı kolonundaki 
+        elemanına <strong>“j”</strong> yazılır. Bu ifadenin anlamı “<strong> j 
+        numaralı duruma git (go to j)</strong>” dir.</p>
+      <ul>
+        <li> 
+          <p> Geçiş çizeneğindeki her uç durum için, eğer uç durumun numarası 
+            <strong>i</strong>, durumdaki işaretli kural da<strong> (A <img src="pics/symbols/ok.gif" align="absmiddle"> 
+            <img src="pics/symbols/beta.gif" align="absmiddle">.)</strong> ise, 
+            çizelgenin i. satırındaki belirli hücrelere “<strong>İndirge (<img src="pics/symbols/beta.gif" align="absmiddle"> 
+            <img src="pics/symbols/ok.gif" align="absmiddle"> A)</strong>” yazılır. 
+            i. satırda, hangi kolonlardaki hücrelere bu ifadenin yazılacağı, <strong><img src="pics/symbols/beta.gif" align="absmiddle"> 
+            <img src="pics/symbols/ok.gif" align="absmiddle"> A</strong> indirgemesi 
+            yapıldığında, bir sonraki simgenin ne olacağına göre belirlenir (bir 
+            sonraki simge uç simgeler ile <strong>ds</strong>‘den biri ya da birkaçı 
+            olabilir). İndirgeme yapıldıktan sonra hangi duruma gidileceği ise, 
+            geçiş çizelgesinde, ilgili uç durumdan geriye doğru iz sürülerek bulunur.</p>
+        </li>
+        <li> 
+          <p> Geçiş çizeneğinde <strong>(S’ <img src="pics/symbols/ok.gif" align="absmiddle"> 
+            S.)</strong> işaretli kuralının bulunduğu durumun numarası <strong>k</strong> 
+            ise, ayrıştırma çizelgesinin<strong> k</strong>. satırında <strong>ds</strong> 
+            başlıklı hücreye “<strong>kabul et (accept)</strong>” yazılır. Bu 
+            ifadenin anlamı, ayrıştırma sürecinde bu noktaya gelinirse dizginin 
+            geçerli bir tümce olduğunun anlaşılacağı ve kabul edileceğidir. </p>
+          <p><strong>G<sub>7.6</sub></strong> ve <strong>G<sub>7.7</sub></strong> 
+            dilbilgileri için oluşturulan LR(1) Ayrıştırma Çizelgeleri sırasıyla 
+            Çizelge 7.3 ve Çizelge 7.4’de görülmektedir.</p>
+        </li>
+      </ul>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="360">
+          <param name=movie value="pics/B07/BD07100_3.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07100_3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="360">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Çizelge 7.3. <strong>G<sub>7.6</sub></strong> İçin LR(1) 
+        Ayrıştırma Çizelgesi</p>
+      <p class="imgdesc"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="360">
+          <param name=movie value="pics/B07/BD07100_4.swf">
+          <param name=quality value=high>
+          <embed src="pics/B07/BD07100_4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="360">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">Çizelge 7.4. <strong>G<sub>7.7</sub></strong> İçin LR(1) 
+        Ayrıştırma Çizelgesi</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
