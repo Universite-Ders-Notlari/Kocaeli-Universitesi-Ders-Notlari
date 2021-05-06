@@ -1,0 +1,95 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="1527">
+  <tr valign="top"> 
+    <td width="0" height="57"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+        <param name=movie value="pics/B03/SM03060_1.swf">
+        <param name=quality value=high>
+        <embed src="pics/B03/SM03060_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+        </embed> 
+      </object></td>
+    <td width="0" height="57"> 
+      <p><span class="baslik">3.3.3. Miniterimlerle Mantık Devresi Çizimi</span><br>
+      </p>
+      <p>Doğruluk tablosu verilen bir mantık devresinin devre şemasını çizmek 
+        için kullanılan yöntemlerden biri de, miniterimlerden yararlanarak devrenin 
+        çıkışlarına ilişkin mantık denkleminin elde edilmesidir. Daha sonra bu 
+        mantık denklemi kullanılarak devre şeması çizilir. Miniterimleri kullanarak 
+        doğruluk tablosundan mantık denkleminin elde edilmesine <b>çarpımların 
+        toplamı yöntemi</b> adı verilir. Bu adın verilmesinin nedeni ise, miniterimlerin 
+        giriş değişkenlerinin çarpımlarından oluşmasıdır. Devre çıkışı ise, doğruluk 
+        tablosunda <b>mantık 1</b> olan giriş birleşimlerine ilişkin miniterimlerin 
+        toplamından meydana gelmektedir.</p>
+      <p>Yanda doğruluk tablosu verilen mantık devresini miniterimleri kullanarak 
+        çizmeye çalışalım.</p>
+      </td>
+  </tr>
+  <tr valign="top"> 
+    <td height="1205" colspan="2"> 
+      <p><b>1. Adım:</b> Giriş değişkenleri ve çıkış değişkenleri belirlenir.</p>
+      <blockquote> 
+        <p> Tablonun sol tarafında yer alan A ve B değişkenleri, giriş değişkenleridir 
+          ve bağımsız değişkenlerdir. Tablonun sağ tarafındaki Z değişkeni ise 
+          çıkış değişkenidir. Z çıkış değişkeni, A ve B giriş değişkenlerine bağımlıdır. 
+        </p>
+      </blockquote>
+      <p><b>2. Adım:</b> Doğruluk tablosuna ilişkin miniterimler oluşturulur.<br>
+      </p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="140">
+          <param name=movie value="pics/B03/SM03060_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03060_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object></p>
+      <p><b>3. Adım:</b> <b>Z=1</b> olan çıkışlar işaretlenir.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="140">
+          <param name=movie value="pics/B03/SM03060_3.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03060_3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object></p>
+      <p><b>4. Adım:</b> İşaretlenen <b>Z=1</b> çıkışlarına ilişkin miniterimler 
+        toplanır.</p>
+      <blockquote> 
+        <p>Örnek doğruluk tablosunda miniterim 0 <b>(<img src="pics/B03/degil_a_bold.gif" width="9" height="12">&middot;<img src="pics/B03/degil_b_bold.gif" width="7" height="12">)</b> 
+          ve miniterim 2 <b>(A&middot;<img src="pics/B03/degil_b_bold.gif" width="7" height="12">)</b> 
+          satırları için Z=1 olmaktadır. Bu iki miniterimin toplamı Z çıkışına 
+          ilişkin mantık denklemini oluşturur.</p>
+        <table width="272" border="1" cellspacing="0" cellpadding="3" bordercolor="#000000" bgcolor="#ECF5FF" height="39">
+          <tr> 
+            <td> 
+              <div align="center"><b><font size="2">Z = (<img src="pics/B03/degil_a_bold.gif" width="9" height="12"> 
+                &middot; <img src="pics/B03/degil_b_bold.gif" width="7" height="12">) 
+                + (A &middot; <img src="pics/B03/degil_b_bold.gif" width="7" height="12">)</font></b></div>
+            </td>
+          </tr>
+        </table>
+        <p class="imgdesc">Devreye ilişkin çıkış denklemi</p>
+      </blockquote>
+      <p><b>5. Adım:</b> Çıkış denklemi kullanılarak mantık devresi şeması çizilir.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="140">
+          <param name=movie value="pics/B03/SM03060_4.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03060_4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="140">
+          </embed> 
+        </object></p>
+      <p class="yonelt">! Mantık kapılarında oluşan fonksiyonları görmek için 
+        fareyi ilgili mantık kapısına sürükleyiniz.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03060_5.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03060_5.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p><font color="#9900FF" class="imgdesc">Şekil - Mantık Devresi Şeması</font></p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

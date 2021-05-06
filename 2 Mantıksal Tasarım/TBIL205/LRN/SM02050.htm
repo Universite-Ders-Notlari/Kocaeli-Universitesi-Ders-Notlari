@@ -1,0 +1,157 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="933">
+  <tr valign="top"> 
+    <td width="80%" height="1046"> 
+      <p> <span class="baslik">2.3.3. VE (AND) Elektrik 
+        Devresi</span><br>
+      </p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B02/SM02050.swf">
+          <param name=quality value=high>
+          <embed src="pics/B02/SM02050.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p>L lambası sadece ve sadece hem A hem de B anahtarları <b>KAPALI (0)</b> 
+        ise <b>YANAR (1)</b>. Bu devreye <b>&quot;VE&quot; (&quot;AND&quot;)</b> 
+        <b>devresi</b> adı verilir çünkü L bağımlı değişkeninin 1 değerini alması 
+        için A ve B bağımsız değişkenlerinin her ikisinin de 1 olması gerekir.</p>
+      <p><b>&quot;VE&quot;</b> devresinin doğruluk tablosu aşağıda verilmektedir:</p>
+      <table width="296" border="1" cellspacing="0" cellpadding="3" height="53" bordercolor="#669999">
+        <tr bgcolor="#99CCCC"> 
+          <td width="89"> 
+            <div align="center"><b><font size="2" color="#FFFFFF">A</font></b></div>
+          </td>
+          <td width="92"> 
+            <div align="center"><font size="2" color="#FFFFFF"><b>B</b></font></div>
+          </td>
+          <td width="89"> 
+            <div align="center"><b><font size="2" color="#FFFFFF">L</font></b></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">AÇIK</font></div>
+          </td>
+          <td width="92"> 
+            <div align="center"><font size="2" color="#000000">AÇIK</font><font size="2"></font></div>
+          </td>
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">SÖNÜK</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">KAPALI</font></div>
+          </td>
+          <td width="92"> 
+            <div align="center"><font size="2" color="#000000">AÇIK</font><font size="2"></font></div>
+          </td>
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">SÖNÜK</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">AÇIK</font></div>
+          </td>
+          <td height="7" width="92"> 
+            <div align="center"><font size="2" color="#000000">KAPALI</font><font size="2"></font></div>
+          </td>
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">SÖNÜK</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">KAPALI</font></div>
+          </td>
+          <td height="7" width="92"> 
+            <div align="center"><font size="2" color="#000000">KAPALI</font><font size="2"></font></div>
+          </td>
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">YANIK</font></div>
+          </td>
+        </tr>
+      </table>
+      <p>Tabloda değişken durumlarının 0, 1 değerleri yerleştirildiğinde <b>&quot;VE&quot;</b> 
+        işlemi açıkça görülmektedir.<br>
+      </p>
+      <table width="296" border="1" cellspacing="0" cellpadding="3" height="53" bordercolor="#7777bb">
+        <tr bgcolor="#9999CC"> 
+          <td width="89"> 
+            <div align="center"><b><font size="2" color="#FFFFFF">A</font></b></div>
+          </td>
+          <td width="92"> 
+            <div align="center"><font size="2" color="#FFFFFF"><b>B</b></font></div>
+          </td>
+          <td width="89"> 
+            <div align="center"><b><font size="2" color="#FFFFFF">L</font></b></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+          <td width="92"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">1</font></div>
+          </td>
+          <td width="92"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+          <td width="89"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+          <td height="7" width="92"> 
+            <div align="center"><font size="2" color="#000000">1</font></div>
+          </td>
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">0</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">1</font></div>
+          </td>
+          <td height="7" width="92"> 
+            <div align="center"><font size="2" color="#000000">1</font></div>
+          </td>
+          <td height="7" width="89"> 
+            <div align="center"><font size="2" color="#000000">1</font></div>
+          </td>
+        </tr>
+      </table>
+      <p>Görüldüğü gibi sadece ve sadece <b>A=1</b> ve <b>B=1</b> ise <b>L=1</b>'dir.</p>
+      <p>Bu doğruluk tablosundan L değişkeni için aşağıdaki eşitlik yazılır:</p>
+      <p> L = A <b>VE</b> B</p>
+      <p>veya</p>
+      <p>L = A <b>AND</b> B</p>
+      <p>Genellikle <b>&quot;VE&quot;</b> ya da <b>&quot;AND&quot;</b> sözcük 
+        ifadeleri yerine <b>&quot;&middot;&quot;</b> sembolü kullanılır. Böylece 
+        eşitlik aşağıdaki gibi yazılır:</p>
+      <p> L = A <b>&middot;</b> B</p>
+      <p><b>&quot;L eşittir A ve B&quot;</b> olarak okunur.</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

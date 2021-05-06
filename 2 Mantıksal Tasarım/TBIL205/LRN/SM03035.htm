@@ -1,0 +1,69 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="931">
+  <tr valign="top"> 
+    <td width="80%" height="930"> 
+      <p><span class="baslik">3.3.1. Mantık Denklemini Kullanarak Mantık Devresi 
+        Oluşturmak </span><br>
+      </p>
+      <p>Sadece mantık denklemi bilinen bir mantık devresini, bu denklemi inceleyerek 
+        çizebiliriz. Bilindiği gibi mantık denklemi, bir mantık devresinin çıkışlarına 
+        ilişkin fonksiyondur ve çıkış değişkenlerinin hangi işlemlerle oluştuğunu 
+        göstermektedir. Denklemin sol tarafı, devrenin çıkış değişkenini belirtir. 
+        Sağ tarafta yer alan değişkenler ise, bağımsız değişkenler olup devrenin 
+        girişlerini oluştururlar. Denklemde yer alan işlemler ise, devrenin hangi 
+        tip mantık kapılarında meydana geldiğini belirtir. Bu bilgileri kullanak 
+        herhangi bir mantık denklemini inceleyerek o devrenin giriş ve çıkış değişkenlerinin 
+        ve devreyi oluşturan mantık kapılarının neler olduğunu ve aralarındaki 
+        bağlantıları saptayabiliriz. Böylece mantık devresini kolaylıkla çizebiliriz. 
+      </p>
+      <p>Buraya kadar anlattıklarımızı şimdi bir örnekle açıklayalım:</p>
+      <p><b><u>Örnek:</u></b></p>
+      <p><b>X = (A + B) + (<img src="pics/B03/degil_c_bold.gif" width="7" height="12"> 
+        &middot; D) </b>mantık denklemiyle verilen devreyi çizelim:</p>
+      <p><b>1. Adım:</b> Çıkış değişkeninin saptanması</p>
+      <blockquote> 
+        <p> Denklemin sol tarafı çıkış değişkenini belirtir. O halde çıkış değişkeni 
+          X'tir. </p>
+      </blockquote>
+      <p><b>2. Adım:</b> Giriş değişkenlerinin saptanması</p>
+      <blockquote> 
+        <p> Denklemin sağ tarafındaki değişkenler bağımsız giriş değişkenleridir. 
+          Denklemin sağ tarafında A, B, C ve D değişkenleri yer almaktadır. O 
+          halde çizeceğimiz devrenin girişleri A, B, C ve D'dir. </p>
+      </blockquote>
+      <p><b>3. Adım:</b> Mantık kapılarının saptanması</p>
+      <blockquote> 
+        <p> <b>A + B</b> işlemi, A ve B girişinin bir VEYA kapısından geçtiğini 
+          gösterir. <img src="pics/B03/degil_c_bold.gif" width="7" height="12">, 
+          C girişinin tersleyici kapısından geçtiğini gösterir. <img src="pics/B03/degil_c_bold.gif" width="7" height="12"> 
+          <b>&middot; D</b>, <img src="pics/B03/degil_c_bold.gif" width="7" height="12"> 
+          ve D'nin bir VE kapısından geçtiğini belirtir.</p>
+      </blockquote>
+      <p><b>(A + B) + (<img src="pics/B03/degil_c_bold.gif" width="7" height="12"> 
+        &middot; D)</b> ise, yukarıda sözü edilen VEYA ve VE kapılarının çıkışlarının, 
+        bir VEYA kapısının girişlerini oluşturduğunu göstermektedir. Bu ikinci 
+        VEYA kapısının çıkışı aynı zamanda çizeceğimiz devrenin X çıkışını verecektir.</p>
+      <p class="yonelt">! Mantık kapılarında oluşan fonksiyonları görmek için 
+        fareyi ilgili mantık kapısına sürükleyiniz.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B03/SM03035.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03035.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p></p>
+      <p><span class="imgdesc">Şekil - <b>X=(A + B)+( <img src="pics/B03/degil_c_bold_mavi.gif" width="7" height="12"> 
+        &middot; D)</b> Denklemli Mantık Devresi</span><br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

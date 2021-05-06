@@ -1,0 +1,149 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="1279">
+  <tr valign="top"> 
+    <td height="888"> 
+      <p><span class="baslik">2.4.2. Tersleyici (Inverter) Kapısı</span><br>
+      </p>
+      <p>Tersleyici kapısı, çoğu zaman <b>&quot;DEĞİL KAPISI&quot; (&quot;NOT 
+        Gate&quot;)</b> olarak adlandırılır.</p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B02/SM02070_1.swf">
+          <param name=quality value=high>
+          <embed src="pics/B02/SM02070_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p>Tersleyici kapısının mantık sembolü, tampon kapısı mantık sembolünün 
+        hemen hemen aynısıdır. Tek fark, <b>(0)</b> ile gösterilen balon işaretinin 
+        eklenmesidir. Bu balon işareti, mantık olarak tersinirlik işlevini belirtmektedir 
+        ve <b>&quot;tersinirlik göstergesi&quot;</b> olarak adlandırılır. Tersleyici 
+        kapının girişinde ya da çıkışında balon işaretinin olmasının hiçbir mantık 
+        önemi yoktur, sadece kapının elektronik imalatı açısından önem taşır. 
+        Kapının giriş ya da çıkışında tersinir mantık işleminin yapılıp yapılmayacağını 
+        gösterir.</p>
+      <p>Bir tersleyici kapısının B çıkışı her zaman A girişinin tümleyenidir, 
+        bundan dolayı iki tersleyici kapı birbirine seri bağlanırsa bir tampon 
+        kapısı elde edilir.</p>
+      <p class="imgdesc">Tersleyici Kapısının Doğruluk Tablosu</p>
+      <table width="235" border="1" cellspacing="0" cellpadding="3" bordercolor="#669999">
+        <tr bgcolor="#99cccc"> 
+          <td> 
+            <div align="center"><b><font size="2" color="#FFFFFF">A</font></b></div>
+          </td>
+          <td> 
+            <div align="center"><b><font size="2" color="#FFFFFF">B</font></b></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td> 
+            <div align="center"><font size="2">0</font></div>
+          </td>
+          <td> 
+            <div align="center"><font size="2">1</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td> 
+            <div align="center"><font size="2">1</font></div>
+          </td>
+          <td> 
+            <div align="center"><font size="2">0</font></div>
+          </td>
+        </tr>
+      </table>
+      <p>Mantık denklemi: <b>B = <img src="pics/B02/degil.gif" width="8" height="11"></b></p>
+    <p>Aşağıda birbirine seri bağlı iki adet tersleyiciden oluşan mantık devresi 
+        ve bu devrenin doğruluk tablosu ile mantık denklemi verilmektedir: </p>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B02/SM02070_2.swf">
+          <param name=quality value=high>
+          <embed src="pics/B02/SM02070_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">1 Numaralı Tersleyicinin Doğruluk Tablosu<br>
+      </p>
+      <table width="235" border="1" cellspacing="0" cellpadding="3" bordercolor="#7777bb">
+        <tr bgcolor="#9999CC"> 
+          <td> 
+            <div align="center"><b><font size="2" color="#FFFFFF">A</font></b></div>
+          </td>
+          <td> 
+            <div align="center"><b><font size="2" color="#FFFFFF">B</font></b></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td> 
+            <div align="center"><font size="2">0</font></div>
+          </td>
+          <td> 
+            <div align="center"><font size="2">1</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td> 
+            <div align="center"><font size="2">1</font></div>
+          </td>
+          <td> 
+            <div align="center"><font size="2">0</font></div>
+          </td>
+        </tr>
+      </table>
+      <p>Şekilden de görüldüğü gibi, 2 numaralı tersleyicinin B girişi 1 numaralı 
+        tersleyicinin çıkışıdır. 2 numaralı tersleyicinin çıkışı aynı zamanda 
+        mantık devresinin de çıkışını oluşturmaktadır. Benzer şekilde 1 numaralı 
+        tersleyicinin A girişi de aynı zamanda mantık kapısının da girişidir.</p>
+      <p><span class="imgdesc">2 Numaralı Tersleyicinin Doğruluk Tablosu</span><br>
+      </p>
+      <table width="235" border="1" cellspacing="0" cellpadding="3" bordercolor="#669999">
+        <tr bgcolor="#99cccc"> 
+          <td> 
+            <div align="center"><b><font size="2" color="#FFFFFF">B</font></b></div>
+          </td>
+          <td> 
+            <div align="center"><b><font size="2" color="#FFFFFF">C</font></b></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td> 
+            <div align="center"><font size="2">0</font></div>
+          </td>
+          <td> 
+            <div align="center"><font size="2">1</font></div>
+          </td>
+        </tr>
+        <tr bgcolor="#EFEFEF"> 
+          <td> 
+            <div align="center"><font size="2">1</font></div>
+          </td>
+          <td> 
+            <div align="center"><font size="2">0</font></div>
+          </td>
+        </tr>
+      </table>
+      <p>Bu iki tersleyiciye ilişkin doğruluk tablolarını kullanarak, mantık devresinin 
+        A girişi ve C çıkışına ilişkin doğruluk tablosunu elde ederiz. </p>
+      <table border="1" cellspacing="0" cellpadding="5" bgcolor="#CAE4FF" bordercolor="#000000">
+        <tr> 
+          <td bgcolor="#D8EBEB"> 
+            <p><img src="pics/B02/SM02070.gif"></p>
+          </td>
+        </tr>
+      </table>
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="590" height="300">
+          <param name=movie value="pics/B02/SM02070_3.swf">
+          <param name=quality value=high>
+          <embed src="pics/B02/SM02070_3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="590" height="300">
+          </embed> 
+        </object></p>
+      <p>Buradan hareketle tampon kapısı eşdeğeri elde edilir.</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

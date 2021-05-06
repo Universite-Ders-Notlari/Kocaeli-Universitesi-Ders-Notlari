@@ -1,0 +1,115 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Yazmaçlar temel olarak aþaðýda belirtilen hangi elemanlardan oluþur?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Toplayýcýlardan</secenek> 
+			<secenek>Tümleyicilerden</secenek> 
+			<secenek dogru="true">Ýkidurumlulardan</secenek>
+			<secenek>VE kapýlarýndan</secenek> 
+			<secenek>DEÐÝL kapýlarýndan</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Yazmaçlar ne amaçla kullanýlýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Veri depolama</secenek> 
+			<secenek>Aritmetik yazma</secenek> 
+			<secenek>Mantýk yazma</secenek>
+			<secenek>Denetleme</secenek> 
+			<secenek>Eþlik</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Bir yazmacýn büyüklüðü neye göre tanýmlanmaktadýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Tümlediði sayýlara göre</secenek> 
+			<secenek>Ürettiði eþlik ikili sayýsýna göre</secenek> 
+			<secenek dogru="true">Depolayabileceði en büyük ikili sayýyý oluþturan ikil sayýsýna göre</secenek>
+			<secenek>2^n formülüyle bulunan ikil sayýsýna göre</secenek> 
+			<secenek>Seri baðlantý sayýsýna göre</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>000’dan 111’e kadar olan ikili sayýlarý depolayan yazmaç aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2-ikil yazmaç</secenek> 
+			<secenek dogru="true">3-ikil yazmaç</secenek> 
+			<secenek>4-ikil yazmaç</secenek>
+			<secenek>8-ikil yazmaç</secenek> 
+			<secenek>16-ikil yazmaç</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Veri ikillerini ayný anda yükleyen yazmaç aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Hýzlý yazmaç</secenek> 
+			<secenek>Eþanlý yazmaç</secenek> 
+			<secenek>Seri yazmaç</secenek>
+			<secenek dogru="true">Koþut yazmaç</secenek> 
+			<secenek>Okuma yazmacý</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>8-ikil koþut yazmacýn veri çýkýþ baðlantýlarýnýn sayýsý aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>3</secenek> 
+			<secenek dogru="true">8</secenek> 
+			<secenek>16</secenek>
+			<secenek>32</secenek> 
+			<secenek>2</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Ýkiyönlü 4-ikil koþut yazmaçta veri hatlarýnýn sayýsý aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2</secenek> 
+			<secenek dogru="true">4</secenek> 
+			<secenek>8</secenek>
+			<secenek>16</secenek> 
+			<secenek>32</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Veriyi teker teker yükleyen yazmaçlara ne ad verilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Tek yazmaç</secenek> 
+			<secenek>Sýralý yazmaç</secenek> 
+			<secenek dogru="true">Seri yazmaç</secenek>
+			<secenek>Koþut yazmaç</secenek> 
+			<secenek>Beklemeli yazmaç</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Seri yazmaçlarýn veri giriþ baðlantý sayýsý aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">1</secenek> 
+			<secenek>2</secenek> 
+			<secenek>3</secenek>
+			<secenek>4</secenek> 
+			<secenek>16</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>8-ikil seri yazmacýn veri çýkýþ baðlantý sayýsý kaçtýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>2</secenek> 
+			<secenek>4</secenek> 
+			<secenek dogru="true">8</secenek>
+			<secenek>16</secenek> 
+			<secenek>32</secenek> 
+		</secenekler>
+	</soru>
+
+	
+
+</quiz>

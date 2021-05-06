@@ -1,0 +1,56 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="226">
+  <tr valign="top"> 
+    <td width="77%" height="216"> 
+      <p class="baslik">6.4.1. 2'ye Tümleme Yöntemiyle Çıkartma Devresi Tasarımı</p>
+      <p>4 - ikillik A ve B sayılarını çıkartmak için 2'ye tümleme yöntemi kullanılacak 
+        olursa, bu durumda çıkartma devresi nasıl tasarlanmalıdır? Öncelikle yapılmak 
+        istenen işlemi aşağıdaki gibi yazalım:</p>
+      <p><img src="pics/B06/641.gif" width="241" height="75"></p>
+      <p>Bu çıkartma işlemini 2'ye tümleme yöntemini kullanarak yapmak için ikinci 
+        sayının, buradaki B sayısının 2'ye tümleyeni bulunur. Bunun için önce 
+        B sayısının 1'e tümleyeni elde edilir, sonra bulunan bu 1'e tümlenmiş 
+        sayı 1 ile toplanır ve böylece B sayısının 2'ye tümleyeni bulunur.</p>
+      <p><img src="pics/B06/641_1.gif" width="315" height="72"></p>
+      <p>A sayısı, eksi sayısının, buradaki B sayısının 2'ye tümleme işlemi ile 
+        toplanır.</p>
+      <p><img src="pics/B06/641_2.gif" width="295" height="101"></p>
+      <p>Buradaki toplama işleminin elde ikilini ifade eden E değeri, çıkartma 
+        işleminde işaret ikiline karşılık düşer. E = 1 bulunursa, çıkartma işleminin 
+        sonucu artı demektir, bu ise A sayısının B sayısından büyük olması durumunu 
+        gösterir. E = 0 olursa, A sayısı B sayısından küçüktür ve çıkartma işleminin 
+        sonucu eksi bir sayıdır. </p>
+      <p>Yukarıdaki işlemi tekrar inceleyecek olursak, en az anlamlı ikillere 
+        ilişkin toplama işleminde 3 - ikil toplanmaktadır. Bunlar <img src="pics/B06/a0.gif" width="23" height="24" align="absmiddle">, 
+        <img src="pics/B06/b0_.gif" width="20" height="25" align="absmiddle"> 
+        ve 1 ikilleridir. 3- ikili toplamak için bir tam - toplayıcı devresi gerekir. 
+        Diğer toplamaları da inceleyecek olursak <img src="pics/B06/a1.gif" width="21" height="24" align="absmiddle"> 
+        ile <img src="pics/B06/b1.gif" width="20" height="25" align="absmiddle"> 
+        toplanmaktadır. Bir önceki adımdan elde ikili gelir. 3 - ikili toplamak 
+        için bir tam - toplayıcı kullanılır. Benzer şekilde <img src="pics/B06/a2.gif" width="20" height="25" align="absmiddle"> 
+        ile <img src="pics/B06/b2.gif" width="21" height="25" align="absmiddle"> 
+        ve <img src="pics/B06/a3.gif" width="21" height="25" align="absmiddle"> 
+        ile <img src="pics/B06/b3.gif" width="21" height="24" align="absmiddle"> 
+        toplanmaktadır. Bu toplama işlemleri de elde ikili ile 3 - ikilin toplaması 
+        işlemleri olduğu için, her bir toplama için birer tam - toplayıcı devresi 
+        kullanılır. Böylece 4 adet tam - toplayıcı devresi kullanarak 4 - ikillik 
+        A ve B sayılarını çıkartan bir çıkartma devresi tasarlanır. Bu devreye 
+        ilişkin devre şeması aşağıdaki şekilde verilmiştir.</p>
+      <p> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="590" height="586">
+          <param name="movie" value="pics/B06/SM06090.swf">
+          <param name="quality" value="high">
+          <embed src="pics/B06/SM06090.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="590" height="586"></embed></object>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

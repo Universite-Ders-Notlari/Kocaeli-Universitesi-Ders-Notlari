@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+var InternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle all the the FSCommand messages in a Flash movie
+function quiz_DoFSCommand(command, args) {
+  var quizObj = InternetExplorer ? quiz : document.quiz;
+   if (command == "resize") {
+		if (args) {quizObj.height = args;}
+	}
+}
+// Hook for Internet Explorer 
+if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && 
+	  navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+	document.write('<SCRIPT LANGUAGE=VBScript\> \n');
+	document.write('on error resume next \n');
+	document.write('Sub quiz_FSCommand(ByVal command, ByVal args)\n');
+	document.write('  call quiz_DoFSCommand(command, args)\n');
+	document.write('end sub\n');
+	document.write('</SCRIPT\> \n');
+}
+//-->
+</SCRIPT>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0">
+<p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="550" height="40">
+    <param name=movie value="pics/derselement/degerlendirme.swf">
+    <param name=quality value=high>
+    <embed src="pics/derselement/degerlendirme.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="550" height="40">
+    </embed> 
+  </object>
+<table width="100%" border="0" cellpadding="15" cellspacing="0">
+  <tr> 
+    <td valign="top" width="77%"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+ id=quiz width=560 height=300>
+        <param name=movie value="pics/quiz.swf">
+        <param name=quality value=high>
+        <param name=salign value=LT><param name="BGCOLOR" value="#FFFFFF">
+        
+        <embed src="pics/quiz.swf" quality=high salign=LT bgcolor=#FFFFFF  width=560 height=300	swliveconnect=true name=quiz type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+        </embed> 
+      </object></td>
+  </tr>
+</table>
+</body>
+</html>
+<script language="Javascript">
+document.quiz.setVariable ("xfile", "SM13085");
+</script>

@@ -1,0 +1,118 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Ýki giriþli bir VEYA mantýk devresinin giriþlerinden birinde A.B deðeri, diðerinde C deðeri varsa, Z çýkýþ denklemi aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Z = (A . B) + C</secenek> 
+			<secenek>Z = A . (B + C)</secenek> 
+			<secenek>Z = A + C </secenek>
+			<secenek>Z = A + (B . C)</secenek> 
+			<secenek>Z = A + B + C </secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Çýkýþ fonksiyonu Z = (A . B) + (C . B) + C olan bir mantýk devresinin A = 1, B = 0 ve C = 1 için Z çýkýþ deðeri aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = 0</secenek> 
+			<secenek dogru="true">Z = 1</secenek> 
+			<secenek>Z = 11</secenek>
+			<secenek>Z = 01</secenek> 
+			<secenek>Z = 0 + 0 + 1</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Çýkýþ fonksiyonu Z = (A . B) + (C . B) + C + D olan mantýk devresinin kaç farklý giriþ olasýlýðý vardýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Ýki</secenek> 
+			<secenek>Dört</secenek> 
+			<secenek>Beþ</secenek>
+			<secenek>Sekiz</secenek> 
+			<secenek dogru="true">Onaltý</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>X = M + L + (K . M) mantýk denklemiyle verilen bir devrenin giriþlerinden K= 0, L = 0 iken X çýkýþýnýn 1 deðerini alabilmesi için M giriþi aþaðýdaki hangi deðeri almalýdýr?</sorumetni>
+		<secenekler type="radio">
+			<secenek>M = X + 1</secenek> 
+			<secenek>M = L + 0</secenek> 
+			<secenek dogru="true">M = 1</secenek>
+			<secenek>M = X </secenek> 
+			<secenek>M = 0</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Çýkýþ fonksiyonu  X = (M . L) + (K . M) olan mantýk devresinin K= 0, L = 0 ve M = 1 giriþ olasýlýðýna iliþkin miniterim aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">K'. L'. M</secenek> 
+			<secenek>K + L + M</secenek> 
+			<secenek>(K + L) . M</secenek>
+			<secenek>K + (L . M)</secenek> 
+			<secenek>K . L . M</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Çýkýþ fonksiyonu  T = (P . R) + (Q . W . Y) olan mantýk devresinin P= 0, R = 1, Q = 1, W = 0 ve Y = 1 giriþ olasýlýðýna iliþkin miniterim aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>P . R . Q . W . Y</secenek> 
+			<secenek dogru="true">P’ . R . Q . W' . Y</secenek> 
+			<secenek>P . R’ . Q' . W . Y’</secenek>
+			<secenek>R . Q . Y</secenek> 
+			<secenek>P . W </secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Giriþ deðiþkenleri A ve B olan bir mantýk devresinin Z çýkýþý, giriþ deðerleri A = 0, B = 0 ve  A = 1, B = 0 giriþ olasýlýklarý için 1 deðerini almaktadýr. Bu devrenin miniterimler cinsinden Z çýkýþ fonksiyonu aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = (A' + B') + (A . B')</secenek> 
+			<secenek>Z = (A' . B') + (A + B')</secenek> 
+			<secenek>Z = (A' . B') + (A . B) </secenek>
+			<secenek dogru="true">Z = (A' . B') + (A . B')</secenek> 
+			<secenek>Z = (A' + B') + (A + B) </secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>Çýkýþ fonksiyonu  X = (M . L) + (K . M) olan mantýk devresinin K= 1, L = 0 ve M = 1 giriþ olasýlýðýna iliþkin maksiterim aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">K' + L + M'</secenek> 
+			<secenek>K + L' + M</secenek> 
+			<secenek>K + L' + M'</secenek>
+			<secenek>K + L + M</secenek> 
+			<secenek>K' + L' + M'</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Çýkýþ fonksiyonu  T = (P . R) + (Q . W . Y) olan mantýk devresinin P= 0, R = 1, Q = 1, W = 0 ve Y = 1 giriþ olasýlýðýna iliþkin maksiterim aþaðýdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>P + R + Q + W + Y</secenek> 
+			<secenek dogru="true">P + R' + Q' + W + Y'</secenek> 
+			<secenek>P' + R + Q + W' + Y</secenek>
+			<secenek>P . R' . Q' + W + Y'</secenek> 
+			<secenek>R . Q . Y + P . W </secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Giriþ deðiþkenleri A ve B olan bir mantýk devresinin Z çýkýþý, giriþ deðerleri A = 0,    B = 1 ve  A = 1, B = 0 giriþ olasýlýklarý için 0 deðerini almaktadýr. Bu devrenin maksiterimler cinsinden Z çýkýþ fonksiyonu aþaðýdakilerden hangisidir? </sorumetni>
+		<secenekler type="radio">
+			<secenek>Z = (A' + B') + (A . B') </secenek> 
+			<secenek>Z = (A' . B') + (A . B) </secenek> 
+			<secenek>Z = (A' . B) . (A . B') </secenek>
+			<secenek>Z = (A' + B') . (A + B')</secenek> 
+			<secenek dogru="true">Z = (A + B') . (A' + B) </secenek> 
+		</secenekler>
+	</soru>
+
+
+
+
+</quiz>

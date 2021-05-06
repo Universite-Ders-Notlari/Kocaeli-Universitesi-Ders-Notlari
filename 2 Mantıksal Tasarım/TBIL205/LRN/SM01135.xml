@@ -1,0 +1,116 @@
+<quiz title="Degerlendirme Sorulari">
+
+	<soru>
+		<sorumetni>Ondalık sayı simgelerinin üç basamaklı olarak kaç farklı sayıda birleşimi vardır?</sorumetni>
+		<secenekler type="radio">
+			<secenek>On</secenek> 
+			<secenek>Yüz</secenek> 
+			<secenek dogru="true">Bin</secenek>
+			<secenek>On bin</secenek> 
+			<secenek>Yüz bin</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Bütün sayı sistemlerinde T sayı sisteminin taban sayısı, n ise birleştirilecek simge sayısı olmak üzere, n tane sayı simgesinin birleşim sayısı aşağıdaki hangi formül kullanılarak bulunabilir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>T^n/2</secenek> 
+			<secenek dogru="true">T^n</secenek> 
+			<secenek>T^2n</secenek>
+			<secenek>n^T</secenek> 
+			<secenek>n^2T</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>En az anlamlı sayı- AAS nedir? </sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">Her sayının en sağındaki basamaktır. </secenek> 
+			<secenek>Her sayının en solundaki basamaktır. </secenek> 
+			<secenek>Her sayının ortasındaki basamaktır. </secenek>
+			<secenek>Sıfır (0) sayısıdır.</secenek> 
+			<secenek>Bir (1) sayısıdır.</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>Octal sayı sisteminin sayı tabanı nedir? </sorumetni>
+		<secenekler type="radio">
+			<secenek>10</secenek> 
+			<secenek dogru="true">8</secenek> 
+			<secenek>100</secenek>
+			<secenek>2</secenek> 
+			<secenek>32</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Hexadecimal sayı sisteminin sayı tabanı nedir? </sorumetni>
+		<secenekler type="radio">
+			<secenek>10</secenek> 
+			<secenek>32</secenek> 
+			<secenek dogru="true">16</secenek>
+			<secenek>64</secenek> 
+			<secenek>2</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Onaltılı sayı sisteminde bir basamakta olabilecek en büyük sayı sembolü aşağıdakilerden hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek dogru="true">F</secenek> 
+			<secenek>1</secenek> 
+			<secenek>9</secenek>
+			<secenek>0</secenek> 
+			<secenek>A</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Sekizli sayı sisteminde 11 sayı sembolüyle gösterilen sayının ondalık sayı sistemindeki karşılığı aşağıdaki sayılardan hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>88</secenek> 
+			<secenek>880</secenek> 
+			<secenek>18</secenek>
+			<secenek dogru="true">9</secenek> 
+			<secenek>11</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>İkili sayı sisteminde 1110  sayı sembolüyle gösterilen sayının onaltılık sayı sistemindeki karşılığı aşağıdaki sayılardan hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>16</secenek> 
+			<secenek>1616160</secenek> 
+			<secenek>A</secenek>
+			<secenek>36</secenek> 
+			<secenek dogru="true">E</secenek> 
+		</secenekler>
+	</soru>
+
+	<soru>
+		<sorumetni>Üç (3) sayısı ve dokuz (9) sayısının toplamının ikili sayı sistemindeki karşılığı aşağıdaki sayılardan hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>0 0011</secenek> 
+			<secenek dogru="true">0 1100</secenek> 
+			<secenek>1 1100</secenek>
+			<secenek>0 1000</secenek> 
+			<secenek>1 1000</secenek> 
+		</secenekler>
+	</soru>
+
+
+	<soru>
+		<sorumetni>0101 sayısının 1’e tümleyeni aşağıdaki sayılardan hangisidir?</sorumetni>
+		<secenekler type="radio">
+			<secenek>1000</secenek> 
+			<secenek>1001</secenek> 
+			<secenek>1111</secenek>
+			<secenek>0000</secenek> 
+			<secenek dogru="true">1010</secenek> 
+		</secenekler>
+	</soru>
+
+
+</quiz>

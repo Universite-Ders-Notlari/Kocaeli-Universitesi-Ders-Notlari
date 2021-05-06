@@ -1,0 +1,56 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="547">
+  <tr valign="top">
+    <td width="21%" height="549">
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+          <param name=movie value="pics/B08/SM08015.swf">
+          <param name=quality value=high>
+          <embed src="pics/B08/SM08015.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+          </embed> 
+        </object></p>
+      <p class="imgdesc">İki-Kanal Çoğullayıcı mantık sembolü</p>
+    </td>
+    <td width="79%" height="549"> 
+      <p class="baslik">8.1.2. İki-Kanal Çoğullayıcı Çalışma İlkeleri<br>
+      </p>
+      <p class="content">S girişindeki koda göre hangi girişin seçileceğine karar 
+        verilir. Örneğin şekildeki çoğullayıcı için S'deki kod 1 ise A'nın, S'deki 
+        kod 0 ise B'nin seçilmesi varsayımını yapabiliriz. Bu varsayımdan yola 
+        çıkarak çoğullayıcı devresini tasarlamaya başlayabiliriz. Tersi varsayılarak 
+        da seçim işlemi yapılabilir. S=0 iken A, S=1 iken B seçilmesi varsayılabilir 
+        ve devre tasarlanabilir.</p>
+      <p>S seçicisi 1 iken, Z çıkış kanalına A giriş kanalında hangi ikili sayı 
+        varsa o sayı gönderilir, çünkü S=1 iken A girişinin seçildiği varsayımı 
+        yapıldı. </p>
+      <p>S seçicisi 0 olduğunda ise, Z çıkışına B giriş kanalındaki ikili sayı 
+        gönderilir, çünkü S=0 iken B'nin seçileceği varsayıldı.</p>
+      <p>İki-kanallı çoğullayının A ve B olmak üzere iki tane veri giriş kanalı 
+        olduğundan, bu iki kanaldan birini seçmek için kullanılacak kodun kaç 
+        ikilden oluşacağı,</p>
+      <p>Giriş Sayısı = <b>2<sup>n</sup></b></p>
+      <p> formülündeki n değeri ile bulunur. İki-kanal çoğullayıcı için bu formül 
+        aşağıdaki gibi çözülür.</p>
+      <p>2 = 2<sup>n</sup> </p>
+      <p>n = 1<br>
+      </p>
+      <p>Buradan seçici kodun 1 ikilden oluşacağı bulunur. Zaten yukarıda yapılan 
+        varsayımla da bir ikilden oluşan kodlamanın A ve B kanallarını seçmek 
+        için yeterli olduğu görülmektedir (S = 1 ise A, S = 0 ise B). İki-kanal 
+        çoğullayıcıda A ve B seçici kodu devreye bildirmek için bir tane seçici 
+        hattın yeterli olacağı görülmektedir.</p>
+      <p>O halde iki-kanal çoğullayıcı da A, B ve S girişleri olmak üzere 3 tane 
+        giriş değişkeni bulunacaktır. Devrenin çıkışı ise tek hattır ve Z değişkeni 
+        ile gösterilmiştir. <br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

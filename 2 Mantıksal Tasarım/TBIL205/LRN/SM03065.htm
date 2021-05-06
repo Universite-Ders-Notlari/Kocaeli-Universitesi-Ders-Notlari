@@ -1,0 +1,65 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
+<link rel="stylesheet" href="abstyle.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="15" class="content" height="487">
+  <tr valign="top">
+    <td width="20%" height="490"> 
+      <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="215" height="300">
+          <param name=movie value="pics/B03/SM03065.swf">
+          <param name=quality value=high>
+          <embed src="pics/B03/SM03065.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="215" height="300">
+          </embed> 
+        </object></p>
+      <p><span class="imgdesc">Tablo - İki Değişkenli Maksiterimler</span></p>
+    </td>
+    <td width="80%" height="490"> 
+      <p><span class="baslik">3.3.4. Maksiterimler Yöntemiyle Mantık Devrelerinin 
+        Sentezi</span><br>
+      </p>
+      <p>Mantık devrelerini tasarlamak için kullanılan diğer yöntem maksiterimleri 
+        kullanmaktır. Tıpkı miniterimlerde olduğu gibi, mantık devrelerinin doğruluk 
+        tablolarındaki her giriş birleşimi satırına ait bir de maksiterim vardır.</p>
+      <table width="100%" border="1" cellspacing="0" cellpadding="3" bgcolor="#FFFFCC" bordercolor="#000000" height="48">
+        <tr> 
+          <td height="47"><font size="2"><b>Maksiterim</b>, bir mantık devresine 
+            ait doğruluk tablosunda, ait olduğu satıra ilişkin giriş değişkenlerinin 
+            değerleri verildiğinde <b>mantık 0</b> sonucunu veren ve diğer satırlardaki 
+            giriş birleşimleri için <b>mantık 1</b> sonucunu veren mantık ifadesidir. 
+            </font></td>
+        </tr>
+      </table>
+      <p>A ve B gibi 2 girişi olan bir mantık devresinin olası giriş birleşimlerini 
+        ve maksiterimlerini oluşturalım.</p>
+      <p>Her maksiterimin sadece ve sadece ait olduğu satır için <b>mantık 0</b> 
+        değerini verdiği ve diğer tüm satırlar için <b>mantık 1</b> olduğunu yukarıdaki 
+        tablodan kolayca görebiliriz. Örneğin A+B maksiterimi sadece ve sadece 
+        (0 0) girişleri için <b>mantık 0</b> olur. Buna karşlılık, diğer girişleri 
+        oluşturan (0 1), (1 0) ve (1 1) değerleri için <b>mantık 1</b> olacaktır. 
+        Benzer şekilde maksiterimi de, sadece ve sadece (0 1) girişi için <b>mantık 
+        0</b> olur. Ancak (0 0), (1 0) ve (1 1) girişleri için <b>mantık 1</b> 
+        sonucunu verir.</p>
+      <p>Maksiterimler de, miniterimlere benzer şekilde tablonun en solunda yer 
+        alan sayılar kullanılarak belirtilir. Bu şekilde maksiterimler aşağıdaki 
+        gibi ifade edilirler:<br>
+      </p>
+      <blockquote> 
+        <p><b>maksiterim 0 = A + B<br>
+          maksiterim 1 = A + <img src="pics/B03/degil_b_bold.gif" width="7" height="12"><br>
+          maksiterim 2 = <img src="pics/B03/degil_a_bold.gif" width="9" height="12"> 
+          + B<br>
+          maksiterim 3 = <img src="pics/B03/degil_a_bold.gif" width="9" height="12"> 
+          + <img src="pics/B03/degil_b_bold.gif" width="7" height="12"> </b> </p>
+      </blockquote>
+      <p>Maksiterimleri oluştururken <b>&quot;+&quot;</b> toplama işareti kullanıldığı 
+        için, maksiterimleri belirtmek için <b>&quot;mantıksal toplamlar&quot;</b> 
+        ifadesi de kullanılmaktadır.</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
